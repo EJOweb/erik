@@ -1,0 +1,49 @@
+@include barebones {
+
+	.site-inner > .content-sidebar-wrap,
+	.footer-widgets > .wrap,
+	.site-footer > .wrap {
+		padding-left: pxrem( 10px );
+		padding-right: pxrem( 10px );
+	}
+
+	/* Header */
+	.site-header {
+		.wrap {
+			padding: 0;
+			height: auto;
+		}
+
+		&,
+		& .bg-container {
+			background: none;
+		}
+
+		.title-area .site-title a,
+		.header-right,
+		.mondial-movers-logo img {
+			text-align: center;
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+		.title-area {
+			margin-top: 20px;
+			margin-bottom: 10px;
+		}
+
+		.header-right {
+			margin-bottom: 10px;
+		}
+
+		.mondial-movers-logo {
+			position: static;
+			bottom: auto;
+			left: auto;
+		}
+	}
+
+	.nav-primary {
+		margin-bottom: 20px;
+	}
+}

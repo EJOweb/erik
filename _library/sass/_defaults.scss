@@ -1,0 +1,151 @@
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing:    border-box;
+	box-sizing:         border-box;
+}
+
+/* Float Clearing */
+.hard-clear:before {
+	content: " ";
+	display: table;
+}
+
+.hard-clear:after {
+	clear: both;
+	content: " ";
+	display: table;
+}
+
+.hidden {
+	display: none;
+	visibility: hidden;
+}
+
+%border-box {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing:    border-box;
+	box-sizing:         border-box;
+}
+
+%transition {
+	@include transition(all, 0.2s, ease-in-out);
+}
+
+a {
+	text-decoration: none;
+	color: $color-link;
+
+	.entry-title & {
+		color: $color-heading;
+	}
+}
+
+p, figure, 
+ol, ul,
+table,
+blockquote,
+pre,
+hr,
+.gallery {
+	margin-bottom: pxrem(20px);
+}
+
+/* Prevent double bottom spacing on entries en texts */
+.content .entry,
+.textwidget {
+	p, figure, 
+	ol, ul,
+	table,
+	blockquote,
+	pre,
+	hr,
+	.gallery {
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	a:hover {
+		text-decoration: underline;
+	}
+}
+
+b,
+strong { font-weight: 500; }
+
+	b b,
+	strong strong { font-weight: 300; }
+
+h1, h2, h3, h4, h5, h6 {
+	color: $color-secondary;
+	font-weight: 500;
+	a {
+		color: $color-heading;
+		text-decoration: none;
+	}
+}
+
+iframe {
+	border: none;
+	display: block;
+	padding: 0;
+}
+
+/**
+ * Forms
+ */
+
+
+/* Tables */
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+	width: 100%;
+}
+
+tbody {
+	border-bottom: 1px solid #ddd;
+}
+
+td,
+th {
+	text-align: left;
+}
+
+td {
+	border-top: 1px solid #ddd;
+	padding: 6px 0;
+}
+
+th {
+	font-weight: 400;
+}
+
+
+/* Widgets */
+.widget {
+	word-wrap: break-word;
+}
+
+/*
+Responsive Table Scroll
+---------------------------------------------------------------------------------------------------- */
+.content .entry .entry-content {
+	.scrollable {
+		overflow-x: auto;
+		background-image: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, #ffffff), color-stop(100%, rgba(255, 255, 255, 0))), -webkit-gradient(linear, 100% 50%, 0% 50%, color-stop(0%, #ffffff), color-stop(100%, rgba(255, 255, 255, 0))), -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, #c3c3c5), color-stop(100%, rgba(195, 195, 197, 0))), -webkit-gradient(linear, 100% 50%, 0% 50%, color-stop(0%, #c3c3c5), color-stop(100%, rgba(195, 195, 197, 0)));
+		background-image: -webkit-linear-gradient(left, #ffffff, rgba(255, 255, 255, 0)), -webkit-linear-gradient(right, #ffffff, rgba(255, 255, 255, 0)), -webkit-linear-gradient(left, #c3c3c5, rgba(195, 195, 197, 0)), -webkit-linear-gradient(right, #c3c3c5, rgba(195, 195, 197, 0));
+		background-image: -moz-linear-gradient(left, #ffffff, rgba(255, 255, 255, 0)), -moz-linear-gradient(right, #ffffff, rgba(255, 255, 255, 0)), -moz-linear-gradient(left, #c3c3c5, rgba(195, 195, 197, 0)), -moz-linear-gradient(right, #c3c3c5, rgba(195, 195, 197, 0));
+		background-image: -o-linear-gradient(left, #ffffff, rgba(255, 255, 255, 0)), -o-linear-gradient(right, #ffffff, rgba(255, 255, 255, 0)), -o-linear-gradient(left, #c3c3c5, rgba(195, 195, 197, 0)), -o-linear-gradient(right, #c3c3c5, rgba(195, 195, 197, 0));
+		background-image: linear-gradient(left, #ffffff, rgba(255, 255, 255, 0)), linear-gradient(right, #ffffff, rgba(255, 255, 255, 0)), linear-gradient(left, #c3c3c5, rgba(195, 195, 197, 0)), linear-gradient(right, #c3c3c5, rgba(195, 195, 197, 0));
+		background-position: 0 0, 100% 0, 0 0, 100% 0;
+		background-repeat: no-repeat;
+		background-color: white;
+		background-size: 4em 100%, 4em 100%, 1em 100%, 1em 100%;
+		background-attachment: local, local, scroll, scroll;
+
+		table {
+			min-width: 450px;
+		}
+	}
+}

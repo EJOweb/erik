@@ -1,0 +1,47 @@
+.keurmerken-table {
+	border-bottom: none !important;
+}
+
+	.keurmerken-table tr {
+		border-bottom: 1px solid #e5e5e5;
+		width: 100%;
+	}
+
+	.keurmerken-table tr.ui-sortable-helper {
+		border: 1px solid #e5e5e5;
+		background-color: #fff;
+		display: table;
+	}
+
+		.keurmerken-table label {
+			margin-right: 4px;
+		}
+
+		.keurmerken-table .image-holder {
+			text-align: center;
+		}
+
+			.keurmerken-table .image-holder img {
+				max-height: 60px;
+				width: auto;
+			}
+
+		.keurmerken-table .keurmerk-name {
+			width: 99%;				
+		}
+
+		.keurmerken-table .keurmerk-link {
+			width: 99%;				
+		}
+
+		.keurmerken-table .move-keurmerk {
+			margin-left: 10px;				
+		}
+
+		.keurmerken-table .move-keurmerk:before {
+			cursor: move;
+		}
+
+		.keurmerken-table .remove-keurmerk:before {
+			cursor: pointer;
+		}
