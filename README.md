@@ -3,7 +3,7 @@ My Wordpress Blog Theme
 
 Test
 
-Test 2
+Test 3
 
 # Sass (version: 3.4.11)
 
