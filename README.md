@@ -3,6 +3,8 @@ My Wordpress Blog Theme
 
 Test
 
+Test 2
+
 # Sass (version: 3.4.11)
 
 To watch files using sass, use command line, go to directory and command this:
