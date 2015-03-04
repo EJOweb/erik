@@ -1,16 +1,20 @@
 # erik
 My Wordpress Blog Theme
 
-Test
-
-Test 3
-
 # Sass (version: 3.4.11)
 
-To watch files using sass, use command line, go to directory and command this:
+### Watch
 
-### Expanded
-sass --watch _library/sass/style.scss:style.css --style expanded --cache-location ./_library/sass/.sass-cache
+- **style.css (expanded)**
+  + sass --watch assets/sass/style.scss:style.css --style expanded --cache-location ./assets/sass/.sass-cache
 
-### Minify
-sass _library/sass/style.scss:style.min.css --style compressed --sourcemap=none --no-cache
+- **style.css (minified)**
+  + sass --watch assets/sass/style.scss:style.css --style compressed --cache-location ./assets/sass/.sass-cache
+
+### Single Output
+
+- **style.css (minified)**
+  + sass assets/sass/style.scss:style.css --style compressed --sourcemap=none --no-cache
+
+- **style.min.css**
+  + sass assets/sass/style.scss:style.min.css --style compressed --sourcemap=none --no-cache

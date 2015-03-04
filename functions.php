@@ -34,20 +34,19 @@ define( 'ERIK_DIR', trailingslashit( get_template_directory() ) );
 define( 'ERIK_URI', trailingslashit( get_template_directory_uri() ) );
 
 /* Set paths to theme folders. */
-define( 'ERIK_INC_DIR', ERIK_DIR . '_library' );
-define( 'ERIK_INC_URI', ERIK_URI . '_library' );
-define( 'ERIK_ADMIN', trailingslashit( ERIK_INC_DIR ) . 'admin' );
-define( 'ERIK_JS', trailingslashit( ERIK_INC_URI ) . 'js' );
-define( 'ERIK_IMG', trailingslashit( ERIK_INC_URI ) . 'images' );
+define( 'ERIK_INC_DIR', ERIK_DIR . 'assets/' );
+define( 'ERIK_INC_URI', ERIK_URI . 'assets/' );
+define( 'ERIK_ADMIN', ERIK_INC_DIR . 'admin/' );
+define( 'ERIK_JS', ERIK_INC_URI . 'js/' );
+define( 'ERIK_IMG', ERIK_INC_URI . 'images/' );
 
 /* Load custom path to theme hybrid */
-define( 'HYBRID_DIR', trailingslashit( ERIK_INC_DIR ) . 'hybrid' );
-define( 'HYBRID_URI', trailingslashit( ERIK_INC_URI ) . 'hybrid' );
+define( 'HYBRID_DIR', ERIK_INC_DIR . 'hybrid/' );
+define( 'HYBRID_URI', ERIK_INC_URI . 'hybrid/' );
 
 /* Load the Hybrid Core framework and theme files. */
-require_once( trailingslashit( HYBRID_DIR ) . 'hybrid.php'     		);
-require_once( trailingslashit( ERIK_INC_DIR ) . 'custom-header.php' );
-require_once( trailingslashit( ERIK_INC_DIR ) . 'theme.php'         );
+require_once( HYBRID_DIR . 'hybrid.php' );
+require_once( ERIK_INC_DIR . 'theme.php' );
 
 /* Launch the Hybrid Core framework. */
 new Hybrid();
@@ -65,30 +64,8 @@ add_action( 'after_setup_theme', 'erik_theme_setup', 5 );
  */
 function erik_theme_setup() {
 
-	/* Theme layouts. */
-	add_theme_support( 
-		'theme-layouts', 
-		array(
-			'1c'        => __( '1 Column',                     'hybrid-base' ),
-			'2c-l'      => __( '2 Columns: Content / Sidebar', 'hybrid-base' ),
-		),
-		array( 'default' => '1c' ) 
-	);
-
 	/* Enable custom template hierarchy. */
 	add_theme_support( 'hybrid-core-template-hierarchy' );
-
-	/* The best thumbnail/image script ever. */
-	add_theme_support( 'get-the-image' );
-
-	/* Breadcrumbs. Yay! */
-	add_theme_support( 'breadcrumb-trail' );
-
-	/* Pagination. */
-	add_theme_support( 'loop-pagination' );
-
-	/* Automatically add feed links to <head>. */
-	add_theme_support( 'automatic-feed-links' );
 
 	/* Post formats. */
 	add_theme_support( 

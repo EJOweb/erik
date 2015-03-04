@@ -25,10 +25,7 @@ add_action( 'wp_enqueue_scripts', 'erik_enqueue_scripts', 5 );
 /* Add custom styles. */
 add_action( 'wp_enqueue_scripts', 'erik_enqueue_styles', 5 );
 
-/* Excerpt-related filters. */
-add_filter( 'excerpt_length', 'erik_excerpt_length' );
-add_filter( 'excerpt_more',   'erik_excerpt_more'   );
-add_filter( 'the_excerpt',    'erik_the_excerpt', 5 );
+
 
 /**
  * Registers custom image sizes for the theme. 
@@ -103,9 +100,6 @@ function erik_enqueue_styles() {
 	/* Gets ".min" suffix. */
 	$suffix = hybrid_get_min_suffix();
 
-	/* Load one-five base style. */
-	wp_enqueue_style( 'one-five', trailingslashit( HYBRID_CSS ) . "one-five{$suffix}.css" );
-
 	/* Load Font Icon */
 	wp_enqueue_style( 'font-awesome', '//netdna.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css', array(), '4.3.0' );
 
@@ -114,45 +108,4 @@ function erik_enqueue_styles() {
 
 	/* Load active theme stylesheet. */
 	wp_enqueue_style( 'style', get_stylesheet_uri() );
-}
-
-/**
- * Adds a custom excerpt length.
- *
- * @since  1.0.0
- * @access public
- * @param  int     $length
- * @return int
- */
-function erik_excerpt_length( $length ) {
-	return 20;
-}
-
-/**
- * Custom excerpt more text and link.
- *
- * @since  1.2.0
- * @access public
- * @param  string  $more
- * @return string
- */
-function erik_excerpt_more( $more ) {
-	return ' &hellip; ';
-}
-
-/**
- * Appends a "Continue reading %s" link to the end of all excerpts.
- *
- * @since  1.0.0
- * @access public
- * @param  string  $excerpt
- * @return string
- */
-function erik_the_excerpt( $excerpt ) {
-
-	/* Translators: The %s is the post title shown to screen readers. */
-	$text = sprintf( __( 'Continue reading %s', 'saga' ), '<span class="screen-reader-text">' . get_the_title() . '</span>' );
-	$more = sprintf( '<p class="more-link-wrap"><a href="%s" class="more-link">%s</a></p>', get_permalink(), $text );
-
-	return $excerpt . $more;
 }
