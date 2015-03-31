@@ -9,10 +9,6 @@
 
 	<div id="container">
 
-		<div class="skip-link">
-			<a href="#content" class="screen-reader-text"><?php _e( 'Skip to content', 'hybrid-base' ); ?></a>
-		</div><!-- .skip-link -->
-
 		<?php hybrid_get_menu( 'primary' ); // Loads the menu/primary.php template. ?>
 
 		<header <?php hybrid_attr( 'header' ); ?>>
@@ -27,8 +23,6 @@
 			<?php endif; // End check for header text. ?>
 
 		</header><!-- #header -->
-
-		<?php hybrid_get_menu( 'secondary' ); // Loads the menu/secondary.php template. ?>
 
 		<?php if ( get_header_image() && !display_header_text() ) : // If there's a header image but no header text. ?>
 

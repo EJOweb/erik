@@ -1,0 +1,36 @@
+@mixin icon($icon, $padding: 0) {
+	&:before {
+		@extend .#{$fa-css-prefix};
+		@extend .#{$fa-css-prefix}-#{$icon}:before;
+		padding-right: rem($padding);
+	}
+}
+
+@mixin icon-only($icon) {
+	&:before {
+		@extend .#{$fa-css-prefix}-#{$icon}:before;
+	}
+}
+
+// Shorthand mixin to calculate fontsizes and line-heights
+@mixin font-size($font-size: $em-base, $line-height: $base-line-height) {
+
+	// Strip unit
+	@if not unitless($font-size) { $font-size: strip-units($font-size);	}
+
+	font-size: rem($font-size);
+
+	@if $line-height {
+		@include line-height($line-height, $font-size);
+	}
+}
+
+// Round line-height
+@mixin line-height($line-height, $font-size: $em-base) {
+
+	@if (unit($line-height) == 'px') {
+		line-height: $line-height / $font-size;
+	}
+
+	line-height: floor($line-height * $font-size) / $font-size;
+}

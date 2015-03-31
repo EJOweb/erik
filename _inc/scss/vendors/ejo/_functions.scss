@@ -1,0 +1,68 @@
+//--------------------------------------------------------------
+// Functions
+//--------------------------------------------------------------
+
+// http://davidwalsh.name/rem-px-browser-function-sass
+// modified by Erik Joling <erik@ejoweb.nl>
+@function rem($values){ 
+
+	$list: (); 
+	$base: $em-base;
+	@if not unitless($base) {
+		$base: strip-units($base);
+	}
+
+	@each $value in $values { 
+
+		@if $value == 0 or $value == 'auto' {
+			$list: append($list, $value);
+		}
+		@else {
+			@if not unitless($value) {
+				$value: strip-units($value);
+			}
+
+			$list: append($list, ($value / $base) * 1rem); 
+		}
+	}
+
+	@return $list(); 
+
+}
+
+@function em($values){ 
+
+	$list: (); 
+	$base: $em-base;
+	@if not unitless($base) {
+		$base: strip-units($base);
+	}
+
+	@each $value in $values { 
+
+		@if $value == 0 or $value == 'auto' {
+			$list: append($list, $value);
+		}
+		@else {
+			@if not unitless($value) {
+				$value: strip-units($value);
+			}
+
+			$list: append($list, ($value / $base) * 1em); 
+		}
+	}
+
+	@return $list(); 
+
+}
+
+// Round line-height
+@function lh($line-height, $font-size: $em-base) {
+
+	@if (unit($line-height) == 'px') {
+		@return $line-height / $font-size;
+	}
+
+	@return floor($line-height * $font-size) / $font-size;
+}
+

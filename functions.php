@@ -1,14 +1,5 @@
 <?php
 /**
- * "Funny, 'cause I look around at this world you're so eager to be a part of and all I see is six billion 
- * lunatics looking for the fastest ride out. Who's not crazy? Look around, everyone's drinking, smoking, 
- * shooting up, shooting each other, or just plain screwing their brains out 'cause they don't want 'em anymore. 
- * I'm crazy? Honey, I'm the original one-eyed chicklet in the kingdom of the blind, 'cause at least I admit the 
- * world makes me nuts. Name one person who can take it here. That's all I'm asking. Name one." 
- * ~ Glorificus (Buffy the Vampire Slayer: Season 5 - Weight of the World)
- * 
- * Theme Authors: Make sure to add a favorite quote of yours above, maybe something that inspired you to 
- * create this theme.
  *
  * This program is free software; you can redistribute it and/or modify it under the terms of the GNU 
  * General Public License as published by the Free Software Foundation; either version 2 of the License, 
@@ -16,9 +7,6 @@
  *
  * This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without 
  * even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
- *
- * You should have received a copy of the GNU General Public License along with this program; if not, write 
- * to the Free Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
  *
  * @package    Erik
  * @subpackage Functions
@@ -29,29 +17,27 @@
  * @license    http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 
-/* Get the template directory and make sure it has a trailing slash. */
-define( 'ERIK_DIR', trailingslashit( get_template_directory() ) );
-define( 'ERIK_URI', trailingslashit( get_template_directory_uri() ) );
+//* Get the template directory and uri and make sure it has a trailing slash.
+$theme_dir = trailingslashit( get_template_directory() );
+$theme_uri = trailingslashit( get_template_directory_uri() );
 
-/* Set paths to theme folders. */
-define( 'ERIK_INC_DIR', ERIK_DIR . 'assets/' );
-define( 'ERIK_INC_URI', ERIK_URI . 'assets/' );
-define( 'ERIK_ADMIN', ERIK_INC_DIR . 'admin/' );
-define( 'ERIK_JS', ERIK_INC_URI . 'js/' );
-define( 'ERIK_IMG', ERIK_INC_URI . 'images/' );
+//* Set custom Hybrid location.
+define( 'HYBRID_DIR', $theme_dir . '_inc/hybrid/' );
+define( 'HYBRID_URI', $theme_uri . '_inc/hybrid/' );
 
-/* Load custom path to theme hybrid */
-define( 'HYBRID_DIR', ERIK_INC_DIR . 'hybrid/' );
-define( 'HYBRID_URI', ERIK_INC_URI . 'hybrid/' );
-
-/* Load the Hybrid Core framework and theme files. */
+//* Load the Hybrid Core framework and theme files.
 require_once( HYBRID_DIR . 'hybrid.php' );
-require_once( ERIK_INC_DIR . 'theme.php' );
 
-/* Launch the Hybrid Core framework. */
+//* Theme setup ie. menus, sidebars, image-sizes, additional scripts and styles.
+require_once( $theme_dir . '_inc/theme.php' );
+
+//* Launch the Hybrid Core framework.
 new Hybrid();
 
-/* Do theme setup on the 'after_setup_theme' hook. */
+
+// *** BEGIN *** //
+
+//* Do theme setup on the 'after_setup_theme' hook.
 add_action( 'after_setup_theme', 'erik_theme_setup', 5 );
 
 /**
@@ -62,17 +48,32 @@ add_action( 'after_setup_theme', 'erik_theme_setup', 5 );
  * @access public
  * @return void
  */
-function erik_theme_setup() {
+function erik_theme_setup() 
+{	
+	//* Set Textdomain with stylesheet 'text-domain'
+	define( 'TEXT_DOMAIN', hybrid_get_parent_textdomain() );
 
-	/* Enable custom template hierarchy. */
+	//* Set paths to asset folders.
+	define( 'THEME_IMG_URI', THEME_URI . '/assets/images/' );
+	define( 'THEME_JS_URI', THEME_URI . '/assets/js/' );
+	define( 'THEME_CSS_URI', THEME_URI . '/assets/css/' );
+
+	//* Enable custom template hierarchy.
 	add_theme_support( 'hybrid-core-template-hierarchy' );
 
-	/* Post formats. */
+	//* Better image grabbing
+	add_theme_support( 'get-the-image' );
+
+	//* Alternative to simple 'next/previous' links
+	add_theme_support( 'loop-pagination' );
+
+	//* Post formats.
 	add_theme_support( 
 		'post-formats', 
 		array( 'aside', 'audio', 'chat', 'image', 'gallery', 'link', 'quote', 'status', 'video' ) 
 	);
 
-	/* Handle content width for embeds and images. */
+	//* Handle content width for embeds and images.
 	hybrid_set_content_width( 1280 );
+
 }

@@ -1,0 +1,32 @@
+/*!
+ * Theme Name:  Erik
+ * Theme URI:   http://www.ejoweb.nl/
+ * Description: A Wordpress Hybrid Theme created for myself (Erik Joling)
+ * Version:     0.2
+ * Author:      Erik Joling
+ * Author URI:  http://www.erikjoling.nl
+ * Tags:        
+ * Text Domain: erik
+ * License:     GNU General Public License v2.0 or later
+ * License URI: http://www.gnu.org/licenses/gpl-2.0.html
+ */
+
+//* Bourbon frameworks
+@import "vendors/bourbon/bourbon";
+@import "vendors-edit/bourbon";
+
+//* Reset
+@import "reset/normalize";
+
+//* Base styles (mainly typography and additional elements)
+@import "base/variables";
+@import "base/base";
+
+//* Neat framework & grid implementation
+@import "grid/grid-settings";
+@import "vendors/neat/neat";
+@import "vendors-edit/neat";
+@import "grid/grid";
+
+// Modules
+@import "modules/content";

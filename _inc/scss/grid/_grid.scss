@@ -1,0 +1,60 @@
+body {
+	margin: 0 10px;
+}
+
+body:before {
+	max-width: $max-width;
+
+	@include media($small-screen-up) {
+		max-width: $small-container-width;
+	}
+
+	@include media($medium-screen-up) {
+		max-width: $medium-container-width;
+	}
+
+	@include media($large-screen-up) {
+		max-width: $large-container-width;
+	}
+}
+
+#container {
+	@include outer-container;
+
+	@include media($small-screen-up) {
+		@include outer-container($small-container-width);
+	}
+
+	@include media($medium-screen-up) {
+		@include outer-container($medium-container-width);
+	}
+
+	@include media($large-screen-up) {
+		@include outer-container($large-container-width);
+	}
+}
+
+// .home {
+	#main {
+		#content {
+			@include span-columns(6);
+			@include shift(0);
+
+			@include media($small-screen-up) {
+				@include span-columns(6);
+				@include shift(0);
+			}
+
+			@include media($medium-screen-up) {
+				@include span-columns(7);
+				@include shift(1);
+			}
+
+			@include media($large-screen-up) {
+				@include span-columns(8);
+				@include shift(2);
+			}
+		}
+	}
+// }
+

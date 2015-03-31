@@ -1,18 +1,11 @@
 #################
-## Sass
-#################
-
-.sass-cache/
-
-#################
 ## Gulp
 #################
 
 node_modules/
-gulpfile.js
 
 #################
 ## Hybrid
 #################
 
-_library/hybrid/
+#hybrid/
