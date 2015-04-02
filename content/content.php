@@ -6,13 +6,6 @@
 
 			<h1 <?php hybrid_attr( 'entry-title' ); ?>><?php single_post_title(); ?></h1>
 
-			<div class="entry-byline">
-				<span <?php hybrid_attr( 'entry-author' ); ?>><?php the_author_posts_link(); ?></span>
-				<time <?php hybrid_attr( 'entry-published' ); ?>><?php echo get_the_date(); ?></time>
-				<?php comments_popup_link( number_format_i18n( 0 ), number_format_i18n( 1 ), '%', 'comments-link', '' ); ?>
-				<?php edit_post_link(); ?>
-			</div><!-- .entry-byline -->
-
 		</header><!-- .entry-header -->
 
 		<div <?php hybrid_attr( 'entry-content' ); ?>>
@@ -27,18 +20,23 @@
 
 	<?php else : // If not viewing a single post. ?>
 
+		<span class="category">
+			<?php 
+				$category = get_the_category();
+				printf( '<a href="%s" title="%s">%s</a>',
+					get_category_link( $category[0]->term_id ),
+					esc_attr( sprintf( __( "View all posts in %s" ), $category[0]->name ) ),
+					$category[0]->cat_name
+				);
+			?>
+		</span>			
 		<header class="entry-header">
-
-			<?php the_title( '<h2 ' . hybrid_get_attr( 'entry-title' ) . '><a href="' . get_permalink() . '" rel="bookmark" itemprop="url">', '</a></h2>' ); ?>
-
-			<div class="entry-byline">
-				<time <?php hybrid_attr( 'entry-published' ); ?>><?php echo get_the_date(); ?></time>
-				<?php comments_popup_link( number_format_i18n( 0 ), number_format_i18n( 1 ), '%', 'comments-link', '' ); ?>
-				<?php hybrid_post_terms( array( 'taxonomy' => 'category', 'text' => __( 'Posted in %s', 'hybrid-base' ) ) ); ?>
-				<?php hybrid_post_terms( array( 'taxonomy' => 'post_tag', 'text' => __( 'Tagged %s', 'hybrid-base' ), 'before' => '<br />' ) ); ?>
-			</div><!-- .entry-byline -->
-
+			<h2 <?php hybrid_attr( 'entry-title' ); ?>>
+				<a href="<?php the_permalink(); ?>" rel="bookmark" itemprop="url"><?php the_title(); ?></a>
+			</h2>
 		</header><!-- .entry-header -->
+		<time <?php hybrid_attr( 'entry-published' ); ?>><?php relative_post_the_date('','','',true); ?></time>
+
 
 	<?php endif; // End single post check. ?>
 

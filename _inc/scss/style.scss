@@ -2,7 +2,7 @@
  * Theme Name:  Erik
  * Theme URI:   http://www.ejoweb.nl/
  * Description: A Wordpress Hybrid Theme created for myself (Erik Joling)
- * Version:     0.2
+ * Version:     0.2.1
  * Author:      Erik Joling
  * Author URI:  http://www.erikjoling.nl
  * Tags:        
@@ -16,7 +16,8 @@
 @import "vendors-edit/bourbon";
 
 //* Reset
-@import "reset/normalize";
+// @import "reset/normalize";
+@import "_inc/hybrid/css/reset.min.css";
 
 //* Base styles (mainly typography and additional elements)
 @import "base/variables";
@@ -29,4 +30,5 @@
 @import "grid/grid";
 
 // Modules
+@import "modules/nav";
 @import "modules/content";

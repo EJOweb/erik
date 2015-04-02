@@ -20,6 +20,7 @@ body:before {
 
 #container {
 	@include outer-container;
+	position: relative;
 
 	@include media($small-screen-up) {
 		@include outer-container($small-container-width);
@@ -33,6 +34,22 @@ body:before {
 		@include outer-container($large-container-width);
 	}
 }
+
+#header {
+	margin-bottom: 2rem;
+
+	#branding {
+		
+	}
+
+	#menu-primary {
+		position: absolute;
+		top: 0;
+		right: 0;
+	}
+}
+
+
 
 // .home {
 	#main {
@@ -58,3 +75,33 @@ body:before {
 	}
 // }
 
+.plural #main #content {
+	// display: table;
+	// width: 100%;
+	article {
+		display: table-row;
+		width: 100%;
+	}
+
+		.entry-header {
+			// display: table;
+			// width: 100%;
+		}
+	
+		span.category {
+			display: table-cell;
+			vertical-align: middle;
+		}
+
+		.entry-header {
+			display: table-cell;
+			vertical-align: middle;
+			width: 100%;
+		}
+
+		time {
+			display: table-cell;
+			vertical-align: middle;
+			text-align: right;
+		}
+}

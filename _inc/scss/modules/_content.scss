@@ -1,9 +1,38 @@
 //* Archives
 .plural {
-	.entry {
-		padding: 1rem;
-		border: 1px solid #ddd;
-		margin-bottom: 1rem;
+	article.entry {
+
+		.category,
+		.entry-header,
+		time {
+			border-bottom: 1px solid #ddd;
+			padding: ($small-spacing / 2) 0;
+		}
+
+		.category a {
+			display: inline-block;
+			width: 100%;
+			text-align: center;
+			background-color: $action-color;
+			color: #fff;
+			padding: 0 $small-spacing;
+			border-radius: $base-border-radius;
+			white-space: nowrap;
+
+			&:hover {
+				background-color: darken($action-color, 10%);
+			}
+		}
+
+		.entry-title {
+			font-weight: normal;
+			line-height: 1.2;
+			margin: 0 $small-spacing;
+		}
+
+		time {
+			white-space: nowrap;
+		}
 	}
 }
 

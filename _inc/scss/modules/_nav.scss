@@ -1,0 +1,16 @@
+#menu-primary {
+	ul {
+		text-align: right;
+	}
+
+	li {
+		display: inline;
+		margin-left: 1rem;
+	}
+
+	li.current-menu-item {
+		a {
+			text-decoration: underline;
+		}
+	}
+}

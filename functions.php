@@ -70,7 +70,7 @@ function erik_theme_setup()
 	//* Post formats.
 	add_theme_support( 
 		'post-formats', 
-		array( 'aside', 'audio', 'chat', 'image', 'gallery', 'link', 'quote', 'status', 'video' ) 
+		array(  ) 
 	);
 
 	//* Handle content width for embeds and images.

@@ -12,7 +12,7 @@
 
 			<?php if ( is_singular() ) : // If viewing a single post/page/CPT. ?>
 
-				<?php comments_template( '', true ); // Loads the comments.php template. ?>
+				<?php /*comments_template( '', true );*/ // Loads the comments.php template. ?>
 
 			<?php endif; // End check for single post. ?>
 
