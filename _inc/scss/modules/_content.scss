@@ -11,59 +11,64 @@ article.entry {
 //* Archives
 .plural {
 	article.entry {
-		.entry-header {}
-			.entry-details {
-				width: 100%;
-				text-align: center;
-				font-size: rem(14);
-				margin-bottom: 16px;
-				// font-weight: bold;
-				position: absolute;
-				top: 0;
-				left: 0;
+		border-top: 8px solid $action-color;
+		.entry-details {
+			width: 100%;
+			text-align: center;
+			font-size: rem(14);
+			margin-bottom: 16px;
+			// font-weight: bold;
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+
+			.category {					
+				@extend .button;
+				margin-top: -4px;
+				border-radius: 0;
+				@include border-bottom-radius($base-border-radius);
+				&:before {
+					@extend .fa;
+					@extend .fa-folder-o;
+					margin-right: 4px;
+				}
 			}
-				.category {
-					display: inline-block;
-					
-					a {
-						&:before {
-							@extend .fa;
-							@extend .fa-folder-o;
-						}
-						background-color: $base-border-color;
-						color: $color-light;
-						// border-radius: $base-border-radius;
-						@include border-bottom-radius($base-border-radius);
-						padding: 2px 9px 2px;
-						display: block;
-					}
-				}
 
-				time {
-					&:before {
-						@extend .fa;
-						@extend .fa-clock-o;
-					}
-					display: inline-block;
-					margin-left: 4px;
-					padding: 2px 0 2px;
-					font-style: normal;
-					white-space: nowrap;
-				}
-
-				.comments {
-					&:before {
-						@extend .fa;
-						@extend .fa-comments-o;
-					}
-					display: inline-block;
-					margin-left: 4px;
-					padding: 2px 0 2px;
-					color: $meta-font-color;
-				}
-
+		.entry-header {}
 			.entry-title {}
 
-		.entry-content {}		
+		.entry-content {
+			margin-bottom: 1rem;
+		}
+
+		.entry-footer {
+			text-align: center;
+
+			time {
+				line-height: 1;
+				display: inline-block;
+				// margin-left: 4px;
+				padding: 2px 0 2px;
+				font-style: normal;
+				white-space: nowrap;
+				&:before {
+					@extend .fa;
+					@extend .fa-clock-o;
+				}
+			}
+
+			.comments {
+				line-height: 1;
+				display: inline-block;
+				margin-left: 10px;
+				padding: 2px 0 2px;
+				color: $meta-font-color;
+				&:before {
+					@extend .fa;
+					@extend .fa-comments-o;
+				}
+			}
+		}
 	}
 }
