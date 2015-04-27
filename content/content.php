@@ -3,10 +3,9 @@
 	<?php if ( is_singular( get_post_type() ) ) : // If viewing a single post. ?>
 
 		<header class="entry-header">
+
 			<h1 <?php hybrid_attr( 'entry-title' ); ?>><?php single_post_title(); ?></h1>
-			<?php if ( !is_page() ) :?>
-				<?php erik_entry_details(); ?>
-			<?php endif; ?>
+
 		</header><!-- .entry-header -->
 
 		<div <?php hybrid_attr( 'entry-content' ); ?>>
@@ -14,10 +13,43 @@
 			<?php wp_link_pages(); ?>
 		</div><!-- .entry-content -->
 
+		<footer class="entry-footer">
+			<?php hybrid_post_terms( array( 'taxonomy' => 'category', 'text' => __( 'Posted in %s', 'hybrid-base' ) ) ); ?>
+			<?php hybrid_post_terms( array( 'taxonomy' => 'post_tag', 'text' => __( 'Tagged %s', 'hybrid-base' ), 'before' => '<br />' ) ); ?>
+		</footer><!-- .entry-footer -->
+
 	<?php else : // If not viewing a single post. ?>
 
-		<?php erik_entry_details(); ?>
 		<header class="entry-header">
+			<div class="entry-details">
+				<span class="category">
+					<?php 
+						$category = get_the_category();
+						printf( '<a href="%s" title="%s">%s</a>',
+							get_category_link( $category[0]->term_id ),
+							esc_attr( sprintf( __( "View all posts in %s" ), $category[0]->name ) ),
+							$category[0]->cat_name
+						);
+					?>
+				</span>
+				<time <?php hybrid_attr( 'entry-published' ); ?>>
+					<?php 
+						$post_date = get_post_time( 'd-m-Y' );
+						$today = date( 'd-m-Y' );
+						$yesterday = date('d-m-Y',strtotime("-1 days"));
+
+						if ($post_date == $today)
+							echo '<i>Vandaag</i>';
+						elseif ($post_date == $yesterday)
+							echo '<i>Gisteren</i>';
+						else 
+							echo get_the_date() . '';
+					?>
+				</time>
+				<span class="comments">
+					0
+				</span>
+			</div>
 			<h2 <?php hybrid_attr( 'entry-title' ); ?>>
 				<a href="<?php the_permalink(); ?>" rel="bookmark" itemprop="url"><?php the_title(); ?></a>
 			</h2>

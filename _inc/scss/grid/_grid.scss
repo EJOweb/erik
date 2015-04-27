@@ -46,17 +46,21 @@ body {
 	}
 
 	article.entry {
-		margin-bottom: 3rem;
-		.entry-header {
-			padding: 1rem 4rem;
-		}
-		.entry-content {
-			padding: 2.5rem 4rem 3rem;
+		padding: 3rem 4rem 3rem;
+		margin-bottom: $base-gap;
+		// @include media($phablet) {
+		// 	padding: flex-grid(1, 9) + flex-gutter(9);
+		// }	
+		// @include media($smartphone) {
+		// 	padding: flex-grid(1, 6) + flex-gutter(6);
+		// }	
+		// @include span-columns(10);
+		// @include shift(1);
 
-			.singular &	{
-				padding: 4.5rem 4rem 4rem;
-			}
-		}	
+		// @include media($smartphone) {
+		// 	@include span-columns(4);
+		// 	@include shift(1);
+		// }	
 	}
 }
 
