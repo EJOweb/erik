@@ -98,7 +98,7 @@ h1.entry-title {
 h2.entry-title {
     @extend %h2;
     margin-top: 0;
-    margin-bottom: $base-gap / 2;
+    margin-bottom: $base-gap / 1.5;
     text-align: center;
 }
 

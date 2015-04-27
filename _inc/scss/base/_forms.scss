@@ -1,7 +1,7 @@
 fieldset {
   background-color: lighten($base-border-color, 10%);
   border: $base-border;
-  margin: 0 0 $small-gap;
+  margin: 0 0 $base-gap;
   padding: $base-gap;
 }
 
@@ -15,7 +15,7 @@ select {
 
 label {
   font-weight: 600;
-  margin-bottom: $small-gap / 2;
+  margin-bottom: $base-gap / 2;
 
   &.required::after {
     content: "*";
@@ -63,11 +63,11 @@ input[type="search"] {
 input[type="checkbox"],
 input[type="radio"] {
   display: inline;
-  margin-right: $small-gap / 2;
+  margin-right: $base-gap / 2;
 }
 
 input[type="file"] {
-  padding-bottom: $small-gap;
+  padding-bottom: $base-gap;
   width: 100%;
 }
 

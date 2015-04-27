@@ -46,8 +46,8 @@ body {
 	}
 
 	article.entry {
-		padding: $column-width + $gutter-width;
-		margin-bottom: $base-gap / 2;
+		padding: 3rem 4rem 3rem;
+		margin-bottom: $base-gap;
 		// @include media($phablet) {
 		// 	padding: flex-grid(1, 9) + flex-gutter(9);
 		// }	

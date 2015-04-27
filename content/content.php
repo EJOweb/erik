@@ -46,6 +46,9 @@
 							echo get_the_date() . '';
 					?>
 				</time>
+				<span class="comments">
+					0
+				</span>
 			</div>
 			<h2 <?php hybrid_attr( 'entry-title' ); ?>>
 				<a href="<?php the_permalink(); ?>" rel="bookmark" itemprop="url"><?php the_title(); ?></a>
@@ -64,6 +67,7 @@
 						if ( $content == $excerpt )
 							$read_more_text = 'Link';
 					}
+					// $read_more_text = '&raquo;';
 				?>
 				&raquo; <a href="<?php the_permalink(); ?>" rel="bookmark" itemprop="url"><?php echo $read_more_text; ?></a>
 			</p>

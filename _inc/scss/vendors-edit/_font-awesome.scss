@@ -4,6 +4,17 @@
  *	https://github.com/FortAwesome/font-awesome-sass/tree/master/assets/stylesheets
  */
 
+$fa-font-name: "fontawesome-webfont";
+$fa-font-size-base: 1em;
+$fa-css-prefix: fa;
+$fa-version: "4.3.0";
+$fa-border-color: #eee;
+$fa-inverse: #fff;
+$fa-li-width: 2;
+$fa-font-path: "https://netdna.bootstrapcdn.com/font-awesome/#{$fa-version}/fonts/";
+
+
+
 @import "../vendors/font-awesome/variables";
 @import "../vendors/font-awesome/mixins";
 @import "../vendors/font-awesome/path";
