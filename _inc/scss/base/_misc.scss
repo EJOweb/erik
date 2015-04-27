@@ -33,6 +33,7 @@ blockquote {
 }
 
 time {
-    color: $meta-font-color;
-    font-style: italic;
+    // color: $meta-font-color;
+    // font-style: italic;
+    white-space: nowrap;
 }

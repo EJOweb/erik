@@ -85,3 +85,40 @@ function erik_excerpt_more( $more )
 {
 	return '... ';
 }
+
+//* show entry-details
+function erik_entry_details()
+{
+	?>
+	<div class="entry-details">
+		<div class="wrap">
+			<?php 
+				$category = get_the_category();
+				printf( '<a href="%s" title="%s" class="%s">%s</a>',
+					get_category_link( $category[0]->term_id ),
+					esc_attr( sprintf( __( "View all posts in %s" ), $category[0]->name ) ),
+					"category",
+					$category[0]->cat_name
+				);
+			?>
+			<time <?php hybrid_attr( 'entry-published' ); ?>>
+				<?php 
+					$post_date = get_post_time( 'd-m-Y' );
+					$today = date( 'd-m-Y' );
+					$yesterday = date('d-m-Y',strtotime("-1 days"));
+
+					if ($post_date == $today)
+						echo '<i>Vandaag</i>';
+					elseif ($post_date == $yesterday)
+						echo '<i>Gisteren</i>';
+					else 
+						echo get_the_date() . '';
+				?>
+			</time>
+			<span class="comments">
+				0
+			</span>
+		</div>
+	</div>
+	<?php
+}
