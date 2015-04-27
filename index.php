@@ -1,5 +1,20 @@
 <?php get_header(); // Loads the header.php template. ?>
 
+<aside class="test">
+	<div>.</div>
+	<div>.</div>
+	<div>.</div>
+	<div>.</div>
+	<div>.</div>
+	<div>.</div>
+	<div>.</div>
+	<div>.</div>
+	<div>.</div>
+	<div>.</div>
+	<div>.</div>
+	<div>.</div>
+</aside>
+
 <main <?php hybrid_attr( 'content' ); ?>>
 
 	<?php if ( have_posts() ) : // Checks if any posts were found. ?>

@@ -7,7 +7,7 @@
 
 <body <?php hybrid_attr( 'body' ); ?>>
 
-	<div id="container">
+	<div id="container" class="visual-grid">
 
 		<header <?php hybrid_attr( 'header' ); ?>>
 

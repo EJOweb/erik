@@ -70,10 +70,18 @@ function erik_theme_setup()
 	//* Post formats.
 	add_theme_support( 
 		'post-formats', 
-		array(  ) 
+		array( 'quote' ) 
 	);
 
 	//* Handle content width for embeds and images.
 	hybrid_set_content_width( 1280 );
 
+	//* Remove more-link from cut-off excerpts
+	add_filter( 'excerpt_more', 'erik_excerpt_more' );
+}
+
+//* Remove more-link from cut-off excerpts
+function erik_excerpt_more( $more ) 
+{
+	return '... ';
 }

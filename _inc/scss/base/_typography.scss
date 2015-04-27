@@ -7,63 +7,107 @@ body {
     line-height: $base-line-height;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    font-family: $heading-font-family;
-}
-
 p {
-    margin: 0 0 $small-spacing;
+    margin: 0 0 $base-gap;
 }
 
 a {
-    color: $action-color;
+    color: $base-font-color;
     text-decoration: none;
+
+    &:active,
+    &:focus {
+       outline: none;
+    }
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: $heading-font-family;
+    line-height: $heading-line-height;
+    color: $heading-font-color;
+    font-weight: 700;
+}
+
+%h1 {
+    font-size: 2.5em;
+    text-align: center;
+    &:after {
+        content: "";
+        display: block;
+        height: 1px;
+        margin: $base-gap auto;
+        width: 50%;
+        background-color: $base-border-color;
+    }
+}
+
+%h2 {
+    font-size: 1.6em;
+    margin-top: $base-gap;
+    margin-bottom: $base-gap * 0.9;
+} 
+
+%h3 {
+    font-size: 1.35em;
+    margin-top: $base-gap * 1.25;
+    margin-bottom: $base-gap * 0.5;
+} 
+
+%h4,
+%h5,
+%h6 {
+    font-size: 1.1em;
+    margin-top: $base-gap * 1.25;
+    margin-bottom: $base-gap * 0.125;
+}
+
+%a {
     transition: color 0.1s linear;
+    font-weight: bold;
+    border-bottom: 1px dotted $base-font-color;
 
     &:active,
     &:focus,
     &:hover {
-        color: darken($action-color, 15%);
-    }
-
-    &:active,
-    &:focus {
-        outline: none;
+        color: $action-color;
     }
 }
 
-hr {
-    border-bottom: $base-border;
-    border-left: none;
-    border-right: none;
-    border-top: none;
-    margin: $base-spacing 0;
-}
+#{$text-containers} {
+    font-family: $text-font-family;
 
-img,
-picture {
-    margin: 0;
-    max-width: 100%;
-}
-
-blockquote {
-    font-style: italic;
-    margin-left: 2rem;
-    &::before {
-        color: #ccc;
-        content: "\201C";
-        font-size: 4em;
-        position: absolute;
-        margin-left: -2.3rem;
-        margin-top: -1.7rem;
+    h1 { 
+        @extend %h1;
+        margin-top: $base-gap * 1.5;
     }
+    h2 { @extend %h2; }
+    h3 { @extend %h3; }
+    h4, h5, h6 { @extend %h4; } 
 
-    p {
-        display: inline;
+    a { @extend %a; }
+
+    > p:last-child {
+        margin-bottom: 0;
     }
 }
+
+h1.entry-title {
+    @extend %h1;
+}
+
+h2.entry-title {
+    @extend %h2;
+    margin-top: 0;
+    margin-bottom: $base-gap / 2;
+    text-align: center;
+}
+
+.entry-title a {
+    @extend %a;
+    font-weight: inherit;
+    border-bottom: none;
+}
+
+
+.widget-title {}
+.archive-title {}

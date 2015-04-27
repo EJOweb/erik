@@ -102,7 +102,11 @@ function erik_enqueue_styles() {
 	wp_enqueue_style( 'font-awesome', '//netdna.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css', array(), '4.3.0' );
 
 	/* Load Font */
-	wp_enqueue_style( 'erik-fonts', '//fonts.googleapis.com/css?family=Lato:300,400,700,900,300italic,400italic,700italic,900italic|Playfair+Display:400,700,900,400italic,700italic,900italic' );
+	wp_enqueue_style( 'erik-fonts', '//fonts.googleapis.com/css?family=Lato:400,400italic,700|Playfair+Display:400,700,900' );
+	wp_enqueue_style( 'erik-fonts', '//fonts.googleapis.com/css?family=Montserrat:400,700' );
+	// wp_enqueue_style( 'erik-fonts', '//fonts.googleapis.com/css?family=Source+Sans+Pro:400,400italic,700,700italic' );
+	// wp_enqueue_style( 'erik-fonts', '//fonts.googleapis.com/css?family=Ubuntu:400,400italic,700,700italic' );
+	// wp_enqueue_style( 'erik-fonts', '//fonts.googleapis.com/css?family=Open+Sans:400,400italic,700|Playfair+Display:400,700,900' );
 
 	/* Load active theme stylesheet. */
 	wp_enqueue_style( 'style', get_stylesheet_uri() );

@@ -20,23 +20,54 @@
 
 	<?php else : // If not viewing a single post. ?>
 
-		<span class="category">
-			<?php 
-				$category = get_the_category();
-				printf( '<a href="%s" title="%s">%s</a>',
-					get_category_link( $category[0]->term_id ),
-					esc_attr( sprintf( __( "View all posts in %s" ), $category[0]->name ) ),
-					$category[0]->cat_name
-				);
-			?>
-		</span>			
 		<header class="entry-header">
+			<div class="entry-details">
+				<span class="category">
+					<?php 
+						$category = get_the_category();
+						printf( '<a href="%s" title="%s">%s</a>',
+							get_category_link( $category[0]->term_id ),
+							esc_attr( sprintf( __( "View all posts in %s" ), $category[0]->name ) ),
+							$category[0]->cat_name
+						);
+					?>
+				</span>
+				<time <?php hybrid_attr( 'entry-published' ); ?>>
+					<?php 
+						$post_date = get_post_time( 'd-m-Y' );
+						$today = date( 'd-m-Y' );
+						$yesterday = date('d-m-Y',strtotime("-1 days"));
+
+						if ($post_date == $today)
+							echo '<i>Vandaag</i>';
+						elseif ($post_date == $yesterday)
+							echo '<i>Gisteren</i>';
+						else 
+							echo get_the_date() . '';
+					?>
+				</time>
+			</div>
 			<h2 <?php hybrid_attr( 'entry-title' ); ?>>
 				<a href="<?php the_permalink(); ?>" rel="bookmark" itemprop="url"><?php the_title(); ?></a>
 			</h2>
 		</header><!-- .entry-header -->
-		<time <?php hybrid_attr( 'entry-published' ); ?>><?php relative_post_the_date('','','',true); ?></time>
 
+		<div <?php hybrid_attr( 'entry-content' ); ?>>
+			<p>
+				<?php 
+					$read_more_text = 'Lees verder';
+					$excerpt = get_the_excerpt();
+					echo $excerpt;
+
+					if ( !has_excerpt() ) {
+						$content = get_the_content();
+						if ( $content == $excerpt )
+							$read_more_text = 'Link';
+					}
+				?>
+				&raquo; <a href="<?php the_permalink(); ?>" rel="bookmark" itemprop="url"><?php echo $read_more_text; ?></a>
+			</p>
+		</div>
 
 	<?php endif; // End single post check. ?>
 

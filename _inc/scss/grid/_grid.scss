@@ -1,41 +1,31 @@
+$column-width: flex-grid(1, $grid-columns);
+$gutter-width: flex-gutter($grid-columns);
+
 body {
-	margin: 0 10px;
-}
-
-body:before {
-	max-width: $max-width;
-
-	@include media($small-screen-up) {
-		max-width: $small-container-width;
-	}
-
-	@include media($medium-screen-up) {
-		max-width: $medium-container-width;
-	}
-
-	@include media($large-screen-up) {
-		max-width: $large-container-width;
-	}
+	// padding: 0 em(20);
 }
 
 #container {
-	@include outer-container;
-	position: relative;
+	@include outer-container($default-width);
+	position: relative;	
+	margin-left: auto;
+	margin-right: auto;
 
-	@include media($small-screen-up) {
-		@include outer-container($small-container-width);
-	}
+	@include media($tablet) {
+		margin-left: em(20);
+		margin-right: em(20);
+	}	
 
-	@include media($medium-screen-up) {
-		@include outer-container($medium-container-width);
-	}
-
-	@include media($large-screen-up) {
-		@include outer-container($large-container-width);
-	}
+	@include media($barebones) {
+		margin-left: 0;
+		margin-right: 0;
+	}	
 }
 
 #header {
+	@include span-columns(12);
+
+	position: relative;
 	margin-bottom: 2rem;
 
 	#branding {
@@ -49,59 +39,44 @@ body:before {
 	}
 }
 
-
-
-// .home {
-	#main {
-		#content {
-			@include span-columns(6);
-			@include shift(0);
-
-			@include media($small-screen-up) {
-				@include span-columns(6);
-				@include shift(0);
-			}
-
-			@include media($medium-screen-up) {
-				@include span-columns(7);
-				@include shift(1);
-			}
-
-			@include media($large-screen-up) {
-				@include span-columns(8);
-				@include shift(2);
-			}
-		}
+#main {
+	@include clearfix;
+	#content {
+		@include span-columns(12);
 	}
-// }
+
+	article.entry {
+		padding: $column-width + $gutter-width;
+		margin-bottom: $base-gap / 2;
+		// @include media($phablet) {
+		// 	padding: flex-grid(1, 9) + flex-gutter(9);
+		// }	
+		// @include media($smartphone) {
+		// 	padding: flex-grid(1, 6) + flex-gutter(6);
+		// }	
+		// @include span-columns(10);
+		// @include shift(1);
+
+		// @include media($smartphone) {
+		// 	@include span-columns(4);
+		// 	@include shift(1);
+		// }	
+	}
+}
+
+aside.test {
+	display: none;
+	@include clearfix;
+	div {
+		@include span-columns(1);
+		&:last-child() {
+			@include omega;
+		}
+
+		background-color: black;
+	}
+}
 
 .plural #main #content {
-	// display: table;
-	// width: 100%;
-	article {
-		display: table-row;
-		width: 100%;
-	}
 
-		.entry-header {
-			// display: table;
-			// width: 100%;
-		}
-	
-		span.category {
-			display: table-cell;
-			vertical-align: middle;
-		}
-
-		.entry-header {
-			display: table-cell;
-			vertical-align: middle;
-			width: 100%;
-		}
-
-		time {
-			display: table-cell;
-			vertical-align: middle;
-			text-align: right;
-		}
 }

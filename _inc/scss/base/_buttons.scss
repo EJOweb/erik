@@ -9,9 +9,9 @@
   display: inline-block;
   font-family: $base-font-family;
   font-size: $base-font-size;
-  font-weight: 600;
+  font-weight: 400;
   line-height: 1;
-  padding: 0.75em 1em;
+  padding: $base-gap / 4 $base-gap / 3;
   text-decoration: none;
   user-select: none;
   vertical-align: middle;

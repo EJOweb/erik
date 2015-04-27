@@ -1,29 +1,29 @@
 @import "../vendors/neat/neat-helpers"; // or "../neat/neat-helpers" when not in Rails
 
 // Neat Overrides
-$column: modular-scale(3, 1em, $golden);
-$gutter: modular-scale(1, 1em, $golden);
+$column: modular-scale(3, 100%, $golden);
+// $column: em(58);
+$gutter: modular-scale(1, 100%, $golden);
+// $gutter: em(24);
 
 // Mobile first
-$grid-columns: 6;
-$max-width: em(380);
+$grid-columns: 12;
+$max-width: em(800);
+$default-width: $max-width;
 
 // Neat Breakpoints
-$small-screen: em(500);
-$medium-screen: em(740);
-$large-screen: em(980);
+$tablet-width: em(840);
+$phablet-width: em(660);
+$smartphone-width: em(480);
+$barebones-width: em(360);
 
-// Breakpoint container widths
-$small-container-width: em(480);
-$medium-container-width: em(720);
-$large-container-width: em(960);
+$tablet: new-breakpoint(max-width $tablet-width);
+$phablet: new-breakpoint(max-width $phablet-width);
+$smartphone: new-breakpoint(max-width $smartphone-width);
+$barebones: new-breakpoint(max-width $barebones-width);
 
-$small-screen-up: new-breakpoint(min-width $small-screen);
-$medium-screen-up: new-breakpoint(min-width $medium-screen, 9);
-$large-screen-up: new-breakpoint(min-width $large-screen, 12);
-
-$visual-grid: true;
-$visual-grid-color: gray;
-$visual-grid-index: front;
-$visual-grid-opacity: 0.1;
+// $visual-grid: test;
+$visual-grid-index: back;
+$visual-grid-opacity: 0.5;
+$visual-grid-color: rgba(gray,$visual-grid-opacity);
 
