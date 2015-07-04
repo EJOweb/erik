@@ -1,0 +1,184 @@
+/*------------------------------------------------------------------
+Main typography
+-------------------------------------------------------------------*/
+html {
+    font-size: $base-font-size / 16px * 100%;
+}
+
+body {
+    color: $base-font-color;
+    font-family: $base-font-family;
+    -webkit-font-smoothing: antialiased;
+    // font-size: 1rem;
+    // font-size: $base-font-size / 16px * 100%;
+    line-height: $base-line-height;
+}
+
+p,
+ul,
+ol,
+dl,
+table,
+figure,
+address,
+blockquote,
+pre,
+code,
+object,
+hr,
+.gallery,
+audio,
+video,
+object,
+embed,
+iframe {
+    margin-bottom: $gap;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+/* Links */
+a {
+    transition: color 0.1s linear;
+    // font-weight: $bold;
+
+    &:active,
+    &:focus,
+    &:hover {
+
+    }
+}
+
+
+/*------------------------------------------------------------------
+Headings
+-------------------------------------------------------------------*/
+h1, h2, h3, h4, h5, h6 {
+    font-family: $heading-font-family;
+    font-weight: $bold;
+    font-style: italic;
+    color: $heading-font-color;
+}
+
+$h1: rem(29px);
+$h2: rem(24px);
+$h3: rem(20px);
+$h4: rem(16px);
+$h5: rem(14px);
+$h6: rem(14px);
+
+h1 {
+    font-size: $h1;
+    line-height: $heading-line-height;
+    margin-bottom: $gap;
+}
+
+h2 {
+    font-size: $h2;
+    line-height: $heading-line-height;
+    margin-bottom: $gap;
+}
+
+h3 {
+    font-size: $h3;
+    line-height: $heading-line-height;
+    margin-bottom: $gap;
+}
+
+h4 {
+    font-size: $h4;
+    line-height: $heading-line-height;
+    margin-bottom: $gap / 1.5;
+}
+
+h5 {
+    font-size: $h5;
+    line-height: $heading-line-height;
+    margin-bottom: $gap / 2;
+}
+
+h6 {
+    font-size: $h6;
+    line-height: $heading-line-height;
+    margin-bottom: 0;
+}
+
+
+/*------------------------------------------------------------------
+Titles
+-------------------------------------------------------------------*/
+h1.entry-title {
+}
+
+h2.entry-title {
+}
+
+.entry-title {
+    .featured-widget & {
+        @include reset-heading();
+    }
+}
+
+.entry-title a {
+    
+}
+
+.widget-title {
+    font-size: $h3;
+    margin-bottom: $half-gap;
+
+    #footer & {
+        color: $color-light;
+        font-size: $h4;
+    }
+
+    #content & {
+        font-size: $h2;
+        margin-bottom: $gap;
+    }
+}
+
+.archive-title {
+
+}
+
+/*------------------------------------------------------------------
+Misc
+-------------------------------------------------------------------*/
+
+/* Alignments */
+.alignleft, 
+.left {
+    float:        left;
+    margin-right: $gap;
+}
+
+.alignright, 
+.right {
+    float:       right;
+    margin-left: $gap;
+}
+
+.aligncenter, 
+.center {
+    display: block;
+    margin-left: auto;
+    margin-left: auto;
+}
+
+.alignnone {
+    float: none;
+}
+
+img.alignleft, 
+img.alignright {
+    border-radius: $base-border-radius;
+    display: inline;
+}
+
+blockquote.alignleft, 
+blockquote.alignright {
+    width: 33%;
+}

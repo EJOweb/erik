@@ -1,8 +1,11 @@
 
+			</div><!-- .wrap -->
 		</div><!-- #main -->
 
 		<footer <?php hybrid_attr( 'footer' ); ?>>			
+			<div class="wrap">
 
+			</div><!-- .wrap -->
 		</footer><!-- #footer -->
 
 	</div><!-- #container -->

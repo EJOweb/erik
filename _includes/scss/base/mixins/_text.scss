@@ -1,0 +1,15 @@
+/*------------------------------------------------------------------
+Text
+-------------------------------------------------------------------*/
+@mixin default-text() {
+	font-size: 1rem;
+	font-weight: $normal;
+	line-height: $base-line-height;
+}
+
+@mixin reset-heading() {
+	@include default-text();
+	margin-bottom: 0;
+}
+
+

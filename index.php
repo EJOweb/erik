@@ -1,6 +1,6 @@
 <?php get_header(); // Loads the header.php template. ?>
 
-<aside class="test">
+<!-- <aside class="test">
 	<div>.</div>
 	<div>.</div>
 	<div>.</div>
@@ -13,7 +13,7 @@
 	<div>.</div>
 	<div>.</div>
 	<div>.</div>
-</aside>
+</aside> -->
 
 <main <?php hybrid_attr( 'content' ); ?>>
 

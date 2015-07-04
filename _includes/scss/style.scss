@@ -1,0 +1,53 @@
+/*!
+ * Theme Name:  Erik
+ * Theme URI:   http://www.erik.joling.me/
+ * Description: A custom Wordpress theme for my personal blog
+ * Version:     0.4
+ * Author:      Erik Joling
+ * Author URI:  http://www.ejoweb.nl
+ * Tags:        
+ * Text Domain: erik
+ * License:     Not free...
+ * License URI: 
+ */
+
+//* Helper functions
+@import "vendors/ejo-sass-utilities/helper-functions";
+@import "vendors/ejo-sass-utilities/utility-mixins";
+
+//* Config
+@import "base/variables";
+
+//* Theme Mixins
+@import "base/mixins/text";
+// @import "base/mixins/font-size";
+@import "base/mixins/menu";
+
+//* Reset
+@import "vendors/reset";
+
+//* Base styles
+@import "base/typography";
+@import "base/tables";
+@import "base/lists";
+@import "base/forms";
+@import "base/buttons";
+@import "base/gallery";
+
+//* Plugins
+@import "vendors-edit/font-awesome"; //* Font Awesome
+@import "vendors/gravityforms"; //* Gravity Forms
+
+//* Layout (Macro level)
+@import "layout/body";
+@import "layout/header";
+@import "layout/content";
+@import "layout/main";
+@import "layout/sidebar";
+@import "layout/footer";
+
+// //* Modules (Micro level)
+@import "modules/titles";
+@import "modules/logo";
+@import "modules/navigation";
+@import "modules/widgets";

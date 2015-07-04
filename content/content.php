@@ -80,7 +80,7 @@
 		<span class="comments">
 			0
 		</span>
-		<a href="<?php the_permalink(); ?>" rel="bookmark" itemprop="url"><?php echo $read_more_text; ?></a>
+		<?php /*<a href="<?php the_permalink(); ?>" rel="bookmark" itemprop="url"><?php echo $read_more_text; ?></a>*/ ?>
 	</footer>
 
 </article><!-- .entry -->

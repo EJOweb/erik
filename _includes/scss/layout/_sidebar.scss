@@ -1,0 +1,92 @@
+.sidebar {	
+
+	.widget:first-child {
+		margin-top: 3px; //* Correction to align width main title
+	}
+
+	.widget {
+		margin-bottom: 1.25rem;
+		.widget-title {
+			margin-bottom: 2px;
+		}
+	}
+
+	.textwidget,
+	.menu {
+		background-color: rgba($base-background-color,0.8);
+		background-color: $body-background-color;
+		color: $color-1;
+	}
+
+	/* Menu */
+	.menu {
+		padding-top: 0.5rem;
+		padding-bottom: 0.5rem;
+		> li {
+			> a {
+				margin-left: 1rem;
+				margin-right: 1rem;
+				padding-top: 6px;
+				padding-bottom: 6px;
+				border-top: 1px solid rgba($color-1, 0.2);
+				border-bottom: 1px solid transparent;
+				&:hover {
+					margin-left: 0;
+					margin-right: 0;
+					padding-left: 1rem;
+					padding-right: 1rem;
+					background-color: rgba($color-1, 0.2);
+					border-top-color: transparent;
+				}
+			}
+
+			&.menu-item-has-children > a {
+				border-bottom-color: rgba($color-1, 0.2);
+				&:hover {
+					border-bottom-color: transparent;
+				}
+			}
+
+			&:first-child > a {
+				border-top: none;
+				&:hover {
+					border-top: none;
+				}
+			}
+		}
+
+		//* Submenu
+		.sub-menu {
+			li {
+				a {
+					margin-left: 1rem;
+					margin-right: 1rem;
+					padding-left: 1.25rem;
+					padding-top: 4px;
+					padding-bottom: 4px;
+					border-top: 1px solid rgba($color-1, 0.2);
+					border-bottom: 1px solid transparent;
+
+					&:hover {
+						background-color: rgba($color-1, 0.2);
+						border-top-color: transparent;
+					}
+				}
+
+				&:first-child > a {
+					border-top-color: transparent;
+				}
+			}
+		}
+
+		a {	
+			display: block;
+		}
+
+		//* Hide top-border of next menu-item
+		li:not(.menu-item-has-children):hover + li > a {
+			border-top-color: transparent;
+		}
+	}
+
+}

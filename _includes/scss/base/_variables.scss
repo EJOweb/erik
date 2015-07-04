@@ -1,0 +1,63 @@
+//* Typography
+$base-font-family: 'Roboto', "Arial", sans-serif;
+$heading-font-family: $base-font-family;
+
+$bold: 700;
+$normal: 400;
+
+//* Default Font Size & line-height
+$em-base: 16px;
+$base-font-size: $em-base;
+$base-line-height: 1.5;
+
+$big-font-size: rem($base-font-size + 2px);
+$small-font-size: rem($base-font-size + 2px);
+
+//* Heading Sizes & line-height
+// $h1: rem(32px);
+// $h2: rem(26px);
+// $h3: rem(21px);
+// $h4: rem(18px);
+// $h5: rem(16px);
+// $h6: rem(16px);
+$heading-line-height: 1.2;
+
+//* Other Sizes
+$gap: 1rem;
+$base-gap: $gap;
+$half-gap: $gap / 2;
+$big-gap: $gap * 1.5;
+$two-gap: $gap * 2;
+
+//* Paths
+$img_path: 'assets/images/';
+
+//* Colors
+$color-1: #f7a128;
+$color-2: #635a4d;
+$color-light: #fff;
+$color-dark: #46403a;
+
+$base-font-color: $color-2;
+$heading-font-color: $color-2;
+$action-color: $color-1;
+
+$base-background-color: $color-light;
+$body-background-color: lighten($color-1, 72%);
+
+//* Border
+$base-border-color: #EDEDDD;
+$base-border: 1px solid $base-border-color;
+$base-border-radius: 0px;
+
+//* Forms
+$form-box-shadow: inset 0 1px 3px rgba(#000, 0.06);
+$form-box-shadow-focus: $form-box-shadow, 0 0 5px adjust-color($action-color, $lightness: -5%, $alpha: -0.3);
+
+//* Other
+$base-z-index: 0;
+$box-sizing: true;
+
+//* Elements which contain structured typography
+$content-blocks:	'.entry-content',
+					'.textwidget';

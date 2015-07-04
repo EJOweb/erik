@@ -1,0 +1,48 @@
+#menu-primary {
+
+	/* Top level */
+	ul.menu-items > li {
+		display: inline-block;
+		margin-top: 6px;
+		margin-right: 4px;
+
+		&:last-child {
+			margin-right: 0;
+		}
+
+		> a {
+			@extend %button;
+			display: block;
+		}
+
+		/* Active */
+		&.current-menu-item,
+		&.current-page-ancestor {
+			> a {			
+				@extend %button-alt;
+				display: block;
+			}
+		}
+	}
+
+	/* Sub-menu */
+	ul.sub-menu {
+		display: none;
+		position: absolute;
+		z-index: 1;
+
+		width: 180px;
+		background-color: $color-light;
+	}
+	
+	/* Expand sub-menu */
+	.menu-item:hover > .sub-menu {
+		display: block;
+	}
+
+	ul.sub-menu > li {
+
+	}
+
+
+}

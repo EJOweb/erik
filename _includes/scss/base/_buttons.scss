@@ -1,0 +1,83 @@
+/**
+ * Buttons
+ */
+
+@mixin button($style: default) 
+{
+	border-radius: $base-border-radius;
+	font-weight: $bold;
+	padding: 8px 12px 8px;
+	line-height: 1;
+	display: inline-block;
+	width: auto;
+
+	$button-font-weight: $bold;
+	$button-background-color: $color-1;
+	$button-text-color: $color-light;
+	$button-hover-background-color: darken($button-background-color, 5%);
+
+	@if $style == alt {
+		$button-background-color: $color-2;
+		$button-hover-background-color: darken($button-background-color, 5%);
+	}
+	@else if $style == light {
+		$button-background-color: $color-light;
+		$button-text-color: $base-font-color;
+		$button-hover-background-color: darken($button-background-color, 5%);
+	}
+	@else if $style == disabled {
+		$button-font-weight: $normal;
+		$button-background-color: $color-light;
+		$button-text-color: $base-font-color;
+		$button-hover-background-color: $button-background-color;
+	}	
+
+	background-color: $button-background-color;
+	color: $button-text-color;
+	font-weight: $button-font-weight;
+	
+	&:hover,
+	&:focus {
+		background-color: $button-hover-background-color;
+	}
+}
+
+//* Change color of a button
+@mixin button-color($style: default)
+{
+	$button-background-color: $color-1;
+	$button-text-color: $color-light;
+	$button-hover-background-color: darken($button-background-color, 5%);
+
+	@if $style == alt {
+		$button-background-color: $color-2;
+		$button-hover-background-color: darken($button-background-color, 5%);
+	}
+	@else if $style == light {
+		$button-background-color: $color-light;
+		$button-text-color: $base-font-color;
+		$button-hover-background-color: darken($button-background-color, 5%);
+	}
+	@else if $style == disabled {
+		$button-font-weight: $normal;
+		$button-background-color: $color-light;
+		$button-text-color: $base-font-color;
+		$button-hover-background-color: $button-background-color;
+	}	
+
+	background-color: $button-background-color;
+	color: $button-text-color;
+
+	&:hover,
+	&:focus {
+		background-color: $button-hover-background-color;
+	}
+}
+
+.button,
+button,
+input[type="button"], 
+input[type="reset"],
+input[type="submit"] {
+	@include button;
+}
