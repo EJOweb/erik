@@ -1,0 +1,14 @@
+.breadcrumbs {
+	margin-top: -19px;
+	margin-bottom: 6px;
+	color: $color-1-b;
+	font-size: rem($base-font-size - 1px);
+
+	a:hover {
+		text-decoration: underline;
+	}
+
+	.trail-end {
+		font-style: italic;
+	}
+}

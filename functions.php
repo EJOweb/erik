@@ -1,35 +1,27 @@
 <?php
 /**
- *
- * This program is free software; you can redistribute it and/or modify it under the terms of the GNU 
- * General Public License as published by the Free Software Foundation; either version 2 of the License, 
- * or (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without 
- * even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
- *
  * @package    Erik
  * @subpackage Functions
  * @version    1.0.0
  * @author     Erik Joling <erik@ejoweb.nl>
  * @copyright  Copyright (c) 2015, Erik Joling
  * @link       http://www.ejoweb.nl/
- * @license    http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+ * @license    Not free...
  */
 
 //* Get the template directory and uri and make sure it has a trailing slash.
-$theme_dir = trailingslashit( get_template_directory() );
-$theme_uri = trailingslashit( get_template_directory_uri() );
+define( 'THEME_LIB_DIR', trailingslashit( get_template_directory() ) . '_includes/' );
+define( 'THEME_LIB_URI', trailingslashit( get_template_directory_uri() ) . '_includes/' );
 
 //* Set custom Hybrid location.
-define( 'HYBRID_DIR', $theme_dir . '_includes/hybrid/' );
-define( 'HYBRID_URI', $theme_uri . '_includes/hybrid/' );
+define( 'HYBRID_DIR', THEME_LIB_DIR . 'hybrid/' );
+define( 'HYBRID_URI', THEME_LIB_URI . 'hybrid/' );
 
 //* Load the Hybrid Core framework and theme files.
 require_once( HYBRID_DIR . 'hybrid.php' );
 
 //* Theme setup ie. menus, sidebars, image-sizes, additional scripts and styles.
-require_once( $theme_dir . '_includes/theme.php' );
+require_once( THEME_LIB_DIR . 'theme.php' );
 
 //* Launch the Hybrid Core framework.
 new Hybrid();
@@ -54,9 +46,9 @@ function erik_theme_setup()
 	define( 'TEXT_DOMAIN', hybrid_get_parent_textdomain() );
 
 	//* Set paths to asset folders.
-	define( 'THEME_IMG_URI', THEME_URI . '/assets/images/' );
-	define( 'THEME_JS_URI', THEME_URI . '/assets/js/' );
-	define( 'THEME_CSS_URI', THEME_URI . '/assets/css/' );
+	define( 'THEME_IMG_URI', HYBRID_PARENT_URI . '/assets/images/' );
+	define( 'THEME_JS_URI', HYBRID_PARENT_URI . '/assets/js/' );
+	define( 'THEME_CSS_URI', HYBRID_PARENT_URI . '/assets/css/' );
 
 	//* Enable custom template hierarchy.
 	add_theme_support( 'hybrid-core-template-hierarchy' );
@@ -64,24 +56,27 @@ function erik_theme_setup()
 	//* Better image grabbing
 	add_theme_support( 'get-the-image' );
 
-	//* Alternative to simple 'next/previous' links
-	add_theme_support( 'loop-pagination' );
+	//* Add breadcrumbs
+	add_theme_support( 'breadcrumb-trail' );
+
+	//* Automatically add feed links to <head>.
+	add_theme_support( 'automatic-feed-links' );
 
 	//* Post formats.
-	add_theme_support( 
-		'post-formats', 
-		array( 'quote' ) 
+	add_theme_support(
+		'post-formats',
+		array( 'aside', 'audio', 'chat', 'image', 'gallery', 'link', 'quote', 'status', 'video' )
 	);
 
-	//* Handle content width for embeds and images.
-	hybrid_set_content_width( 1280 );
+	//* Custom Header
+	$header_image_args = array(
+		'width'         => 960,
+		'height'        => 150,
+		'uploads'   	=> true,
+		'header-text'   => false,
+	);
+	add_theme_support( 'custom-header', $header_image_args );
 
-	//* Remove more-link from cut-off excerpts
-	add_filter( 'excerpt_more', 'erik_excerpt_more' );
-}
-
-//* Remove more-link from cut-off excerpts
-function erik_excerpt_more( $more ) 
-{
-	return '... ';
+	//* Filter excerpt_more
+	add_filter( 'excerpt_more', function() { return '...'; } );
 }

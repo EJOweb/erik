@@ -1,9 +1,10 @@
-
 			</div><!-- .wrap -->
 		</div><!-- #main -->
 
-		<footer <?php hybrid_attr( 'footer' ); ?>>			
+		<footer <?php hybrid_attr( 'footer' ); ?>>
 			<div class="wrap">
+
+			<?php dynamic_sidebar( 'footer' ); // Displays the primary sidebar. ?>	
 
 			</div><!-- .wrap -->
 		</footer><!-- #footer -->

@@ -19,11 +19,17 @@ add_action( 'init', 'erik_register_menus', 5 );
 /* Register sidebars. */
 add_action( 'widgets_init', 'erik_register_sidebars', 5 );
 
-/* Add custom scripts. */
-add_action( 'wp_enqueue_scripts', 'erik_enqueue_scripts', 5 );
+//* Remove styles & scripts
+add_action( 'wp_print_styles', 'erik_remove_styles_and_scripts', 99 );
 
-/* Add custom styles. */
-add_action( 'wp_enqueue_scripts', 'erik_enqueue_styles', 5 );
+//* Add custom styles & scripts
+add_action( 'wp_enqueue_scripts', 'erik_add_styles_and_scripts', 5 );
+
+//* Add custom favicon
+add_action('wp_head', 'erik_favicon');
+
+//* Extensions
+// include_once( THEME_LIB_DIR . 'extensions/...' );
 
 /**
  * Registers custom image sizes for the theme. 
@@ -34,11 +40,6 @@ add_action( 'wp_enqueue_scripts', 'erik_enqueue_styles', 5 );
  */
 function erik_register_image_sizes() {
 
-	/* Sets the 'post-thumbnail' size. */
-	//set_post_thumbnail_size( 150, 150, true );
-
-	/* Adds the 'saga-large' image size. */
-	add_image_size( 'erik-large', 1100, 9999, false );
 }
 
 /**
@@ -49,7 +50,7 @@ function erik_register_image_sizes() {
  * @return void
  */
 function erik_register_menus() {
-	register_nav_menu( 'primary',    _x( 'Primary',    'nav menu location', 'hybrid-base' ) );
+	register_nav_menu( 'primary', 'Primary' );
 }
 
 /**
@@ -63,51 +64,58 @@ function erik_register_sidebars() {
 
 	hybrid_register_sidebar(
 		array(
-			'id'          => 'primary',
-			'name'        => _x( 'Primary', 'sidebar', 'hybrid-base' ),
-			'description' => __( 'Add sidebar description.', 'hybrid-base' )
+			'id'          => 'sidebar-primary',
+			'name'        => 'Zijbalk - Standaard',
+			'description' => 'Sleep hier widgets naar toe',
+			'before_title'  => '<h3 class="widget-title"><span>',
+			'after_title'   => '</span></h3>'
+		)
+	);
+
+	hybrid_register_sidebar(
+		array(
+			'id'          => 'footer',
+			'name'        => 'Footer',
+			'description' => 'Footer...'
 		)
 	);
 }
 
-/**
- * Load scripts for the front end.
- *
- * @since  1.0.0
- * @access public
- * @return void
- */
-function erik_enqueue_scripts() {
-
-	$suffix = hybrid_get_min_suffix();
-
-	wp_register_script( 'erik', trailingslashit( THEME_JS_URI ) . "theme{$suffix}.js", array( 'jquery' ), null, true );
-
-	wp_enqueue_script( 'erik' );	
-}
 
 /**
- * Load stylesheets for the front end.
- *
- * @since  1.0.0
- * @access public
- * @return void
+ * Remove scripts & stylesheets for the front end.
  */
-function erik_enqueue_styles() {
+function erik_remove_styles_and_scripts() {
 
 	/* Gets ".min" suffix. */
 	$suffix = hybrid_get_min_suffix();
 
-	/* Load Font Icon */
-	// wp_enqueue_style( 'font-awesome', '//netdna.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css', array(), '4.3.0' );
+	//* Dequeue plugin font-awesome because font-awesome is already included in theme-stylesheet
+	wp_dequeue_style( 'bfa-font-awesome' );
+}
+
+/**
+ * Load scripts & styles for the front end.
+ */
+function erik_add_styles_and_scripts() {
+
+	$suffix = hybrid_get_min_suffix();
+
+	//* Scripts
+	wp_register_script( 'erik', trailingslashit( THEME_JS_URI ) . "theme{$suffix}.js", array( 'jquery' ), null, true );
+	wp_enqueue_script( 'erik' );	
+
+	//* Styles
 
 	/* Load Font */
-	// wp_enqueue_style( 'erik-fonts', '//fonts.googleapis.com/css?family=Lato:400,400italic,700|Playfair+Display:400,700,900' );
-	// wp_enqueue_style( 'erik-fonts', '//fonts.googleapis.com/css?family=Montserrat:400,700' );
-	// wp_enqueue_style( 'erik-fonts', '//fonts.googleapis.com/css?family=Source+Sans+Pro:400,400italic,700,700italic' );
-	// wp_enqueue_style( 'erik-fonts', '//fonts.googleapis.com/css?family=Ubuntu:400,400italic,700,700italic' );
-	// wp_enqueue_style( 'erik-fonts', '//fonts.googleapis.com/css?family=Open+Sans:400,400italic,700|Playfair+Display:400,700,900' );
+	wp_enqueue_style( 'erik-fonts', '//fonts.googleapis.com/css?family=Open+Sans:400,400italic,700,700italic' );
 
 	/* Load active theme stylesheet. */
 	wp_enqueue_style( 'style', get_stylesheet_uri() );
+}
+
+//* Favicon
+function erik_favicon() 
+{
+	echo '<link rel="shortcut icon" href="'. THEME_IMG_URI .'favicon.ico">';
 }

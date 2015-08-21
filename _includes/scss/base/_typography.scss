@@ -6,14 +6,17 @@ html {
 }
 
 body {
-    color: $base-font-color;
-    font-family: $base-font-family;
+    @include font-feature-settings("kern", "liga", "pnum");
     -webkit-font-smoothing: antialiased;
-    // font-size: 1rem;
-    // font-size: $base-font-size / 16px * 100%;
+    font-family: $base-font-family;
+    color: $base-font-color;
     line-height: $base-line-height;
 }
 
+
+/*------------------------------------------------------------------
+Typography blocks
+-------------------------------------------------------------------*/
 p,
 ul,
 ol,
@@ -39,10 +42,15 @@ iframe {
     }
 }
 
-/* Links */
+
+/*------------------------------------------------------------------
+Links
+-------------------------------------------------------------------*/
+
 a {
     transition: color 0.1s linear;
-    // font-weight: $bold;
+    text-decoration: none;
+    color: $color-1;
 
     &:active,
     &:focus,
@@ -51,23 +59,32 @@ a {
     }
 }
 
+#{$content-blocks} {
+    a {
+        color: $color-1;
+        border-bottom: 1px dotted lighten($color-1, 10%);
+
+        &:hover {
+            border-bottom: 1px solid $color-1;
+        }
+    }
+
+    a.button {
+        color: $color-light;
+        border-bottom: none;
+    }
+}
+
 
 /*------------------------------------------------------------------
 Headings
 -------------------------------------------------------------------*/
+
 h1, h2, h3, h4, h5, h6 {
     font-family: $heading-font-family;
     font-weight: $bold;
-    font-style: italic;
-    color: $heading-font-color;
+    color: $color-1;
 }
-
-$h1: rem(29px);
-$h2: rem(24px);
-$h3: rem(20px);
-$h4: rem(16px);
-$h5: rem(14px);
-$h6: rem(14px);
 
 h1 {
     font-size: $h1;
@@ -109,60 +126,87 @@ h6 {
 /*------------------------------------------------------------------
 Titles
 -------------------------------------------------------------------*/
+#site-title {
+    color: $color-light;
+    margin-bottom: 0;
+}
+
 h1.entry-title {
+
 }
 
 h2.entry-title {
+
 }
 
-.entry-title {
-    .featured-widget & {
-        @include reset-heading();
-    }
-}
-
-.entry-title a {
+.widget-title {
     
 }
 
 .widget-title {
-    font-size: $h3;
-    margin-bottom: $half-gap;
-
-    #footer & {
-        color: $color-light;
-        font-size: $h4;
-    }
+    #call-to-action & {}
 
     #content & {
-        font-size: $h2;
-        margin-bottom: $gap;
+        
+    }
+    
+    #sidebar-primary & {
+             
+    }
+
+    #footer & {
+       
     }
 }
 
-.archive-title {
+.archive-title {}
 
+.entry-title a {
+    color: inherit;
+    font-weight: inherit;
+    border-bottom: none;
 }
+
 
 /*------------------------------------------------------------------
-Misc
+Blockquotes
 -------------------------------------------------------------------*/
 
-/* Alignments */
-.alignleft, 
-.left {
+blockquote {}
+
+    blockquote blockquote {}
+
+    blockquote cite {}
+
+
+/*------------------------------------------------------------------
+Code
+-------------------------------------------------------------------*/
+
+code {}
+
+pre {}
+
+    pre code {}
+
+
+/*------------------------------------------------------------------
+Alignment
+-------------------------------------------------------------------*/
+
+.alignleft {
     float:        left;
-    margin-right: $gap;
+    margin-right: 1.25rem;
+    margin-bottom: 0.75rem;
 }
 
-.alignright, 
-.right {
+.alignright {
     float:       right;
-    margin-left: $gap;
+    margin-right: 1.25rem;
+    margin-bottom: 0.75rem;
 }
 
-.aligncenter, 
-.center {
+.aligncenter {
     display: block;
     margin-left: auto;
     margin-left: auto;
@@ -172,13 +216,52 @@ Misc
     float: none;
 }
 
-img.alignleft, 
-img.alignright {
-    border-radius: $base-border-radius;
-    display: inline;
+
+/*------------------------------------------------------------------
+WP classes
+-------------------------------------------------------------------*/
+
+.wp-caption,
+.wp-caption-text {
+    
 }
 
-blockquote.alignleft, 
-blockquote.alignright {
-    width: 33%;
+
+/*------------------------------------------------------------------
+Other
+-------------------------------------------------------------------*/
+
+audio,
+video,
+object,
+embed,
+iframe {
+    max-width: 100%;
+}
+
+img {
+    display: block;
+}
+
+img.wp-smiley {
+    max-height: 12px;
+    background: transparent;
+    display:    inline;
+}
+
+.clear {
+    clear: both;
+}
+
+.hide,
+.hidden {
+    display: none;
+}
+
+.show-if-js {
+    display: none;
+}
+
+.screen-reader-text {
+    display: none;
 }

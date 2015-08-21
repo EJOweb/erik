@@ -1,19 +1,6 @@
 <?php get_header(); // Loads the header.php template. ?>
 
-<!-- <aside class="test">
-	<div>.</div>
-	<div>.</div>
-	<div>.</div>
-	<div>.</div>
-	<div>.</div>
-	<div>.</div>
-	<div>.</div>
-	<div>.</div>
-	<div>.</div>
-	<div>.</div>
-	<div>.</div>
-	<div>.</div>
-</aside> -->
+<?php hybrid_get_menu( 'breadcrumbs' ); // Loads the menu/breadcrumbs.php template. ?>	
 
 <main <?php hybrid_attr( 'content' ); ?>>
 
@@ -40,5 +27,7 @@
 	<?php endif; // End check for posts. ?>
 
 </main><!-- #content -->
+
+<?php // hybrid_get_sidebar( 'primary' ); // Loads the sidebar/primary.php template. ?>
 
 <?php get_footer(); // Loads the footer.php template. ?>

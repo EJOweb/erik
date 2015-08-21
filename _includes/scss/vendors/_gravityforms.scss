@@ -1,6 +1,6 @@
 /**
  * Gravity Forms structure sass
- * Version: 0.9
+ * Version: 0.9.1
  **/
 
 // Variables
@@ -13,7 +13,7 @@ $ui-border-color: #DDD !default;
 $ui-background-color: #EFEFEF !default;
 
 /* Reset */
-.gform_wrapper form {
+body .gform_wrapper form {
 	ol,
 	ul {
 		margin: 0; 
@@ -29,7 +29,7 @@ $ui-background-color: #EFEFEF !default;
 }
 
 /* Structure */
-.gform_wrapper form {
+body .gform_wrapper form {
 
 	.gform_heading {}
 
@@ -159,6 +159,10 @@ $ui-background-color: #EFEFEF !default;
 		}
 	}
 
+	.ginput_container {
+		@include clearfix;
+	}
+
 	.gf_left_third,
 	.gf_left_half,
 	.ginput_left {
@@ -227,7 +231,7 @@ $ui-background-color: #EFEFEF !default;
 }
 
 /* Sidebar */
-.widget .gform_wrapper form {
+body .widget .gform_wrapper form {
 
 	.small { width: 50%; }
 	.medium { width: 100%; }
@@ -237,7 +241,7 @@ $ui-background-color: #EFEFEF !default;
 }
 
 /* Gravity form specifics */
-.gform_wrapper form {
+body .gform_wrapper form {
 	.validation_error {
 		border: 1px solid $ui-border-color;
 		background-color: $ui-background-color;

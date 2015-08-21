@@ -1,3 +1,7 @@
+/* EJOweb gulpfile
+ * v20150708
+ */
+
 //* Package variables
 var gulp = require('gulp');
 var gutil = require('gulp-util');
@@ -6,25 +10,27 @@ var sourcemaps = require('gulp-sourcemaps');
 var rename = require('gulp-rename');
 
 //* Config
-var lib_dir = './lib/';
+var lib_dir = './_includes/';
 
-//* Make style.css from sass files
-gulp.task('sass-expanded', function () {
-    gulp.src(['./_includes/scss/style.scss'])
+//* Create expanded and minified stylesheet at the same time (performance is fast using libsass)
+//* In case of error, show it only once
+gulp.task('sass', function () {
+
+    //* Create expanded stylesheet
+    gulp.src([lib_dir + 'scss/style.scss'])
         .pipe(sass({
             outputStyle: 'expanded'
         }))
-        .on('error', gutil.log)
+        .on('error', gutil.log) // On error: show log and continue
         .pipe(gulp.dest('.'));
-});
 
-gulp.task('sass-minified', function () {
-    gulp.src(['./_includes/scss/style.scss'])
+    //* Create minified stylesheet
+    gulp.src([lib_dir + 'scss/style.scss'])
         .pipe(sourcemaps.init())
         .pipe(sass({
             outputStyle: 'compressed'
         }))
-        .on('error', gutil.log)
+        .on('error', gutil.noop) // On error: just continue because log is already shown above
         .pipe(sourcemaps.write('./'))
         .pipe(rename({
             suffix: '.min'
@@ -34,13 +40,5 @@ gulp.task('sass-minified', function () {
 
 //* Default task
 gulp.task('default', function () {
-    gulp.watch( './_includes/scss/**/*.scss', ['sass-expanded']);
-});
-
-//* Live task
-gulp.task('live', function () {
-    //* Handle Stylesheets
-    gulp.start('sass-expanded', 'sass-minified');
-    
-    //* Handle Javascripts
+    gulp.watch( lib_dir + 'scss/**/*.scss', ['sass']);
 });

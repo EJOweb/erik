@@ -1,0 +1,1 @@
+To load all images in marquee in stead of offscreen at the right side I decommented some lines in the marquee script. r239, r259, r263

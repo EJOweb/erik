@@ -1,0 +1,31 @@
+body {
+	background-color: $base-background-color;
+}
+
+#header {
+	background-color: $color-1;
+	color: $color-light;
+	
+
+	.menu-toggle {
+		display: none;
+	}
+}
+
+#menu-primary {
+	margin-bottom: $gap * 1.5;
+}
+
+#main {
+
+}
+
+	//* Content Container
+	#content {
+		position: relative;
+	}
+
+
+#footer {
+	
+}

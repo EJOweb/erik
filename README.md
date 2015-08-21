@@ -1,4 +1,2 @@
-# erik
-My Wordpress Blog Theme
+# SlaOpBijStrang.nl
 
-# Theme Setup

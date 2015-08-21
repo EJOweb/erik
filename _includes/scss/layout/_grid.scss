@@ -1,0 +1,55 @@
+$column-width: flex-grid(1, $grid-columns);
+$gutter-width: flex-gutter($grid-columns);
+
+body {
+	// padding: 0 em(20);
+}
+
+#container {
+}
+
+#header {
+	.wrap {
+		@include outer-container($default-width);
+		position: relative;
+	}
+
+	#branding {
+		@include span-columns(12);
+	}
+
+}
+
+#menu-primary {
+	.wrap {
+		@include outer-container($default-width);
+		position: relative;
+
+		.menu-items {
+			@include span-columns(12);
+		}
+	}
+}
+
+#main {
+	.wrap {
+		@include outer-container($default-width);
+		position: relative;
+	}
+
+	#content {
+		@include span-columns(12);
+	}
+
+}
+
+#footer {
+	.wrap {
+		@include outer-container($default-width);
+		position: relative;
+	}	
+
+	.widget {
+		@include span-columns(3);
+	}
+}
