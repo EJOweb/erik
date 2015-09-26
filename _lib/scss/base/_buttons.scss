@@ -1,0 +1,22 @@
+/**
+ * Buttons
+ */
+
+@mixin button($color: $color-1) {
+	
+	width: auto;
+	
+	&:hover,
+	&:focus {
+		background-color: darken($color, 5%);
+		text-decoration: none;
+	}
+}
+
+.button,
+button,
+input[type="button"], 
+input[type="reset"],
+input[type="submit"] {
+	@include button();
+}

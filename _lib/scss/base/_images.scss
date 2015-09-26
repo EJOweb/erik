@@ -1,0 +1,11 @@
+img {
+    display: block;
+    max-width: 100%;
+}
+
+img.alignleft, 
+img.alignright {
+    border-radius: $base-border-radius;
+    border: $base-border;
+    display: inline;
+}

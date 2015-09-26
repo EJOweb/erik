@@ -1,0 +1,19 @@
+/* EJO Reset
+   v0.2 | 20150925
+*/
+
+html { // http://bit.ly/1qk2tVR
+	box-sizing: border-box;
+}
+
+* {
+	&,
+	&::after,
+	&::before {
+		box-sizing: inherit;
+	}
+}
+
+@import 'eric-meyer';
+@import 'normalize';
+@import 'erik-joling';

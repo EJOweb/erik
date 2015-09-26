@@ -1,23 +1,27 @@
 /* EJOweb gulpfile
- * v20150708
+ * v20150925
  */
 
 //* Package variables
 var gulp = require('gulp');
 var gutil = require('gulp-util');
-var sass = require('gulp-sass');
-var sourcemaps = require('gulp-sourcemaps');
 var rename = require('gulp-rename');
+var concat = require('gulp-concat');
+var sourcemaps = require('gulp-sourcemaps');
+var sass = require('gulp-sass');
+var uglify = require('gulp-uglify');
+var jshint = require('gulp-jshint');
 
 //* Config
-var lib_dir = './_includes/';
+var sass_dir = './_lib/scss/';
+var js_dir = './_lib/js/';
 
 //* Create expanded and minified stylesheet at the same time (performance is fast using libsass)
 //* In case of error, show it only once
 gulp.task('sass', function () {
 
     //* Create expanded stylesheet
-    gulp.src([lib_dir + 'scss/style.scss'])
+    gulp.src([sass_dir + 'style.scss'])
         .pipe(sass({
             outputStyle: 'expanded'
         }))
@@ -25,20 +29,43 @@ gulp.task('sass', function () {
         .pipe(gulp.dest('.'));
 
     //* Create minified stylesheet
-    gulp.src([lib_dir + 'scss/style.scss'])
-        .pipe(sourcemaps.init())
+    gulp.src([sass_dir + 'style.scss'])
+        // .pipe(sourcemaps.init())
         .pipe(sass({
             outputStyle: 'compressed'
         }))
         .on('error', gutil.noop) // On error: just continue because log is already shown above
-        .pipe(sourcemaps.write('./'))
+        // .pipe(sourcemaps.write('./'))
         .pipe(rename({
             suffix: '.min'
         }))
         .pipe(gulp.dest('.'));
 });
 
-//* Default task
-gulp.task('default', function () {
-    gulp.watch( lib_dir + 'scss/**/*.scss', ['sass']);
+// Lint Task
+gulp.task('lint', function() {
+    gulp.src(js_dir + '*.js')
+        .pipe(jshint())
+        .pipe(jshint.reporter('default'));
 });
+
+// Concatenate & Minify JS
+gulp.task('scripts', function() {
+    gulp.src(js_dir + '*.js')
+        .pipe(concat('theme.js'))
+        .pipe(gulp.dest('.'))
+        .pipe(uglify())
+        .pipe(rename({
+            suffix: '.min'
+        }))
+        .pipe(gulp.dest('.'));
+});
+
+// Watch Files For Changes
+gulp.task('watch', function() {
+    gulp.watch( js_dir + '*.js', ['lint', 'scripts'] );
+    gulp.watch( sass_dir + '**/*.scss', ['sass'] );
+});
+
+//* Default task
+gulp.task('default', ['lint', 'sass', 'scripts', 'watch']);

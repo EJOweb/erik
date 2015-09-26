@@ -1,0 +1,28 @@
+//* Typography
+$base-font-family: 'Roboto', arial, sans-serif;
+$heading-font-family: 'Roboto Slab', arial, sans-serif;
+
+$bold-weight: 700;
+$normal-weight: 400;
+
+//* Default Font Size & line-height
+$em-base: 16px;
+$base-font-size: $em-base;
+$base-line-height: 1.64286;
+$base-line-height: 23 / strip-unit($em-base);
+
+$big-font-size: rem($base-font-size + 2px);
+$small-font-size: rem($base-font-size - 2px);
+
+//* Heading Sizes & line-height
+$h1: rem(26px);
+$h2: rem(23px);
+$h3: rem(20px);
+$h4: rem(17px);
+$h5: rem(14px);
+$h6: rem(14px);
+$heading-line-height: 1.2;
+
+//* Elements which contain structured typography
+$content-blocks:	'.entry-content',
+					'.textwidget';

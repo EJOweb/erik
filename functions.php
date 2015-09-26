@@ -10,8 +10,8 @@
  */
 
 //* Get the template directory and uri and make sure it has a trailing slash.
-define( 'THEME_LIB_DIR', trailingslashit( get_template_directory() ) . '_includes/' );
-define( 'THEME_LIB_URI', trailingslashit( get_template_directory_uri() ) . '_includes/' );
+define( 'THEME_LIB_DIR', trailingslashit( get_template_directory() ) . '_lib/' );
+define( 'THEME_LIB_URI', trailingslashit( get_template_directory_uri() ) . '_lib/' );
 
 //* Set custom Hybrid location.
 define( 'HYBRID_DIR', THEME_LIB_DIR . 'hybrid/' );
@@ -46,9 +46,9 @@ function erik_theme_setup()
 	define( 'TEXT_DOMAIN', hybrid_get_parent_textdomain() );
 
 	//* Set paths to asset folders.
-	define( 'THEME_IMG_URI', HYBRID_PARENT_URI . '/assets/images/' );
-	define( 'THEME_JS_URI', HYBRID_PARENT_URI . '/assets/js/' );
-	define( 'THEME_CSS_URI', HYBRID_PARENT_URI . '/assets/css/' );
+	define( 'THEME_IMG_URI', HYBRID_PARENT_URI . 'assets/images/' );
+	define( 'THEME_JS_URI', HYBRID_PARENT_URI );
+	define( 'THEME_CSS_URI', HYBRID_PARENT_URI );
 
 	//* Enable custom template hierarchy.
 	add_theme_support( 'hybrid-core-template-hierarchy' );
@@ -65,7 +65,7 @@ function erik_theme_setup()
 	//* Post formats.
 	add_theme_support(
 		'post-formats',
-		array( 'aside', 'audio', 'chat', 'image', 'gallery', 'link', 'quote', 'status', 'video' )
+		array( 'image', 'gallery', 'link', 'quote', 'status', 'video' )
 	);
 
 	//* Custom Header

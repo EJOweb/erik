@@ -1,0 +1,13 @@
+//* Colors
+$color-1: #00387b;
+$color-1-b: lighten($color-1, 72%);
+$color-2: #f9a800;
+$color-light: #fff;
+$color-dark: #333;
+
+$base-font-color: $color-dark;
+$heading-font-color: $color-dark;
+$action-color: $color-1;
+
+$base-background-color: $color-light;
+$body-background-color: $color-1-b;

@@ -9,18 +9,16 @@
 
 	<div id="container">
 
-		<header <?php hybrid_attr( 'header' ); ?>> <?php // class="shrink" ?>
+		<header <?php hybrid_attr( 'header' ); ?>>
 			<div class="wrap">
 
 				<div <?php hybrid_attr( 'branding' ); ?>>
 					<?php hybrid_site_title(); ?>
-					<!-- <p id="site-description"><?php bloginfo( 'description' ); ?></p> -->
+					<p id="site-description"><?php bloginfo( 'description' ); ?></p>
 				</div><!-- #branding -->
 
-				<span class="menu-toggle">Menu</span>
-
+				<?php hybrid_get_menu( 'primary' ); // Loads the menu/primary.php template. ?>
 			</div><!-- .wrap -->
-			<?php hybrid_get_menu( 'primary' ); // Loads the menu/primary.php template. ?>
 
 		</header><!-- #header -->
 

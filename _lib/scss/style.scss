@@ -1,0 +1,54 @@
+/*!
+ * Theme Name:  Erik
+ * Theme URI:   http://www.erik.joling.me/
+ * Description: A Wordpress Theme developed for myself (Based on Hybrid Core framework)
+ * Version:     0.1
+ * Author:      Erik Joling
+ * Author URI:  http://www.erik.joling.me/
+
+ * Tags:        
+ * Text Domain: erik
+ * License:     Not free...
+ * License URI: 
+ *
+ * GitHub Theme URI: https://github.com/EJOweb/erik
+ * GitHub Branch: 	 master
+ */
+
+//* Helpers
+@import "helpers/mixins/clearfix";
+@import "helpers/mixins/media-query";
+@import "helpers/mixins/icons";
+@import "helpers/functions/strip-unit";
+
+//* Config
+@import "config/typography-settings";
+@import "config/space-settings";
+@import "config/responsive-settings";
+@import "config/color-settings";
+@import "config/path-settings";
+@import "config/form-settings";
+@import "config/border-settings";
+
+//* Reset
+@import "vendors/ejo-reset/reset";
+
+//* Base styles
+@import "base/typography";
+@import "base/tables";
+@import "base/lists";
+@import "base/forms";
+@import "base/buttons";
+@import "base/images";
+@import "base/common";
+
+//* Plugins
+@import "vendors/gravity-forms/gravity-forms"; //* Gravity Forms
+
+//* Layout
+// @import "layout/header";
+// @import "layout/main";
+// @import "layout/footer";
+
+// //* Modules (Micro level)
+// @import "modules/.";
