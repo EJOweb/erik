@@ -1,27 +1,26 @@
 //* Typography
 $base-font-family: 'Roboto', arial, sans-serif;
-$heading-font-family: 'Roboto Slab', arial, sans-serif;
-
-$bold-weight: 700;
-$normal-weight: 400;
+$heading-font-family: 'Roboto Slab', georgia, serif;
 
 //* Default Font Size & line-height
-$em-base: 16px;
+$em-base: 18px;
 $base-font-size: $em-base;
-$base-line-height: 1.64286;
-$base-line-height: 23 / strip-unit($em-base);
+$base-line-height: strip-unit(30px) / strip-unit($base-font-size);
 
 $big-font-size: rem($base-font-size + 2px);
 $small-font-size: rem($base-font-size - 2px);
 
+//* Default font weights
+$bold-weight: 500;
+$normal-weight: 300;
+
 //* Heading Sizes & line-height
-$h1: rem(26px);
-$h2: rem(23px);
+$h1: rem(32px);
+$h2: rem(25px);
 $h3: rem(20px);
-$h4: rem(17px);
-$h5: rem(14px);
-$h6: rem(14px);
-$heading-line-height: 1.2;
+$h4: rem(18px);
+$heading-line-height: 1.125;
+$heading-bold-weight: 700;
 
 //* Elements which contain structured typography
 $content-blocks:	'.entry-content',

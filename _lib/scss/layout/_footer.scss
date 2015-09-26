@@ -1,0 +1,25 @@
+#footer {
+	background-color: $color-secondary;
+	color: $color-secondary-contrast;
+	text-align: center;
+	padding: $gap 0;
+	
+	.wrap {
+		margin: 0 auto;
+		max-width: $max-width;
+	}
+
+	#toTop {
+		color: $color-secondary-contrast;
+		cursor: pointer;
+
+		&:hover {
+			color: $base-font-color;
+		}
+		
+		&:before {
+			@include icon( 'fa-var-arrow-circle-up' );
+			padding-right: rem(6);
+		}
+	}
+}

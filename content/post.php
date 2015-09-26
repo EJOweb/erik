@@ -5,6 +5,13 @@
 	<?php if ( is_singular() ) : // If a single post. ?>
 
 		<header class="entry-header">
+
+			<div class="entry-byline">
+				<?php hybrid_post_terms( array( 'taxonomy' => 'category' ) ); ?>
+				&bullet;
+				<?php echo $time; ?>
+			</div>
+
 			<h1 <?php hybrid_attr( 'entry-title' ); ?>><span><?php the_title(); ?></span></h1>
 		</header>
 
@@ -17,6 +24,13 @@
 	<?php else : // If not a single post. ?>
 
 		<header class="entry-header">
+
+			<div class="entry-byline">
+				<?php hybrid_post_terms( array( 'taxonomy' => 'category' ) ); ?>
+				&bullet;
+				<?php echo $time; ?>
+			</div>
+
 			<h2 <?php hybrid_attr( 'entry-title' ); ?>><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" rel="bookmark" itemprop="url"><?php the_title(); ?></a></h2>
 		</header><!-- .entry-header -->
 

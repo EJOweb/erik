@@ -1,13 +1,27 @@
 //* Colors
-$color-1: #00387b;
-$color-1-b: lighten($color-1, 72%);
-$color-2: #f9a800;
+$color-primary: #673ab7;
+$color-primary-b: #512da8;
+$color-secondary: #EEE;
+
+//* Active
+$color-primary-active: darken( $color-primary, 5% );
+$color-primary-b-active: darken( $color-primary-b, 5% );
+
 $color-light: #fff;
 $color-dark: #333;
+$color-dark-b: #424242;
 
+//* Contrasted colors
+$color-primary-contrast: $color-light;
+$color-secondary-contrast: $color-dark-b;
+
+//* Font
 $base-font-color: $color-dark;
 $heading-font-color: $color-dark;
-$action-color: $color-1;
 
-$base-background-color: $color-light;
-$body-background-color: $color-1-b;
+//* Action / Links
+$action-color: $color-primary;
+$action-color-alt: $color-light;
+
+//* Body
+$body-background-color: $color-light;

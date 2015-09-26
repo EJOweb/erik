@@ -1,6 +1,6 @@
 <?php get_header(); // Loads the header.php template. ?>
 
-<?php hybrid_get_menu( 'breadcrumbs' ); // Loads the menu/breadcrumbs.php template. ?>	
+<?php //hybrid_get_menu( 'breadcrumbs' ); // Loads the menu/breadcrumbs.php template. ?>	
 
 <main <?php hybrid_attr( 'content' ); ?>>
 
@@ -14,7 +14,7 @@
 
 			<?php if ( is_singular() ) : // If viewing a single post/page/CPT. ?>
 
-				<?php /*comments_template( '', true );*/ // Loads the comments.php template. ?>
+				<?php comments_template( '', true ); // Loads the comments.php template. ?>
 
 			<?php endif; // End check for single post. ?>
 
@@ -28,6 +28,6 @@
 
 </main><!-- #content -->
 
-<?php // hybrid_get_sidebar( 'primary' ); // Loads the sidebar/primary.php template. ?>
+<?php locate_template( array( 'misc/loop-nav.php' ), true ); // Loads the misc/loop-nav.php template. ?>
 
 <?php get_footer(); // Loads the footer.php template. ?>

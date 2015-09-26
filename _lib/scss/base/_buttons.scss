@@ -2,14 +2,15 @@
  * Buttons
  */
 
-@mixin button($color: $color-1) {
-	
+@mixin button($color: $color-primary) {
+	font-weight: $bold-weight;
 	width: auto;
+	line-height: $base-line-height;
+	background-color: transparent;
 	
 	&:hover,
 	&:focus {
-		background-color: darken($color, 5%);
-		text-decoration: none;
+		text-decoration: underline;
 	}
 }
 

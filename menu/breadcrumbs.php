@@ -2,13 +2,13 @@
 
 	<?php breadcrumb_trail(
 		array( 
-			'container'     => 'nav', 
-			'separator'     => '>', 
-			'show_on_front' => false,
-
-			'labels'        => array( 
-				'browse' => '' 
-			) 
+			'container'       => 'nav',
+			'separator'		  => '>',
+			'show_on_front'   => false,
+			'show_title'      => true,
+			'show_browse'     => false,
+			// 'labels'          => array(),
+			// 'post_taxonomy'   => array(),
 		) 
 	); ?>
 

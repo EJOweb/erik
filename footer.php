@@ -4,7 +4,7 @@
 		<footer <?php hybrid_attr( 'footer' ); ?>>
 			<div class="wrap">
 
-			<?php dynamic_sidebar( 'footer' ); // Displays the primary sidebar. ?>	
+				<a class="button" id="toTop">Naar Boven</a>
 
 			</div><!-- .wrap -->
 		</footer><!-- #footer -->

@@ -10,6 +10,7 @@ body {
     font-family: $base-font-family;
     color: $base-font-color;
     line-height: $base-line-height;
+    font-weight: $normal-weight;
 }
 
 
@@ -34,11 +35,15 @@ video,
 object,
 embed,
 iframe {
-    margin-bottom: $gap;
+    margin-bottom: 1.5rem;
 
     &:last-child {
         margin-bottom: 0;
     }
+
+    // #{$content-blocks} & {
+    //     margin-bottom: $gap;
+    // }
 }
 
 
@@ -48,21 +53,23 @@ Links
 
 a {
     transition: color 0.1s linear;
+    text-decoration: none;
+    color: $color-primary;
 
     &:active,
     &:focus,
     &:hover {
-
+        color: $color-primary-b;
     }
 }
 
 #{$content-blocks} {
     a {
-        color: $color-1;
-        border-bottom: 1px dotted lighten($color-1, 10%);
+        color: $color-primary;
+        border-bottom: 1px dotted lighten($color-primary, 10%);
 
         &:hover {
-            border-bottom: 1px solid $color-1;
+            border-bottom: 1px solid $color-primary;
         }
     }
 
@@ -79,8 +86,8 @@ Headings
 
 h1, h2, h3, h4, h5, h6 {
     font-family: $heading-font-family;
-    font-weight: $bold-weight;
-    color: $color-1;
+    font-weight: $heading-bold-weight;
+    color: $heading-font-color;
 }
 
 h1 {
@@ -101,22 +108,10 @@ h3 {
     margin-bottom: $gap;
 }
 
-h4 {
+h4,h5,h6 {
     font-size: $h4;
     line-height: $heading-line-height;
     margin-bottom: $gap / 1.5;
-}
-
-h5 {
-    font-size: $h5;
-    line-height: $heading-line-height;
-    margin-bottom: $gap / 2;
-}
-
-h6 {
-    font-size: $h6;
-    line-height: $heading-line-height;
-    margin-bottom: 0;
 }
 
 
@@ -127,7 +122,9 @@ Titles
 //* Entry Titles
 
 .entry-title {
-
+    #content & {
+        font-size: $h1;
+    }
 }
 
 h1.entry-title {
@@ -135,11 +132,12 @@ h1.entry-title {
 }
 
 h2.entry-title {
-
+    
+    
 }
 
 .entry-title a {
-
+    color: $heading-font-color;
 }
 
 //* Widget Titles

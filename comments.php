@@ -1,5 +1,5 @@
 <?php
-/* If a post password is required or no comments are given and comments/pings are closed, return. */
+// If a post password is required or no comments are given and comments/pings are closed, return.
 if ( post_password_required() || ( !have_comments() && !comments_open() && !pings_open() ) )
 	return;
 ?>
@@ -30,6 +30,11 @@ if ( post_password_required() || ( !have_comments() && !comments_open() && !ping
 
 	<?php locate_template( array( 'misc/comments-error.php' ), true ); // Loads the misc/comments-error.php template. ?>
 
-	<?php comment_form(); // Loads the comment form. ?>
+	<?php comment_form(
+		array(
+			'comment_notes_before' => '',
+  			'comment_notes_after' => '',
+		)
+	); // Loads the comment form. ?>
 
 </section><!-- #comments-template -->

@@ -1,8 +1,9 @@
+@charset "UTF-8";
 /*!
  * Theme Name:  Erik
  * Theme URI:   http://www.erik.joling.me/
  * Description: A Wordpress Theme developed for myself (Based on Hybrid Core framework)
- * Version:     0.1
+ * Version:     0.5
  * Author:      Erik Joling
  * Author URI:  http://www.erik.joling.me/
 
@@ -14,8 +15,11 @@
  * GitHub Theme URI: https://github.com/EJOweb/erik
  * GitHub Branch: 	 master
  */
+/* EJO Icons
+   v0.5 | 20150926
+*/
 /* EJO Reset
-   v0.2 | 20150925
+   v0.2.1 | 20150926
 */
 html {
   box-sizing: border-box;
@@ -419,6 +423,7 @@ th {
 }
 
 button,
+.button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
@@ -434,14 +439,15 @@ input[type="submit"] {
 Main typography
 -------------------------------------------------------------------*/
 html {
-  font-size: 100%;
+  font-size: 112.5%;
 }
 
 body {
   -webkit-font-smoothing: antialiased;
   font-family: "Roboto", arial, sans-serif;
   color: #333;
-  line-height: 1.4375;
+  line-height: 1.66667;
+  font-weight: 300;
 }
 
 /*------------------------------------------------------------------
@@ -465,7 +471,7 @@ video,
 object,
 embed,
 iframe {
-  margin-bottom: 1.4375rem;
+  margin-bottom: 1.5rem;
 }
 
 p:last-child,
@@ -494,15 +500,23 @@ Links
 -------------------------------------------------------------------*/
 a {
   transition: color 0.1s linear;
+  text-decoration: none;
+  color: #673ab7;
+}
+
+a:active,
+a:focus,
+a:hover {
+  color: #512da8;
 }
 
 .entry-content a, .textwidget a {
-  color: #00387b;
-  border-bottom: 1px dotted #004fae;
+  color: #673ab7;
+  border-bottom: 1px dotted #8259cb;
 }
 
 .entry-content a:hover, .textwidget a:hover {
-  border-bottom: 1px solid #00387b;
+  border-bottom: 1px solid #673ab7;
 }
 
 .entry-content a.button, .textwidget a.button {
@@ -514,59 +528,55 @@ a {
 Headings
 -------------------------------------------------------------------*/
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Roboto Slab", arial, sans-serif;
+  font-family: "Roboto Slab", georgia, serif;
   font-weight: 700;
-  color: #00387b;
+  color: #333;
 }
 
 h1 {
-  font-size: rem(26px);
-  line-height: 1.2;
-  margin-bottom: 1.4375rem;
+  font-size: 1.77778rem;
+  line-height: 1.125;
+  margin-bottom: 1.5rem;
 }
 
 h2 {
-  font-size: rem(23px);
-  line-height: 1.2;
-  margin-bottom: 1.4375rem;
+  font-size: 1.38889rem;
+  line-height: 1.125;
+  margin-bottom: 1.5rem;
 }
 
 h3 {
-  font-size: rem(20px);
-  line-height: 1.2;
-  margin-bottom: 1.4375rem;
+  font-size: 1.11111rem;
+  line-height: 1.125;
+  margin-bottom: 1.5rem;
 }
 
-h4 {
-  font-size: rem(17px);
-  line-height: 1.2;
-  margin-bottom: 0.95833rem;
-}
-
-h5 {
-  font-size: rem(14px);
-  line-height: 1.2;
-  margin-bottom: 0.71875rem;
-}
-
-h6 {
-  font-size: rem(14px);
-  line-height: 1.2;
-  margin-bottom: 0;
+h4, h5, h6 {
+  font-size: 1rem;
+  line-height: 1.125;
+  margin-bottom: 1rem;
 }
 
 /*------------------------------------------------------------------
 Titles
 -------------------------------------------------------------------*/
+#content .entry-title {
+  font-size: 1.77778rem;
+}
+
+.entry-title a {
+  color: #333;
+}
+
 /*------------------------------------------------------------------
 Font Styles
 -------------------------------------------------------------------*/
 b, strong {
-  font-weight: 700;
+  font-weight: 500;
 }
 
 b b, b strong, strong b, strong strong {
-  font-weight: 400;
+  font-weight: 300;
 }
 
 i, em, mark, cite {
@@ -634,25 +644,7 @@ ol {
 input[type="color"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="email"], input[type="month"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="time"], input[type="url"], input[type="week"], textarea,
 select[multiple=multiple],
 textarea {
-  background-color: #fff;
-  border: 1px solid #ccc;
-  border-radius: 3px;
-  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.06);
-  transition: border-color;
-  padding: 5px 7px;
-}
-
-input[type="color"]:hover, input[type="date"]:hover, input[type="datetime"]:hover, input[type="datetime-local"]:hover, input[type="email"]:hover, input[type="month"]:hover, input[type="number"]:hover, input[type="password"]:hover, input[type="search"]:hover, input[type="tel"]:hover, input[type="text"]:hover, input[type="time"]:hover, input[type="url"]:hover, input[type="week"]:hover, textarea:hover,
-select[multiple=multiple]:hover,
-textarea:hover {
-  border-color: #b3b3b3;
-}
-
-input[type="color"]:focus, input[type="date"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="email"]:focus, input[type="month"]:focus, input[type="number"]:focus, input[type="password"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="text"]:focus, input[type="time"]:focus, input[type="url"]:focus, input[type="week"]:focus, textarea:focus,
-select[multiple=multiple]:focus,
-textarea:focus {
-  border-color: #00387b;
-  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.06), 0 0 5px rgba(0, 44, 98, 0.7);
+  border: none;
 }
 
 input:checked + label {
@@ -667,7 +659,10 @@ button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
+  font-weight: 500;
   width: auto;
+  line-height: 1.66667;
+  background-color: transparent;
 }
 
 .button:hover,
@@ -680,13 +675,13 @@ input[type="reset"]:hover,
 input[type="reset"]:focus,
 input[type="submit"]:hover,
 input[type="submit"]:focus {
-  background-color: #002c62;
-  text-decoration: none;
+  text-decoration: underline;
 }
 
 img {
   display: block;
   max-width: 100%;
+  height: auto;
 }
 
 img.alignleft,
@@ -759,6 +754,89 @@ Other
 
 .screen-reader-text {
   display: none;
+}
+
+body {
+  background-color: #EEE;
+}
+
+#header {
+  background-color: #673ab7;
+  color: #fff;
+  text-align: center;
+  padding: 2.66667rem 0 2.33333rem;
+}
+
+#header .wrap {
+  margin: 0 auto;
+  max-width: 540px;
+}
+
+#main {
+  background-color: #fff;
+}
+
+#main .wrap {
+  margin: 0 auto;
+  max-width: 540px;
+}
+
+#content {
+  padding: 1rem 0;
+}
+
+#content article.entry {
+  padding: 1.5rem 0;
+}
+
+#content article.entry:not(:last-child) {
+  border-bottom: 1px solid #ccc;
+}
+
+#content article.entry .entry-byline {
+  margin-bottom: 0.33333rem;
+  font-size: 0.88889rem;
+}
+
+#content article.entry .entry-byline .category a {
+  font-weight: 500;
+  color: #424242;
+}
+
+#content article.entry .entry-content {
+  margin-bottom: 1rem;
+}
+
+#footer {
+  background-color: #EEE;
+  color: #424242;
+  text-align: center;
+  padding: 1.5rem 0;
+}
+
+#footer .wrap {
+  margin: 0 auto;
+  max-width: 540px;
+}
+
+#footer #toTop {
+  color: #424242;
+  cursor: pointer;
+}
+
+#footer #toTop:hover {
+  color: #333;
+}
+
+#footer #toTop:before {
+  display: inline-block;
+  font: normal normal normal 1rem/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  content: "";
+  padding-right: 0.33333rem;
 }
 
 /**
@@ -1051,4 +1129,280 @@ body .gform_wrapper form .gfield_error .validation_message {
 
 body .gform_wrapper form .gfield_error .gfield_label {
   color: #790000;
+}
+
+#branding {
+  margin-bottom: 1.5rem;
+}
+
+#branding h1 {
+  font-size: 2rem;
+  margin-bottom: 0;
+}
+
+#branding p {
+  font-size: 1.11111rem;
+  font-style: italic;
+  margin-bottom: 0;
+}
+
+#branding a {
+  color: #fff;
+}
+
+#menu-primary ul {
+  margin-bottom: -8px;
+}
+
+#menu-primary ul::after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+#menu-primary li {
+  display: inline-block;
+  margin: 0 2px 8px;
+}
+
+#menu-primary a {
+  display: block;
+  background-color: #512da8;
+  color: #fff;
+  line-height: 1;
+  text-transform: uppercase;
+  font-size: 0.88889rem;
+  padding: 0.66667rem 1.66667rem;
+}
+
+#menu-primary a:hover {
+  background-color: #472894;
+}
+
+.breadcrumbs {
+  font-size: 0.88889rem;
+}
+
+.breadcrumbs li {
+  display: inline-block;
+}
+
+.breadcrumbs a {
+  text-decoration: underline;
+}
+
+.breadcrumbs a:hover {
+  color: #673ab7;
+}
+
+.breadcrumbs .trail-item:not(.trail-end):after {
+  content: '>';
+  margin-left: 4px;
+  margin-right: 4px;
+}
+
+.breadcrumbs .trail-item.trail-end {
+  font-style: italic;
+}
+
+.pagination {
+  display: table;
+  width: 100%;
+}
+
+.pagination .prev,
+.pagination .next {
+  display: table-cell;
+  vertical-align: middle;
+  background-color: #512da8;
+  color: #fff;
+}
+
+.pagination .prev:hover,
+.pagination .next:hover {
+  background-color: #472894;
+}
+
+.pagination a {
+  display: block;
+  padding: 0.83333rem 1.11111rem;
+  color: #fff;
+  font-family: "Roboto Slab", georgia, serif;
+  line-height: 1.125;
+}
+
+.pagination .icon-wrap {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.pagination .link-wrap {
+  display: table-cell;
+  vertical-align: middle;
+  width: 100%;
+}
+
+.pagination .prev .icon-wrap {
+  text-align: left;
+  padding-left: 0.83333rem;
+}
+
+.pagination .prev .link-wrap {
+  text-align: left;
+}
+
+.pagination .prev a {
+  padding-left: 0.66667rem;
+}
+
+.pagination .next .icon-wrap {
+  text-align: right;
+  padding-right: 0.83333rem;
+}
+
+.pagination .next .link-wrap {
+  text-align: right;
+}
+
+.pagination .next a {
+  padding-right: 0.66667rem;
+}
+
+.pagination.two-way .prev,
+.pagination.two-way .next {
+  width: 50%;
+}
+
+.pagination.two-way .prev {
+  background-color: #673ab7;
+}
+
+.pagination.two-way .prev:hover {
+  background-color: #5c34a4;
+}
+
+.comment-respond {
+  border-left: 1px solid #ccc;
+  padding: 2rem;
+  padding-right: 0;
+  /* BOTTOM BARS ================================= */
+  /* active state */
+  /* HIGHLIGHTER ================================== */
+  /* active state */
+  /* ANIMATIONS ================ */
+}
+
+.comment-respond .comment-form-author,
+.comment-respond .comment-form-email {
+  position: relative;
+  margin-bottom: 45px;
+}
+
+.comment-respond .comment-form-comment,
+.comment-respond .form-submit {
+  display: none;
+}
+
+.comment-respond label {
+  color: #999;
+  font-size: 18px;
+  font-weight: normal;
+  position: absolute;
+  pointer-events: none;
+  left: 5px;
+  top: 10px;
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
+}
+
+.comment-respond input[type="color"], .comment-respond input[type="date"], .comment-respond input[type="datetime"], .comment-respond input[type="datetime-local"], .comment-respond input[type="email"], .comment-respond input[type="month"], .comment-respond input[type="number"], .comment-respond input[type="password"], .comment-respond input[type="search"], .comment-respond input[type="tel"], .comment-respond input[type="text"], .comment-respond input[type="time"], .comment-respond input[type="url"], .comment-respond input[type="week"], .comment-respond textarea {
+  border-bottom: 1px solid #ccc;
+  padding: 10px 10px 10px 5px;
+  display: block;
+  width: 300px;
+}
+
+.comment-respond input:focus ~ label,
+.comment-respond input:valid ~ label,
+.comment-respond input:invalid ~ label {
+  top: -20px;
+  font-size: 14px;
+  color: #5264AE;
+}
+
+.comment-respond .bar {
+  position: relative;
+  display: block;
+  width: 300px;
+}
+
+.comment-respond .bar:before, .comment-respond .bar:after {
+  content: '';
+  height: 2px;
+  width: 0;
+  bottom: 1px;
+  position: absolute;
+  background: #5264AE;
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
+}
+
+.comment-respond .bar:before {
+  left: 50%;
+}
+
+.comment-respond .bar:after {
+  right: 50%;
+}
+
+.comment-respond input:focus ~ .bar:before, .comment-respond input:focus ~ .bar:after {
+  width: 50%;
+}
+
+.comment-respond .highlight {
+  position: absolute;
+  height: 60%;
+  width: 100px;
+  top: 25%;
+  left: 0;
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.comment-respond input:focus ~ .highlight {
+  -webkit-animation: inputHighlighter 0.3s ease;
+  -moz-animation: inputHighlighter 0.3s ease;
+  animation: inputHighlighter 0.3s ease;
+}
+
+@-webkit-keyframes inputHighlighter {
+  from {
+    background: #5264AE;
+  }
+  to {
+    width: 0;
+    background: transparent;
+  }
+}
+
+@-moz-keyframes inputHighlighter {
+  from {
+    background: #5264AE;
+  }
+  to {
+    width: 0;
+    background: transparent;
+  }
+}
+
+@keyframes inputHighlighter {
+  from {
+    background: #5264AE;
+  }
+  to {
+    width: 0;
+    background: transparent;
+  }
 }

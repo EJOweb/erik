@@ -1,0 +1,18 @@
+#branding {
+	margin-bottom: rem(27);
+
+	h1 {
+		font-size: rem(36);
+		margin-bottom: 0;
+	}
+
+	p {
+		font-size: rem(20);
+		font-style: italic;
+		margin-bottom: 0;
+	}
+
+	a {
+		color: $color-primary-contrast;
+	}
+}

@@ -26,8 +26,8 @@ add_action( 'wp_print_styles', 'erik_remove_styles_and_scripts', 99 );
 add_action( 'wp_enqueue_scripts', 'erik_add_styles_and_scripts', 5 );
 
 //* Extensions
-include_once( THEME_LIB_DIR . 'extensions/erik-category-icon/index.php' );
-include_once( THEME_LIB_DIR . 'extensions/erik-category-color/index.php' );
+// include_once( THEME_LIB_DIR . 'extensions/erik-category-icon/index.php' );
+// include_once( THEME_LIB_DIR . 'extensions/erik-category-color/index.php' );
 
 /**
  * Registers custom image sizes for the theme. 
@@ -36,7 +36,8 @@ include_once( THEME_LIB_DIR . 'extensions/erik-category-color/index.php' );
  * @access public
  * @return void
  */
-function erik_register_image_sizes() {
+function erik_register_image_sizes() 
+{
 	add_image_size( 'post_header_small', 720, 240, true );
 }
 
@@ -47,7 +48,8 @@ function erik_register_image_sizes() {
  * @access public
  * @return void
  */
-function erik_register_menus() {
+function erik_register_menus() 
+{
 	register_nav_menu( 'primary', 'Primary' );
 }
 
@@ -58,33 +60,17 @@ function erik_register_menus() {
  * @access public
  * @return void
  */
-function erik_register_sidebars() {
+function erik_register_sidebars() 
+{
 
-	// hybrid_register_sidebar(
-	// 	array(
-	// 		'id'          => 'sidebar-primary',
-	// 		'name'        => 'Zijbalk - Standaard',
-	// 		'description' => 'Sleep hier widgets naar toe',
-	// 		'before_title'  => '<h3 class="widget-title"><span>',
-	// 		'after_title'   => '</span></h3>'
-	// 	)
-	// );
-
-	// hybrid_register_sidebar(
-	// 	array(
-	// 		'id'          => 'footer',
-	// 		'name'        => 'Footer',
-	// 		'description' => 'Footer...'
-	// 	)
-	// );
 }
 
 
 /**
  * Remove scripts & stylesheets for the front end.
  */
-function erik_remove_styles_and_scripts() {
-
+function erik_remove_styles_and_scripts() 
+{
 	/* Gets ".min" suffix. */
 	$suffix = hybrid_get_min_suffix();
 }
@@ -92,8 +78,8 @@ function erik_remove_styles_and_scripts() {
 /**
  * Load scripts & styles for the front end.
  */
-function erik_add_styles_and_scripts() {
-
+function erik_add_styles_and_scripts() 
+{
 	$suffix = hybrid_get_min_suffix();
 
 	//* Scripts
@@ -103,8 +89,7 @@ function erik_add_styles_and_scripts() {
 	//* Styles
 
 	/* Load Font */
-	// wp_enqueue_style( 'erik-fonts', '//fonts.googleapis.com/css?family=Open+Sans:400,400italic,700,700italic' );
-	wp_enqueue_style( 'erik-fonts', '//fonts.googleapis.com/css?family=Roboto:300,400,400italic,700,700italic' );
+	wp_enqueue_style( 'erik-fonts', 'https://fonts.googleapis.com/css?family=Roboto:300,300italic,500,500italic|Roboto+Slab:700' );
 
 	/* Load active theme stylesheet. */
 	wp_enqueue_style( 'style', get_stylesheet_uri() );

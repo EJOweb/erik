@@ -1,0 +1,26 @@
+#content {
+	padding: 1rem 0;
+
+	article.entry {
+		padding: $gap 0;
+
+		&:not(:last-child) {
+			border-bottom: $base-border;
+		}
+
+		.entry-byline {
+			margin-bottom: rem(6);
+			font-size: $small-font-size;
+
+			.category a {
+				// text-transform: uppercase;
+				font-weight: $bold-weight;
+				color: $color-dark-b;
+			}
+		}
+
+		.entry-content {
+			margin-bottom: 1rem;
+		}
+	}
+}

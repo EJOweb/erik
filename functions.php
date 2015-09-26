@@ -79,4 +79,38 @@ function erik_theme_setup()
 
 	//* Filter excerpt_more
 	add_filter( 'excerpt_more', function() { return '...'; } );
+
+	//* Remove URL from comment form
+	add_filter('comment_form_default_fields', 'erik_comment_remove_url');
+}
+
+function erik_comment_remove_url($fields)
+{
+	unset($fields['url']);
+
+	$fields['author'] = '<p class="comment-form-author">' . 
+							'<input id="author" name="author" type="text" value="" size="30" aria-required="true" required="required" />' .
+							'<span class="highlight"></span>' .
+      						'<span class="bar"></span>' .
+							'<label for="author">Naam <span class="required">*</span></label> ' .
+						'</p>';
+
+	$fields['email'] = 	'<p class="comment-form-email">' . 
+							'<input id="email" name="email" type="email" value="" size="30" aria-describedby="email-notes" aria-required="true" required="required" />' .
+							'<span class="highlight"></span>' .
+      						'<span class="bar"></span>' .
+							'<label for="email">E-mail <span class="required">*</span></label> ' .
+						'</p>';
+
+	// $fields['author'] = '<p class="comment-form-author">' .
+	// 						'<input id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30"' . $aria_req . ' />' . 
+	// 						'<label for="author">' . __( 'Name', 'domainreference' ) . '</label> ' . ( $req ? '<span class="required">*</span>' : '' ) .
+	// 					'</p>';
+
+	// $fields['email'] = 	'<p class="comment-form-email">' .
+ 	// 						'<input id="email" name="email" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" size="30"' . $aria_req . ' />' . 
+ 	// 						'<label for="email">' . __( 'Email', 'domainreference' ) . '</label> ' . ( $req ? '<span class="required">*</span>' : '' ) .
+	// 					'</p>';
+	
+	return $fields;
 }

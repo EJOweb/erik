@@ -2,7 +2,7 @@
  * Theme Name:  Erik
  * Theme URI:   http://www.erik.joling.me/
  * Description: A Wordpress Theme developed for myself (Based on Hybrid Core framework)
- * Version:     0.1
+ * Version:     0.5
  * Author:      Erik Joling
  * Author URI:  http://www.erik.joling.me/
 
@@ -20,6 +20,8 @@
 @import "helpers/mixins/media-query";
 @import "helpers/mixins/icons";
 @import "helpers/functions/strip-unit";
+@import "helpers/functions/px-to-rem";
+@import "helpers/resources/social-media";
 
 //* Config
 @import "config/typography-settings";
@@ -42,13 +44,19 @@
 @import "base/images";
 @import "base/common";
 
+//* Layout
+@import "layout/body";
+@import "layout/header";
+@import "layout/main";
+@import "layout/content";
+@import "layout/footer";
+
 //* Plugins
 @import "vendors/gravity-forms/gravity-forms"; //* Gravity Forms
 
-//* Layout
-// @import "layout/header";
-// @import "layout/main";
-// @import "layout/footer";
-
 // //* Modules (Micro level)
-// @import "modules/.";
+@import "modules/branding";
+@import "modules/menu-primary";
+@import "modules/breadcrumbs";
+@import "modules/pagination";
+@import "modules/comments";
