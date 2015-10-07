@@ -1,11 +1,13 @@
 //* Colors
 $color-primary: #673ab7;
 $color-primary-b: #512da8;
-$color-secondary: #EEE;
+$color-secondary: #eeeeee;
+$color-ui: #999999;
 
 //* Active
 $color-primary-active: darken( $color-primary, 5% );
 $color-primary-b-active: darken( $color-primary-b, 5% );
+
 
 $color-light: #fff;
 $color-dark: #333;
@@ -14,6 +16,7 @@ $color-dark-b: #424242;
 //* Contrasted colors
 $color-primary-contrast: $color-light;
 $color-secondary-contrast: $color-dark-b;
+$color-ui-contrast: #cccccc;
 
 //* Font
 $base-font-color: $color-dark;

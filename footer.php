@@ -4,7 +4,7 @@
 		<footer <?php hybrid_attr( 'footer' ); ?>>
 			<div class="wrap">
 
-				<a class="button" id="toTop">Naar Boven</a>
+				<a id="toTop">Naar Boven</a>
 
 			</div><!-- .wrap -->
 		</footer><!-- #footer -->

@@ -2,6 +2,7 @@
 select[multiple=multiple],
 textarea {
   border: none;
+  background-color: transparent;
   
   &:hover {
     // border-color: darken($base-border-color, 10%);

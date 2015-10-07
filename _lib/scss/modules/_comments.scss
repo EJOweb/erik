@@ -1,105 +1,201 @@
 //* New comment
 
+#comments-template {
+	#comments {
+		.comments-title {}
+		.comment-list {
+			.comment {}
+		}
+	}
+
+	#respond {
+		#reply-title {}
+		#commentform {}
+	}
+}
+
+#comments {
+	position: relative;
+
+	.comments-title {
+		font-size: $small-font-size;
+		text-transform: uppercase;
+		font-family: $base-font-family;
+		line-height: $base-line-height;
+		font-weight: $normal-weight;
+		margin-bottom: 2px;
+		float: right;
+	}
+}
+
+//* Comment list and comments
+.comment-list {
+	clear: both;
+
+	.comment-respond, 
+	.children {
+		margin-left: 2rem;
+	}
+
+	.comment {
+		article {
+			border-left: $base-border;
+			border-top: $base-border;
+			border-bottom: $base-border;
+			margin-bottom: -1px;
+			padding: 2rem;
+			padding-right: 0;
+		}
+		
+		.comment-meta {
+			margin-bottom: 1em;
+			font-size: rem(15);
+			line-height: 1;
+
+			.comment-author {
+				font-size: $base-font-size;
+				font-family: $heading-font-family;
+				font-weight: $bold-weight;
+				font-style: normal;
+				margin-right: 1px;
+			}
+
+			.comment-published {
+				margin: 0 1px;
+			}
+
+			.comment-reply-link {
+				margin: 0 1px;
+				&:before {
+					// @include icon('fa-reply');
+					// padding-right: 4px;
+				}
+			}
+		}
+
+		.comment-content {
+			font-size: $small-font-size;
+			line-height: 1.625;
+
+			p:not(:last-child) {
+				margin-bottom: 0.75em;
+			}
+		}
+
+		.sce-comment {
+
+		}
+
+		.sce-edit-comment {
+			.sce-comment-textarea {
+				margin-top: 0.75em;
+				margin-bottom: 0.75em;
+			}
+		}
+
+		//* Simple edit textarea
+		textarea {
+			box-sizing: border-box;
+			border-bottom: $base-border;
+			padding: rem(5) 0;
+			display:block;
+
+			&:focus {
+				border-bottom-width: 2px;
+				border-color: $color-primary;
+				margin-bottom: -1px;
+			}
+		}
+	}
+}
+
+//* Reply styling
 .comment-respond {
 	border-left: $base-border;
+	border-top: $base-border;
+	border-bottom: $base-border;
+	margin-bottom: -1px;
 	padding: 2rem;
 	padding-right: 0;
+	position: relative;
+
+	.comment-reply-title {
+		margin-bottom: 2rem;
+	}
+
+	#cancel-comment-reply-link {
+		font-family: $base-font-family;
+		font-weight: $bold-weight;
+		position: absolute;
+		right: 0;
+		margin-top: 2px;
+
+		.fa:hover {
+			color: $color-primary-active;
+		}
+
+
+
+		// &:before {
+		// 	@include icon('fa-remove');
+		// 	padding-right: 3px;
+		// }
+	}
 
 	.comment-form-author,
 	.comment-form-email {
 		position: relative;
-		margin-bottom: 45px; 
+		margin-bottom: 2rem;
 	}
 
-	.comment-form-comment,
+	.comment-form-comment {
+		position: relative;
+		margin-bottom: 1.5rem;
+	}
+
 	.form-submit {
-		display: none;
+		margin-bottom: 0;
 	}
-
-
 
 	label {
-		color:#999; 
-		font-size:18px;
-		font-weight:normal;
+		color: $color-ui;
 		position:absolute;
-		pointer-events:none;
-		left:5px;
-		top:10px;
+		pointer-events: none;
+		left: 0px;
+		top: 2px;
 		transition:0.2s ease all; 
 		-moz-transition:0.2s ease all; 
 		-webkit-transition:0.2s ease all;
-	}
 
-	#{$all-text-inputs} {
+		&.superscript,
+		.show-if-no-js & {
+			top: - rem(18);
+			font-size: rem(14);
+			// color: inherit;
+			// font-weight: $bold-weight;
+		}
+	}
+}
+
+	#{$all-text-inputs},
+	textarea {
+		box-sizing: border-box;
 		border-bottom: $base-border;
-		padding: 10px 10px 10px 5px;
+		padding: rem(5) 0;
 		display:block;
-		width:300px;
+
+		&:focus {
+			border-bottom-width: 2px;
+			border-color: $color-primary;
+			margin-bottom: -1px;
+		}
 	}
 
-	input:focus ~ label, 
-	input:valid ~ label,
-	input:invalid ~ label {
-		top:-20px;
-		font-size:14px;
-		color:#5264AE;
+	//* Textarea margin-correction (haven't found the reason yet)
+	textarea:focus {
+		margin-bottom: 0;
 	}
 
-	/* BOTTOM BARS ================================= */
-	.bar 	{ position:relative; display:block; width:300px; }
-	.bar:before, .bar:after 	{
-	  content:'';
-	  height:2px; 
-	  width:0;
-	  bottom:1px; 
-	  position:absolute;
-	  background:#5264AE; 
-	  transition:0.2s ease all; 
-	  -moz-transition:0.2s ease all; 
-	  -webkit-transition:0.2s ease all;
-	}
-	.bar:before {
-	  left:50%;
-	}
-	.bar:after {
-	  right:50%; 
-	}
-
-	/* active state */
-	input:focus ~ .bar:before, input:focus ~ .bar:after {
-	  width:50%;
-	}
-
-	/* HIGHLIGHTER ================================== */
-	.highlight {
-	  position:absolute;
-	  height:60%; 
-	  width:100px; 
-	  top:25%; 
-	  left:0;
-	  pointer-events:none;
-	  opacity:0.5;
-	}
-
-	/* active state */
-	input:focus ~ .highlight {
-	  -webkit-animation:inputHighlighter 0.3s ease;
-	  -moz-animation:inputHighlighter 0.3s ease;
-	  animation:inputHighlighter 0.3s ease;
-	}
-
-	/* ANIMATIONS ================ */
-	@-webkit-keyframes inputHighlighter {
-		from { background:#5264AE; }
-	  	to 	{ width:0; background:transparent; }
-	}
-	@-moz-keyframes inputHighlighter {
-		from { background:#5264AE; }
-	  	to 	{ width:0; background:transparent; }
-	}
-	@keyframes inputHighlighter {
-		from { background:#5264AE; }
-	  	to 	{ width:0; background:transparent; }
-	}
+.sce-textarea {
+	display: block !important;
 }

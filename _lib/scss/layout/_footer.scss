@@ -2,7 +2,7 @@
 	background-color: $color-secondary;
 	color: $color-secondary-contrast;
 	text-align: center;
-	padding: $gap 0;
+	padding: $base-gap 0;
 	
 	.wrap {
 		margin: 0 auto;
@@ -10,6 +10,7 @@
 	}
 
 	#toTop {
+		font-weight: $bold-weight;
 		color: $color-secondary-contrast;
 		cursor: pointer;
 
@@ -18,7 +19,7 @@
 		}
 		
 		&:before {
-			@include icon( 'fa-var-arrow-circle-up' );
+			@include icon( 'fa-arrow-circle-up' );
 			padding-right: rem(6);
 		}
 	}

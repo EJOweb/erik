@@ -3,14 +3,19 @@
  */
 
 @mixin button($color: $color-primary) {
-	font-weight: $bold-weight;
+	display: inline-block;
 	width: auto;
+	font-weight: $bold-weight;
 	line-height: $base-line-height;
-	background-color: transparent;
+	padding: rem(2) rem(12);
+
+	background-color: $color-primary;
+	color: $color-primary-contrast;
 	
 	&:hover,
 	&:focus {
-		text-decoration: underline;
+		background-color: $color-primary-b;
+		color: $color-primary-contrast;
 	}
 }
 
@@ -20,4 +25,12 @@ input[type="button"],
 input[type="reset"],
 input[type="submit"] {
 	@include button();
+
+	+ .button,
+	+ button,
+	+ input[type="button"], 
+	+ input[type="reset"],
+	+ input[type="submit"] {
+		margin-left: 4px;
+	}
 }

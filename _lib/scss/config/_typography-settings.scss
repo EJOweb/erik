@@ -1,27 +1,39 @@
+//* Base number for bourbon rem() and em() function
+$em-base: 18px;
+
+//* Font size in percentage for HTML tag
+$root-font-size: $em-base / 16px * 100%;
+
+//* Default Font Size & line-height
+$base-font-size: rem($em-base);
+$base-line-height: strip-unit(30px / $em-base);
+$small-line-height: strip-unit(21px / $em-base);
+
+//* Small and big font size
+$small-font-size: rem($em-base - 2px);
+$big-font-size: rem($em-base + 2px);
+
+//* Heading Sizes & line-height
+$heading-line-height: 1.125;
+$h1: rem(32px);
+$h2: rem(25px);
+$h3: rem(20px);
+
 //* Typography
 $base-font-family: 'Roboto', arial, sans-serif;
 $heading-font-family: 'Roboto Slab', georgia, serif;
 
-//* Default Font Size & line-height
-$em-base: 18px;
-$base-font-size: $em-base;
-$base-line-height: strip-unit(30px) / strip-unit($base-font-size);
-
-$big-font-size: rem($base-font-size + 2px);
-$small-font-size: rem($base-font-size - 2px);
-
-//* Default font weights
+//* Font Weights
 $bold-weight: 500;
 $normal-weight: 300;
-
-//* Heading Sizes & line-height
-$h1: rem(32px);
-$h2: rem(25px);
-$h3: rem(20px);
-$h4: rem(18px);
-$heading-line-height: 1.125;
 $heading-bold-weight: 700;
 
 //* Elements which contain structured typography
 $content-blocks:	'.entry-content',
 					'.textwidget';
+
+//* Other Sizes
+// $base-gap: $base-line-height * 1em;
+// $heading-gap: $heading-line-height * 1em;
+$base-gap: 1em;
+$heading-gap: 1rem;

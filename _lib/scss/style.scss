@@ -2,7 +2,7 @@
  * Theme Name:  Erik
  * Theme URI:   http://www.erik.joling.me/
  * Description: A Wordpress Theme developed for myself (Based on Hybrid Core framework)
- * Version:     0.5
+ * Version:     0.5.1
  * Author:      Erik Joling
  * Author URI:  http://www.erik.joling.me/
 
@@ -15,25 +15,29 @@
  * GitHub Branch: 	 master
  */
 
+//* Bourbon frameworks
+@import "helpers/bourbon/bourbon";
+@import "helpers/bourbon-edit/strip-unit";
+
 //* Helpers
-@import "helpers/mixins/clearfix";
-@import "helpers/mixins/media-query";
-@import "helpers/mixins/icons";
-@import "helpers/functions/strip-unit";
-@import "helpers/functions/px-to-rem";
-@import "helpers/resources/social-media";
+@import "helpers/ejo-toolkit/icons/core";
+@import "helpers/ejo-toolkit/icons/icons";
+@import "helpers/ejo-toolkit/social-media/colors";
 
 //* Config
 @import "config/typography-settings";
-@import "config/space-settings";
-@import "config/responsive-settings";
 @import "config/color-settings";
 @import "config/path-settings";
 @import "config/form-settings";
 @import "config/border-settings";
 
+//* Grid settings
+@import "helpers/neat/neat-helpers";
+@import "config/grid-settings";
+@import "helpers/neat/neat";
+
 //* Reset
-@import "vendors/ejo-reset/reset";
+@import "helpers/ejo-toolkit/reset/reset";
 
 //* Base styles
 @import "base/typography";
@@ -41,7 +45,6 @@
 @import "base/lists";
 @import "base/forms";
 @import "base/buttons";
-@import "base/images";
 @import "base/common";
 
 //* Layout
@@ -52,7 +55,7 @@
 @import "layout/footer";
 
 //* Plugins
-@import "vendors/gravity-forms/gravity-forms"; //* Gravity Forms
+@import "helpers/ejo-toolkit/gravity-forms/gravity-forms";
 
 // //* Modules (Micro level)
 @import "modules/branding";

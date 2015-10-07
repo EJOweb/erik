@@ -24,25 +24,12 @@ Alignment
     float: none;
 }
 
-
-/*------------------------------------------------------------------
-Media
--------------------------------------------------------------------*/
-
-audio,
-video,
-object,
-embed,
-iframe {
-    max-width: 100%;    
+img.alignleft, 
+img.alignright {
+    border-radius: $base-border-radius;
+    border: $base-border;
+    display: inline;
 }
-
-img.wp-smiley {
-    max-height: 12px;
-    background: transparent;
-    display:    inline;
-}
-
 
 /*------------------------------------------------------------------
 WP classes
@@ -73,4 +60,9 @@ Other
 
 .screen-reader-text {
     display: none;
+}
+
+img.wp-smiley,
+img.emoji {
+    display:    inline;
 }

@@ -88,19 +88,19 @@ function erik_comment_remove_url($fields)
 {
 	unset($fields['url']);
 
-	$fields['author'] = '<p class="comment-form-author">' . 
-							'<input id="author" name="author" type="text" value="" size="30" aria-required="true" required="required" />' .
-							'<span class="highlight"></span>' .
-      						'<span class="bar"></span>' .
-							'<label for="author">Naam <span class="required">*</span></label> ' .
-						'</p>';
+	// $fields['author'] = '<p class="comment-form-author">' . 
+	// 						'<input id="author" name="author" type="text" value="" size="30" aria-required="true" required="required" />' .
+	// 						'<span class="highlight"></span>' .
+ //      						'<span class="bar"></span>' .
+	// 						'<label for="author">Naam <span class="required">*</span></label> ' .
+	// 					'</p>';
 
-	$fields['email'] = 	'<p class="comment-form-email">' . 
-							'<input id="email" name="email" type="email" value="" size="30" aria-describedby="email-notes" aria-required="true" required="required" />' .
-							'<span class="highlight"></span>' .
-      						'<span class="bar"></span>' .
-							'<label for="email">E-mail <span class="required">*</span></label> ' .
-						'</p>';
+	// $fields['email'] = 	'<p class="comment-form-email">' . 
+	// 						'<input id="email" name="email" type="email" value="" size="30" aria-describedby="email-notes" aria-required="true" required="required" />' .
+	// 						'<span class="highlight"></span>' .
+ //      						'<span class="bar"></span>' .
+	// 						'<label for="email">E-mail <span class="required">*</span></label> ' .
+	// 					'</p>';
 
 	// $fields['author'] = '<p class="comment-form-author">' .
 	// 						'<input id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30"' . $aria_req . ' />' . 
@@ -113,4 +113,24 @@ function erik_comment_remove_url($fields)
 	// 					'</p>';
 	
 	return $fields;
+}
+/**
+ * Simple function to show comment info of a post
+ * Output: [delimer] [link]Number of comments[/link]
+ */
+function ejo_show_comments_info()
+{
+	if (get_comments_number() > 0) :
+
+		echo '<span class="delimiter">&bullet;</span>';
+
+		comments_popup_link( 
+			'', 
+			number_format_i18n( 1 ) . ' reactie', 
+			'% reacties', 
+			'comments-link', 
+			'' 
+		); 
+
+	endif; // END check comments
 }
