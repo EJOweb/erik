@@ -1,22 +1,27 @@
+//* Main Colors
 #footer {
 	background-color: $color-secondary;
 	color: $color-secondary-contrast;
-	text-align: center;
-	padding: $base-gap 0;
-	
-	.wrap {
-		margin: 0 auto;
-		max-width: $max-width;
-	}
 
-	#toTop {
-		font-weight: $bold-weight;
+	a {
 		color: $color-secondary-contrast;
-		cursor: pointer;
-
 		&:hover {
 			color: $base-font-color;
 		}
+	}
+}
+
+//* Spacing
+#footer {
+	text-align: center;
+	padding: $base-gap 0;
+}
+
+//* Other
+#footer {
+	#toTop {
+		font-weight: $bold-weight;
+		cursor: pointer;
 		
 		&:before {
 			@include icon( 'fa-arrow-circle-up' );

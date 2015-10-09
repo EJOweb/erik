@@ -1,0 +1,15 @@
+#header,
+#main,
+#footer {
+	padding-left: $gutter;
+	padding-right: $gutter;
+
+	@include media($barebones) {
+		padding-left: 1rem;
+		padding-right: 1rem;
+	}
+
+	> .wrap {
+		@include outer-container();
+	}
+}

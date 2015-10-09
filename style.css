@@ -3,7 +3,7 @@
  * Theme Name:  Erik
  * Theme URI:   http://www.erik.joling.me/
  * Description: A Wordpress Theme developed for myself (Based on Hybrid Core framework)
- * Version:     0.5.1
+ * Version:     0.5.2
  * Author:      Erik Joling
  * Author URI:  http://www.erik.joling.me/
 
@@ -503,6 +503,12 @@ html {
   font-size: 112.5%;
 }
 
+@media screen and (max-width: 380px) {
+  html {
+    font-size: 100%;
+  }
+}
+
 body {
   -webkit-font-smoothing: antialiased;
   font-family: "Roboto", arial, sans-serif;
@@ -823,6 +829,38 @@ img.emoji {
   display: inline;
 }
 
+#header,
+#main,
+#footer {
+  padding-left: 36px;
+  padding-right: 36px;
+}
+
+@media screen and (max-width: 380px) {
+  #header,
+  #main,
+  #footer {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+#header > .wrap,
+#main > .wrap,
+#footer > .wrap {
+  max-width: 540px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#header > .wrap::after,
+#main > .wrap::after,
+#footer > .wrap::after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
 body {
   background-color: #eeeeee;
 }
@@ -830,22 +868,23 @@ body {
 #header {
   background-color: #673ab7;
   color: #fff;
+}
+
+#header a {
+  color: #fff;
+}
+
+#header a:hover {
+  color: #eeeeee;
+}
+
+#header {
   text-align: center;
   padding: 2.66667rem 0 2.33333rem;
 }
 
-#header .wrap {
-  margin: 0 auto;
-  max-width: 540px;
-}
-
 #main {
   background-color: #fff;
-}
-
-#main .wrap {
-  margin: 0 auto;
-  max-width: 540px;
 }
 
 #content {
@@ -968,23 +1007,24 @@ body {
 #footer {
   background-color: #eeeeee;
   color: #424242;
+}
+
+#footer a {
+  color: #424242;
+}
+
+#footer a:hover {
+  color: #333;
+}
+
+#footer {
   text-align: center;
   padding: 1em 0;
 }
 
-#footer .wrap {
-  margin: 0 auto;
-  max-width: 540px;
-}
-
 #footer #toTop {
   font-weight: 500;
-  color: #424242;
   cursor: pointer;
-}
-
-#footer #toTop:hover {
-  color: #333;
 }
 
 #footer #toTop:before {
@@ -1302,10 +1342,6 @@ body .gform_wrapper form .gfield_error .gfield_label {
   margin-bottom: 0;
 }
 
-#branding a {
-  color: #fff;
-}
-
 #menu-primary ul {
   margin-bottom: -8px;
 }
@@ -1333,6 +1369,7 @@ body .gform_wrapper form .gfield_error .gfield_label {
 
 #menu-primary a:hover {
   background-color: #472894;
+  color: #fff;
 }
 
 .breadcrumbs {
@@ -1437,6 +1474,34 @@ body .gform_wrapper form .gfield_error .gfield_label {
   background-color: #5c34a4;
 }
 
+#comments .comment article,
+.comment-respond {
+  padding-left: 2rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+@media screen and (max-width: 380px) {
+  #comments .comment article,
+  .comment-respond {
+    padding-left: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+}
+
+#comments .children,
+#comments .comment-respond {
+  margin-left: 2rem;
+}
+
+@media screen and (max-width: 580px) {
+  #comments .children,
+  #comments .comment-respond {
+    margin-left: 1rem;
+  }
+}
+
 #comments {
   position: relative;
 }
@@ -1451,31 +1516,24 @@ body .gform_wrapper form .gfield_error .gfield_label {
   float: right;
 }
 
-.comment-list {
+#comments .comment-list {
   clear: both;
 }
 
-.comment-list .comment-respond,
-.comment-list .children {
-  margin-left: 2rem;
-}
-
-.comment-list .comment article {
+#comments .comment article {
   border-left: 1px solid #ccc;
   border-top: 1px solid #ccc;
   border-bottom: 1px solid #ccc;
   margin-bottom: -1px;
-  padding: 2rem;
-  padding-right: 0;
 }
 
-.comment-list .comment .comment-meta {
+#comments .comment .comment-meta {
   margin-bottom: 1em;
   font-size: 0.83333rem;
   line-height: 1;
 }
 
-.comment-list .comment .comment-meta .comment-author {
+#comments .comment .comment-meta .comment-author {
   font-size: 1rem;
   font-family: "Roboto Slab", georgia, serif;
   font-weight: 500;
@@ -1483,36 +1541,31 @@ body .gform_wrapper form .gfield_error .gfield_label {
   margin-right: 1px;
 }
 
-.comment-list .comment .comment-meta .comment-published {
+#comments .comment .comment-meta .comment-published {
   margin: 0 1px;
 }
 
-.comment-list .comment .comment-meta .comment-reply-link {
+#comments .comment .comment-meta .comment-reply-link {
   margin: 0 1px;
 }
 
-.comment-list .comment .comment-content {
+#comments .comment .comment-content {
   font-size: 0.88889rem;
   line-height: 1.625;
 }
 
-.comment-list .comment .comment-content p:not(:last-child) {
+#comments .comment .comment-content p:not(:last-child) {
   margin-bottom: 0.75em;
 }
 
-.comment-list .comment .sce-edit-comment .sce-comment-textarea {
-  margin-top: 0.75em;
-  margin-bottom: 0.75em;
-}
-
-.comment-list .comment textarea {
+#comments .comment textarea {
   box-sizing: border-box;
   border-bottom: 1px solid #ccc;
   padding: 0.27778rem 0;
   display: block;
 }
 
-.comment-list .comment textarea:focus {
+#comments .comment textarea:focus {
   border-bottom-width: 2px;
   border-color: #673ab7;
   margin-bottom: -1px;
@@ -1523,8 +1576,6 @@ body .gform_wrapper form .gfield_error .gfield_label {
   border-top: 1px solid #ccc;
   border-bottom: 1px solid #ccc;
   margin-bottom: -1px;
-  padding: 2rem;
-  padding-right: 0;
   position: relative;
 }
 
@@ -1593,8 +1644,4 @@ textarea:focus {
 
 textarea:focus {
   margin-bottom: 0;
-}
-
-.sce-textarea {
-  display: block !important;
 }

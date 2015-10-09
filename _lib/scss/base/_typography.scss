@@ -3,6 +3,10 @@ Main typography
 -------------------------------------------------------------------*/
 html {
     font-size: $root-font-size;
+
+    @include media($barebones) {
+        font-size: $small-root-font-size;
+    }
 }
 
 body {

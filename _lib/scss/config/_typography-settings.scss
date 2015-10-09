@@ -3,6 +3,7 @@ $em-base: 18px;
 
 //* Font size in percentage for HTML tag
 $root-font-size: $em-base / 16px * 100%;
+$small-root-font-size: ($em-base - 2px) / 16px * 100%;
 
 //* Default Font Size & line-height
 $base-font-size: rem($em-base);
