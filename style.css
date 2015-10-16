@@ -3,7 +3,7 @@
  * Theme Name:  Erik
  * Theme URI:   http://www.erik.joling.me/
  * Description: A Wordpress Theme developed for myself (Based on Hybrid Core framework)
- * Version:     0.5.2
+ * Version:     0.5.3
  * Author:      Erik Joling
  * Author URI:  http://www.erik.joling.me/
 
@@ -600,33 +600,46 @@ h1, h2, h3, h4, h5, h6 {
   color: #333;
 }
 
+h1:first-child, h2:first-child, h3:first-child, h4:first-child, h5:first-child, h6:first-child {
+  margin-top: 0;
+}
+
 h1 {
   font-size: 1.77778rem;
   line-height: 1.125;
+  margin-top: 1em;
   margin-bottom: 1rem;
 }
 
 h2 {
-  font-size: 1.38889rem;
+  font-size: 1.33333rem;
   line-height: 1.125;
-  margin-bottom: 1rem;
+  margin-top: 1.25em;
+  margin-bottom: 1em;
 }
 
 h3 {
   font-size: 1.11111rem;
   line-height: 1.125;
-  margin-bottom: 1rem;
+  margin-top: 1.25em;
+  margin-bottom: 0.5em;
 }
 
 h4, h5, h6 {
   font-size: 1rem;
   line-height: 1.66667;
-  margin-bottom: 1em;
+  margin-top: 1.25em;
+  margin-bottom: 0.5em;
 }
 
 /*------------------------------------------------------------------
 Titles
 -------------------------------------------------------------------*/
+.entry-title {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
 #content .entry-title {
   font-size: 1.77778rem;
 }
@@ -827,6 +840,7 @@ Other
 img.wp-smiley,
 img.emoji {
   display: inline;
+  max-height: 0.9em;
 }
 
 #header,
@@ -983,7 +997,7 @@ body {
   font-style: italic;
 }
 
-.plural #content article.format-quote blockquote {
+#content article.format-quote blockquote:last-child {
   padding-bottom: 0.33333rem;
 }
 
@@ -1333,6 +1347,7 @@ body .gform_wrapper form .gfield_error .gfield_label {
 
 #branding h1 {
   font-size: 2rem;
+  margin-top: 0;
   margin-bottom: 0;
 }
 

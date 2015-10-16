@@ -79,7 +79,8 @@
 			padding-top: rem(9);
 			padding-bottom: rem(24);
 
-			.plural & {
+			&:last-child {
+			// .plural & {
 				padding-bottom: rem(6);
 			}
 

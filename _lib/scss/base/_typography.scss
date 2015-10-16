@@ -92,30 +92,37 @@ h1, h2, h3, h4, h5, h6 {
     font-family: $heading-font-family;
     font-weight: $heading-bold-weight;
     color: $heading-font-color;
+    &:first-child {
+        margin-top: 0;
+    }
 }
 
 h1 {
     font-size: $h1;
     line-height: $heading-line-height;
-    margin-bottom: $heading-gap;
+    margin-top: 1em;
+    margin-bottom: 1rem;
 }
 
 h2 {
     font-size: $h2;
     line-height: $heading-line-height;
-    margin-bottom: $heading-gap;
+    margin-top: 1.25em;
+    margin-bottom: 1em;
 }
 
 h3 {
     font-size: $h3;
     line-height: $heading-line-height;
-    margin-bottom: $heading-gap;
+    margin-top: 1.25em;
+    margin-bottom: 0.5em;
 }
 
 h4,h5,h6 {
     font-size: $base-font-size;
     line-height: $base-line-height;
-    margin-bottom: $base-gap;
+    margin-top: 1.25em;
+    margin-bottom: 0.5em;
 }
 
 
@@ -126,6 +133,8 @@ Titles
 //* Entry Titles
 
 .entry-title {
+    margin-top: 0;
+    margin-bottom: 1rem;
     #content & {
         font-size: $h1;
     }
