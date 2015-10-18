@@ -122,10 +122,16 @@
 		}
 	}
 
+	.comment-form-legit,
 	.comment-form-author,
 	.comment-form-email {
 		position: relative;
 		margin-bottom: 2rem;
+	}
+
+	//* Hide spamfield
+	.comment-form-legit {
+		display: none;
 	}
 
 	.comment-form-comment {

@@ -25,6 +25,10 @@ add_action( 'wp_print_styles', 'erik_remove_styles_and_scripts', 99 );
 //* Add custom styles & scripts
 add_action( 'wp_enqueue_scripts', 'erik_add_styles_and_scripts', 5 );
 
+//* Spam prevention
+add_action('preprocess_comment', 'preprocess_new_comment');
+
+
 //* Extensions
 // include_once( THEME_LIB_DIR . 'extensions/erik-category-icon/index.php' );
 // include_once( THEME_LIB_DIR . 'extensions/erik-category-color/index.php' );
@@ -93,4 +97,16 @@ function erik_add_styles_and_scripts()
 
 	/* Load active theme stylesheet. */
 	wp_enqueue_style( 'style', get_stylesheet_uri() );
+}
+
+
+/** 
+ * Fuck off spammers
+ * Check if extra honeypot form-field is filled in. If so, then disallow comment
+ */ 
+function preprocess_new_comment($commentdata) {
+	if(!empty($_POST['is-legit'])) {
+		die('You are bullshit');
+	}
+	return $commentdata;
 }

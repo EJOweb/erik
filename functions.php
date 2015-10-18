@@ -111,6 +111,12 @@ function erik_comment_remove_url($fields)
  	// 						'<input id="email" name="email" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" size="30"' . $aria_req . ' />' . 
  	// 						'<label for="email">' . __( 'Email', 'domainreference' ) . '</label> ' . ( $req ? '<span class="required">*</span>' : '' ) .
 	// 					'</p>';
+
+	//* Extra honeypot form field to attract spam-bots
+	$fields['is_legit'] = 	'<p class="comment-form-legit">' .
+								'<label for="is-legit">Fill in if you\'re a spambot</label>' .
+								'<input class="is-legit" name="is-legit" type="text" value="" />' . 
+							'</p>';
 	
 	return $fields;
 }

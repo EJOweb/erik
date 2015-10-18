@@ -3,7 +3,7 @@
  * Theme Name:  Erik
  * Theme URI:   http://www.erik.joling.me/
  * Description: A Wordpress Theme developed for myself (Based on Hybrid Core framework)
- * Version:     0.5.3
+ * Version:     0.5.4
  * Author:      Erik Joling
  * Author URI:  http://www.erik.joling.me/
 
@@ -1610,10 +1610,15 @@ body .gform_wrapper form .gfield_error .gfield_label {
   color: #5c34a4;
 }
 
+.comment-respond .comment-form-legit,
 .comment-respond .comment-form-author,
 .comment-respond .comment-form-email {
   position: relative;
   margin-bottom: 2rem;
+}
+
+.comment-respond .comment-form-legit {
+  display: none;
 }
 
 .comment-respond .comment-form-comment {
