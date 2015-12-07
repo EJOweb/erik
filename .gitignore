@@ -1,11 +1,2 @@
-#################
-## Gulp
-#################
-
+# Do not commit node_modules
 node_modules/
-
-#################
-## Hybrid
-#################
-
-#hybrid/

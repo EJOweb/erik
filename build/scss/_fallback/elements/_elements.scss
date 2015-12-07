@@ -1,0 +1,152 @@
+/* Body
+-------------------------------------------------------------------*/
+body {
+    background-color: $color__background-body;
+}
+
+/* Media
+-------------------------------------------------------------------*/
+
+figure,
+audio,
+video,
+object,
+embed,
+iframe {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+/* Links
+-------------------------------------------------------------------*/
+a {
+    color: $color__link;
+
+    &:visited {
+        color: $color__link-visited;
+    }
+    &:hover,
+    &:focus,
+    &:active {
+        color: $color__link-hover;
+    }
+    &:focus {
+        outline: thin dotted;
+    }
+    &:hover,
+    &:active {
+        outline: 0;
+    }
+}
+
+/* Button link */
+a.button {
+
+}
+
+/* Paragraphs
+-------------------------------------------------------------------*/
+
+p {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+/* Intro paragraph */
+p.intro {
+
+}
+
+/* Lists
+-------------------------------------------------------------------*/
+
+ul, ol {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    margin-left: 2.5rem;
+
+    ul, ol {
+        margin-top: 0.5rem;
+        margin-bottom: 0.5rem;
+    }
+}
+
+/* Tables
+-------------------------------------------------------------------*/
+
+table {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+th {
+    border-bottom: 2px solid $color__border;
+}
+
+td {
+    border-bottom: 1px solid $color__border;
+}
+
+/* Horizontal Rule
+-------------------------------------------------------------------*/
+
+hr {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+/* Blockquotes
+-------------------------------------------------------------------*/
+
+blockquote {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-style: italic;
+
+    i,
+    em, 
+    cite {
+        font-style: normal;
+    }
+}
+
+
+/* Code
+-------------------------------------------------------------------*/
+
+code {}
+
+pre {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+    pre code {}
+
+/* Font Styles
+-------------------------------------------------------------------*/
+
+b, strong { 
+    font-weight: $font__weight-bold; 
+
+    b, strong { 
+        font-weight: $font__weight-normal; 
+    }
+}
+
+i, em, mark, cite { 
+    font-style: italic; 
+
+    i, em, mark, cite { 
+        font-style: normal; 
+    }
+}
+
+/* Forms
+------------------------------------------------------------------ */
+@import "forms/fields";
+@import "forms/buttons";
+
+/* Gravity Forms
+------------------------------------------------------------------ */
+@import "../vendors/gravity-forms/setup";

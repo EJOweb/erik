@@ -1,5 +1,5 @@
 /* EJOweb gulpfile
- * v20150925
+ * v20151020
  */
 
 //* Package variables
@@ -13,23 +13,23 @@ var uglify = require('gulp-uglify');
 var jshint = require('gulp-jshint');
 
 //* Config
-var sass_dir = './_lib/scss/';
-var js_dir = './_lib/js/';
+var sass_dir = './build/scss/';
+var js_dir = './build/js/';
 
 //* Create expanded and minified stylesheet at the same time (performance is fast using libsass)
 //* In case of error, show it only once
 gulp.task('sass', function () {
 
     //* Create expanded stylesheet
-    gulp.src([sass_dir + 'style.scss'])
+    gulp.src([sass_dir + 'theme.scss'])
         .pipe(sass({
             outputStyle: 'expanded'
         }))
         .on('error', gutil.log) // On error: show log and continue
-        .pipe(gulp.dest('.'));
+        .pipe(gulp.dest('./assets/css/'));
 
     //* Create minified stylesheet
-    gulp.src([sass_dir + 'style.scss'])
+    gulp.src([sass_dir + 'theme.scss'])
         // .pipe(sourcemaps.init())
         .pipe(sass({
             outputStyle: 'compressed'
@@ -39,7 +39,7 @@ gulp.task('sass', function () {
         .pipe(rename({
             suffix: '.min'
         }))
-        .pipe(gulp.dest('.'));
+        .pipe(gulp.dest('./assets/css/'));
 });
 
 // Lint Task
@@ -53,12 +53,12 @@ gulp.task('lint', function() {
 gulp.task('scripts', function() {
     gulp.src(js_dir + '*.js')
         .pipe(concat('theme.js'))
-        .pipe(gulp.dest('.'))
+        .pipe(gulp.dest('./assets/js/'))
         .pipe(uglify())
         .pipe(rename({
             suffix: '.min'
         }))
-        .pipe(gulp.dest('.'));
+        .pipe(gulp.dest('./assets/js/'));
 });
 
 // Watch Files For Changes
