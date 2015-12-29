@@ -7,8 +7,8 @@
  */
 
 //* Get the template directory and uri and make sure it has a trailing slash.
-define( 'THEME_LIB_DIR', trailingslashit( get_template_directory() ) . 'build/' );
-define( 'THEME_LIB_URI', trailingslashit( get_template_directory_uri() ) . 'build/' );
+define( 'THEME_LIB_DIR', trailingslashit( get_template_directory() ) . '_build/' );
+define( 'THEME_LIB_URI', trailingslashit( get_template_directory_uri() ) . '_build/' );
 
 //* Set custom Hybrid location.
 define( 'HYBRID_DIR', THEME_LIB_DIR . 'hybrid/' );

@@ -1,0 +1,22 @@
+$('a > img').each(function() {
+	var anchor = $(this).parent();
+	var image = $(this);
+	// var image = this;
+
+	// var image_alignment = 
+	// var image_width = image.width;
+	// var image_height = image.height;
+
+	// console.log(image_height);
+	if ( image.hasClass('alignleft') ) {
+		image.removeClass('alignleft');
+		anchor.addClass('alignleft');
+	}
+	else if ( image.hasClass('alignright') ) {
+		image.removeClass('alignright');
+		anchor.addClass('alignright');
+	}
+
+	// console.log(image);
+	anchor.addClass('image-wrap');
+});

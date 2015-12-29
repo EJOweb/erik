@@ -13,8 +13,8 @@ var uglify = require('gulp-uglify');
 var jshint = require('gulp-jshint');
 
 //* Config
-var sass_dir = './build/scss/';
-var js_dir = './build/js/';
+var sass_dir = './_build/scss/';
+var js_dir = './_build/js/';
 
 //* Create expanded and minified stylesheet at the same time (performance is fast using libsass)
 //* In case of error, show it only once
