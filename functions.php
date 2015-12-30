@@ -122,7 +122,7 @@ function ejo_show_comments_info()
 {
 	if (get_comments_number() > 0) :
 
-		echo '<span class="delimiter">&bullet;</span>';
+		echo '<span class="delimiter">&bullet;</span> ';
 
 		comments_popup_link( 
 			'', 
