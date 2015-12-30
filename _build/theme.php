@@ -24,8 +24,7 @@ add_action( 'wp_print_styles', 'erik_remove_styles_and_scripts', 99 );
 //* Add custom styles & scripts
 add_action( 'wp_enqueue_scripts', 'erik_add_styles_and_scripts', 20 );
 
-//* Spam prevention
-add_action('preprocess_comment', 'preprocess_new_comment');
+
 
 /**
  * Registers custom image sizes for the theme. 
@@ -92,14 +91,3 @@ function erik_add_styles_and_scripts()
 	wp_enqueue_style( 'theme', THEME_CSS_URI . "theme{$suffix}.css", false, THEME_VERSION );
 }
 
-
-/** 
- * Fuck off spammers
- * Check if extra honeypot form-field is filled in. If so, then disallow comment
- */ 
-function preprocess_new_comment($commentdata) {
-	if(!empty($_POST['is-legit'])) {
-		die('You are bullshit');
-	}
-	return $commentdata;
-}

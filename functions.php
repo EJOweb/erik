@@ -62,49 +62,22 @@ function erik_theme_setup()
 		array( 'image', 'gallery', 'link', 'quote', 'status', 'video' )
 	);
 
-	//* Custom Header
-	$header_image_args = array(
-		'width'         => 960,
-		'height'        => 150,
-		'uploads'   	=> true,
-		'header-text'   => false,
-	);
-	add_theme_support( 'custom-header', $header_image_args );
-
 	//* Filter excerpt_more
 	add_filter( 'excerpt_more', function() { return '...'; } );
 
 	//* Remove URL from comment form
-	add_filter('comment_form_default_fields', 'erik_comment_remove_url');
+	add_filter('comment_form_default_fields', 'erik_edit_comment_form_default_fields');
+
+	//* Spam prevention
+	add_action( 'preprocess_comment', 'preprocess_new_comment' );
 }
 
-function erik_comment_remove_url($fields)
+/**
+ * Remove url-field and add honeypot against bots
+ */
+function erik_edit_comment_form_default_fields($fields)
 {
 	unset($fields['url']);
-
-	// $fields['author'] = '<p class="comment-form-author">' . 
-	// 						'<input id="author" name="author" type="text" value="" size="30" aria-required="true" required="required" />' .
-	// 						'<span class="highlight"></span>' .
- //      						'<span class="bar"></span>' .
-	// 						'<label for="author">Naam <span class="required">*</span></label> ' .
-	// 					'</p>';
-
-	// $fields['email'] = 	'<p class="comment-form-email">' . 
-	// 						'<input id="email" name="email" type="email" value="" size="30" aria-describedby="email-notes" aria-required="true" required="required" />' .
-	// 						'<span class="highlight"></span>' .
- //      						'<span class="bar"></span>' .
-	// 						'<label for="email">E-mail <span class="required">*</span></label> ' .
-	// 					'</p>';
-
-	// $fields['author'] = '<p class="comment-form-author">' .
-	// 						'<input id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30"' . $aria_req . ' />' . 
-	// 						'<label for="author">' . __( 'Name', 'domainreference' ) . '</label> ' . ( $req ? '<span class="required">*</span>' : '' ) .
-	// 					'</p>';
-
-	// $fields['email'] = 	'<p class="comment-form-email">' .
- 	// 						'<input id="email" name="email" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" size="30"' . $aria_req . ' />' . 
- 	// 						'<label for="email">' . __( 'Email', 'domainreference' ) . '</label> ' . ( $req ? '<span class="required">*</span>' : '' ) .
-	// 					'</p>';
 
 	//* Extra honeypot form field to attract spam-bots
 	$fields['is_legit'] = 	'<p class="comment-form-legit">' .
@@ -114,6 +87,19 @@ function erik_comment_remove_url($fields)
 	
 	return $fields;
 }
+
+
+/** 
+ * Fuck off spammers
+ * Check if extra honeypot form-field is filled in. If so, then disallow comment
+ */ 
+function preprocess_new_comment($commentdata) {
+	if(!empty($_POST['is-legit'])) {
+		die('Bleep! Please do not comment..');
+	}
+	return $commentdata;
+}
+
 /**
  * Simple function to show comment info of a post
  * Output: [delimer] [link]Number of comments[/link]
