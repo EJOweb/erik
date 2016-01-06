@@ -1,0 +1,31 @@
+@mixin content-style() {
+	h1,h2,h3,h4,h5,h6 {
+		margin-left: -4.5rem;
+	}
+
+	// .alignleft,
+	// .alignright,
+	// .aligncenter,
+	// .alignnone {
+	// 	max-width: none;
+	// }
+
+	.alignleft {
+		margin-left: -9rem;
+	}
+	.alignright {
+		margin-right: -3rem;
+	}
+
+	.alignnone {
+		margin-left: -9rem;
+		margin-right: -3rem;
+		// Met javascript alle alignclass wrappen
+		// Maar hoe dan met editor styles? Kan ik daar ook javascript toevoegen?
+	}
+
+	.gallery {
+		margin-left: -9rem;
+		margin-right: -3rem;
+	}
+}

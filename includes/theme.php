@@ -24,6 +24,9 @@ add_action( 'wp_print_styles', 'erik_remove_styles_and_scripts', 99 );
 //* Add custom styles & scripts
 add_action( 'wp_enqueue_scripts', 'erik_add_styles_and_scripts', 20 );
 
+/* Add editor style */
+add_action( 'admin_init', 'erik_add_editor_styles' );
+
 //* Filter excerpt_more
 add_filter( 'excerpt_more', function() { return '...'; } );
 
@@ -104,6 +107,21 @@ function erik_add_styles_and_scripts()
 
 	/* Load active theme stylesheet. */
 	wp_enqueue_style( 'theme', THEME_CSS_URI . "theme{$suffix}.css", false, THEME_VERSION );
+}
+
+/**
+ * Add editor style
+ */
+function erik_add_editor_styles()
+{
+	$suffix = hybrid_get_min_suffix();
+
+	/* External font */
+	$font_url = str_replace( ',', '%2C', '//fonts.googleapis.com/css?family=Roboto:300,300italic,500,500italic|Roboto+Slab:700' );
+	add_editor_style( $font_url );
+
+	/* Editor Style */
+	add_editor_style( THEME_CSS_URI . "editor-style{$suffix}.css" );
 }
 
 /**

@@ -1,4 +1,6 @@
 @charset "UTF-8";
+/* Import theme styles
+============================================================================ */
 /* Reset
 ============================================================================ */
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
@@ -2092,4 +2094,50 @@ Alignment
 
 #footer, #footer a {
   color: #263238;
+}
+
+/* Editor Style specifics
+============================================================================ */
+body#tinymce,
+html.wp-fullscreen body#tinymce {
+  background-color: #ffffff;
+  max-width: 800px;
+  padding: 3rem 3rem 3rem 9rem !important;
+  border: none;
+}
+
+body#tinymce,
+html.wp-fullscreen body#tinymce,
+html.wp-fullscreen {
+  height: auto;
+}
+
+body#tinymce h1, body#tinymce h2, body#tinymce h3, body#tinymce h4, body#tinymce h5, body#tinymce h6 {
+  margin-left: -4.5rem;
+}
+
+body#tinymce .alignleft {
+  margin-left: -9rem;
+}
+
+body#tinymce .alignright {
+  margin-right: -3rem;
+}
+
+body#tinymce .alignnone {
+  margin-left: -9rem;
+  margin-right: -3rem;
+}
+
+body#tinymce .gallery {
+  margin-left: -9rem;
+  margin-right: -3rem;
+}
+
+/* Fix weird br after linked image which causes layout problems */
+br[data-mce-bogus]:not(:only-child),
+br[type='_moz'],
+br[type='_moz'] + br[data-mce-bogus] {
+  visibility: hidden;
+  display: none;
 }

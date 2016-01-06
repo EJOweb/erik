@@ -55,7 +55,8 @@ p {}
 
 /* Intro paragraph */
 p.intro {
-
+    font-weight: $font__weight-bold;
+    font-size: $font__size-large;
 }
 
 /* Lists
@@ -107,19 +108,22 @@ audio,
 video,
 object,
 embed,
-iframe {}
+iframe {
+    margin-left: 0;
+    margin-right: 0;
+}
 
 
 /* Horizontal Rule
 -------------------------------------------------------------------*/
 
 hr {
-    margin-top: $vertical__space + 0.75em;
-    margin-bottom: $vertical__space + 0.75em;
+    margin-top: $vertical__space + 0.75rem;
+    margin-bottom: $vertical__space + 0.75rem;
     margin-left: auto;
     margin-right: auto;
     border: 0;
-    height: 1px;
+    height: 2px;
     background-color: $color__border;
 }
 

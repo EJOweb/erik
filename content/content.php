@@ -17,7 +17,7 @@
 
 		<div <?php hybrid_attr( 'entry-content' ); ?>>
 
-			<?php ejo_the_post_summary(); ?>
+			<?php the_content(); ?>
 
 		</div><!-- .entry-content -->
 

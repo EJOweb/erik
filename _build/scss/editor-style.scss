@@ -1,0 +1,33 @@
+/* Import theme styles
+============================================================================ */
+@import "theme";
+
+/* Editor Style specifics
+============================================================================ */
+body#tinymce,
+html.wp-fullscreen body#tinymce {
+	background-color: $color__background-main;
+	max-width: $width__site-max;
+	// margin:    3em 3em 3em 9em;
+	padding:    3rem 3rem 3rem 9rem !important;
+	// padding:   $vertical__space $vertical__space 0 !important;
+	border:    none;
+}
+
+body#tinymce,
+html.wp-fullscreen body#tinymce,
+html.wp-fullscreen {
+	height:    auto;
+}
+
+body#tinymce {
+	@include content-style;
+}
+
+/* Fix weird br after linked image which causes layout problems */
+br[data-mce-bogus]:not(:only-child), 
+br[type='_moz'],
+br[type='_moz'] + br[data-mce-bogus] {
+	visibility: hidden;
+	display: none;
+}
