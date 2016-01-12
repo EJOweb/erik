@@ -8,4 +8,7 @@ jQuery(document).ready(function($) {
         $("html, body").animate({ scrollTop: 0 }, "slow");
     });
 
+	/* Aligned images */
+    $('.alignnone').removeClass('alignnone').wrap('<div class="alignnone"></div>');
+
 });

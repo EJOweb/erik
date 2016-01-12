@@ -103,7 +103,7 @@ function erik_add_styles_and_scripts()
 	//* Styles
 
 	/* Load Font */
-	wp_enqueue_style( 'theme-fonts', 'https://fonts.googleapis.com/css?family=Roboto:300,300italic,500,500italic|Roboto+Slab:700' );
+	// wp_enqueue_style( 'theme-fonts', 'https://fonts.googleapis.com/css?family=Roboto:300,300italic,500,500italic|Roboto+Slab:700' );
 
 	/* Load active theme stylesheet. */
 	wp_enqueue_style( 'theme', THEME_CSS_URI . "theme{$suffix}.css", false, THEME_VERSION );
@@ -117,8 +117,8 @@ function erik_add_editor_styles()
 	$suffix = hybrid_get_min_suffix();
 
 	/* External font */
-	$font_url = str_replace( ',', '%2C', '//fonts.googleapis.com/css?family=Roboto:300,300italic,500,500italic|Roboto+Slab:700' );
-	add_editor_style( $font_url );
+	// $font_url = str_replace( ',', '%2C', '//fonts.googleapis.com/css?family=Roboto:300,300italic,500,500italic|Roboto+Slab:700' );
+	// add_editor_style( $font_url );
 
 	/* Editor Style */
 	add_editor_style( THEME_CSS_URI . "editor-style{$suffix}.css" );

@@ -1,7 +1,8 @@
 <?php if ( has_nav_menu( 'primary' ) ) : // Check if there's a menu assigned to the 'primary' location. ?>
-
+	
 	<nav <?php hybrid_attr( 'menu', 'primary-mobile' ); ?>>
 		<div class="wrap">
+
 			<div class="menu-toggle">Menu</div>
 
 			<?php wp_nav_menu(

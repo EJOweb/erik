@@ -334,15 +334,15 @@ jQuery(document).ready(function($){
 	});
 
 	//* Reset on resize
-	$(window).resize(u_debounce(function(){
-		//Remove inline style because that overrules stylesheet
-		if($(window).width() >= 1000) {  
-			navigation.removeAttr('style');
-			navigation.find(".sub-menu").removeAttr('style');
-			navigation.children(".menu-item").removeClass("expanded");
-			responsive_menu_icon.removeClass("expanded");
-		}  
-	}, 250 ));
+	// $(window).resize(u_debounce(function(){
+	// 	//Remove inline style because that overrules stylesheet
+	// 	if($(window).width() >= 1000) {  
+	// 		navigation.removeAttr('style');
+	// 		navigation.find(".sub-menu").removeAttr('style');
+	// 		navigation.children(".menu-item").removeClass("expanded");
+	// 		responsive_menu_icon.removeClass("expanded");
+	// 	}  
+	// }, 250 ));
 
 });
 jQuery(document).ready(function($) {
@@ -354,6 +354,9 @@ jQuery(document).ready(function($) {
 	$('#toTop').click(function() {
         $("html, body").animate({ scrollTop: 0 }, "slow");
     });
+
+	/* Aligned images */
+    $('.alignnone').removeClass('alignnone').wrap('<div class="alignnone"></div>');
 
 });
 //* Wait a couple of miniseconds before action. Useful to prevent multiple triggers on resize

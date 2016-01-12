@@ -1,9 +1,12 @@
+// Theme colors
+$color__primary: #34bfa0;
+
 // Backgrounds
-$color__background-body: #eceff1;
-$color__background-header: #607d8b;
+$color__background-body: #ffffff;
+$color__background-header: #ebe7dd;
 $color__background-main: #ffffff;
-$color__background-footer: #cfd8dc;
-$color__background-button: #546e7a;
+$color__background-footer: #ffffff;
+$color__background-button: $color__primary;
 $color__background-button-hover: darken($color__background-button, 5%);
 $color__background-button-alt: $color__background-button;
 $color__background-button-alt-hover: $color__background-button-hover;
@@ -13,7 +16,7 @@ $color__background-screenreader: #f1f1f1;
 
 // Font colors
 $color__text: #263238;
-$color__text-header: #fff;
+$color__text-header: $color__primary;
 $color__text-footer: #263238;
 $color__text-button: #fff;
 $color__text-button-alt: #fff;
@@ -26,14 +29,17 @@ $color__link-hover: #263238;
 
 // Borders
 $color__border: #ccc;
+$color__border-header: $color__primary;
 $color__border-menu: #607d8b;
 $color__border-form-field: #ccc;
 $color__border-form-field-hover: #ccc;
 $color__border-form-field-focus: #ccc;
 
 // Menu
-$color__background-menu: #546e7a;
-$color__background-menu-item: transparent;
+$color__background-menu: transparent;
+$color__background-menu-toggle: $color__primary;
+$color__background-menu-toggle-hover: darken($color__primary, 3%);
+$color__background-menu-item: $color__primary;
 $color__background-menu-item-hover: #455a64;
 $color__background-menu-item-selected: #455a64;
 $color__background-submenu: #455a64;

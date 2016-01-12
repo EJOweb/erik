@@ -1,27 +1,55 @@
-/* Import theme styles
+// Resources
+@import "vendors/bourbon/bourbon";
+@import "vendors/icons";
+@import "vendors/social-media";
+
+// Mixins
+@import "mixins/mixins";
+@import "mixins/mixins-flexbox";
+@import "mixins/mixins-reset-styles";
+
+// Theme Variables
+@import "variables/colors";
+@import "variables/typography";
+@import "variables/structure";
+@import "variables/misc";
+
+/* Reset
 ============================================================================ */
-@import "theme";
+@import "vendors/normalize";
+
+/* EJO Defaults
+============================================================================ */
+@import "vendors/ejo-defaults";
+
+/* Content
+============================================================================ */
+@import "content/content";
 
 /* Editor Style specifics
 ============================================================================ */
-body#tinymce,
-html.wp-fullscreen body#tinymce {
-	background-color: $color__background-main;
+body {
+
+}
+
+/* Main content editor */
+body.content {
 	max-width: $width__site-max;
-	// margin:    3em 3em 3em 9em;
-	padding:    3rem 3rem 3rem 9rem !important;
-	// padding:   $vertical__space $vertical__space 0 !important;
-	border:    none;
+	padding-left: 3rem !important;
+	padding-right: 3rem !important;
+	margin-top: 2rem;
+	margin-bottom: 2rem;
 }
 
-body#tinymce,
-html.wp-fullscreen body#tinymce,
-html.wp-fullscreen {
-	height:    auto;
+/* Other content editors (ex. black studio tinymce widget) */
+body:not(.content) {
+	margin: 9px 10px;
 }
 
-body#tinymce {
-	@include content-style;
+/* Reversing default 100% height */
+html,
+body {
+	height: auto;
 }
 
 /* Fix weird br after linked image which causes layout problems */

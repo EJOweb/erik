@@ -498,84 +498,9 @@ blockquote {
   margin: 0;
 }
 
-/* Typography
+/* Content
 ============================================================================ */
-/* Main typography
--------------------------------------------------------------------*/
-html {
-  font-size: 100%;
-}
-
-body,
-button,
-input,
-select,
-textarea {
-  font-family: Georgia, serif;
-  font-size: 1rem;
-  line-height: 1.6;
-  font-weight: 400;
-  color: #263238;
-}
-
-/*------------------------------------------------------------------
-Headings
--------------------------------------------------------------------*/
-h1, h2, h3, h4, h5, h6 {
-  font-family: Verdana, sans-serif;
-  font-weight: 400;
-  color: #263238;
-}
-
-h1 {
-  font-size: 2.5rem;
-  line-height: 1.125;
-  margin-top: 1.25em;
-  margin-bottom: 0.75em;
-}
-
-h2 {
-  font-size: 1.75rem;
-  line-height: 1.125;
-  margin-top: 1.25em;
-  margin-bottom: 0.75em;
-}
-
-h3 {
-  font-size: 1.4375rem;
-  line-height: 1.125;
-  margin-top: 1.35em;
-  margin-bottom: 0.75em;
-}
-
-h4, h5, h6 {
-  font-size: 1.125rem;
-  line-height: 1.125;
-  margin-top: 1.5em;
-  margin-bottom: 0.44444em;
-}
-
-/* Elements
-============================================================================ */
-/* Vertical Rhythm
--------------------------------------------------------------------*/
-p,
-ul, ol,
-table,
-figure, audio, video, object, embed, iframe,
-hr,
-blockquote,
-pre {
-  margin-top: 0;
-  margin-bottom: 1.25rem;
-}
-
-/* Body
--------------------------------------------------------------------*/
-body {
-  background-color: #eceff1;
-}
-
+/* Elements */
 /* Links
 -------------------------------------------------------------------*/
 a {
@@ -777,10 +702,10 @@ a.button, button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-  background-color: #546e7a;
+  background-color: #34bfa0;
   color: #fff;
-  padding: 8px 12px 9px;
-  font-family: Verdana, sans-serif;
+  padding: 10px 15px 12px;
+  font-family: Arial, sans-serif;
   font-weight: 400;
   display: inline-block;
   line-height: 1;
@@ -790,14 +715,14 @@ a.button:hover, button:hover,
 input[type="button"]:hover,
 input[type="reset"]:hover,
 input[type="submit"]:hover {
-  background-color: #4a606b;
+  background-color: #2fab8f;
 }
 
 a.button.alt, button.alt,
 input.alt[type="button"],
 input.alt[type="reset"],
 input.alt[type="submit"] {
-  background-color: #546e7a;
+  background-color: #34bfa0;
   color: #fff;
 }
 
@@ -805,13 +730,156 @@ a.button.alt:hover, button.alt:hover,
 input.alt[type="button"]:hover,
 input.alt[type="reset"]:hover,
 input.alt[type="submit"]:hover {
-  background-color: #4e6671;
+  background-color: #31b396;
 }
 
+/* Alignment
+------------------------------------------------------------------ */
+.alignleft {
+  display: inline;
+  float: left;
+  margin-right: 2rem;
+  margin-top: 0.375rem;
+  margin-bottom: 0.6rem;
+}
+
+.alignright {
+  display: inline;
+  float: right;
+  margin-left: 2rem;
+  margin-top: 0.375rem;
+  margin-bottom: 0.6rem;
+}
+
+.aligncenter {
+  clear: both;
+  display: block;
+  margin-left: auto;
+  margin-top: 0.375rem;
+  margin-bottom: 0.6rem;
+  margin-right: auto;
+}
+
+@media screen and (max-width: 600px) {
+  .alignleft,
+  .alignright {
+    display: block;
+    float: none;
+    margin-right: 0;
+    margin-left: 0;
+    width: 100%;
+    margin-bottom: 1.25rem;
+  }
+}
+
+/* Typography */
+/* Main typography
+-------------------------------------------------------------------*/
+html {
+  font-size: 100%;
+}
+
+body,
+button,
+input,
+select,
+textarea {
+  font-family: Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  font-weight: 400;
+  color: #263238;
+}
+
+/*------------------------------------------------------------------
+Headings
+-------------------------------------------------------------------*/
+h1, h2, h3, h4, h5, h6 {
+  font-family: Arial, sans-serif;
+  font-weight: 400;
+  color: #263238;
+}
+
+h1 {
+  font-size: 2.5rem;
+  line-height: 1.125;
+  margin-top: 1.25em;
+  margin-bottom: 0.75em;
+}
+
+h2 {
+  font-size: 1.75rem;
+  line-height: 1.125;
+  margin-top: 1.25em;
+  margin-bottom: 0.9em;
+}
+
+h3 {
+  font-size: 1.4375rem;
+  line-height: 1.125;
+  margin-top: 1.35em;
+  margin-bottom: 0.75em;
+}
+
+h4, h5, h6 {
+  font-size: 1.125rem;
+  line-height: 1.125;
+  margin-top: 1.5em;
+  margin-bottom: 0.44444em;
+}
+
+/*------------------------------------------------------------------
+Headings
+-------------------------------------------------------------------*/
+h1, h2, h3, h4, h5, h6 {
+  font-family: Arial, sans-serif;
+  font-weight: 400;
+  color: #263238;
+}
+
+h1 {
+  font-size: 2.5rem;
+  line-height: 1.125;
+  margin-top: 1.25em;
+  margin-bottom: 0.75em;
+}
+
+h2 {
+  font-size: 1.75rem;
+  line-height: 1.125;
+  margin-top: 1.25em;
+  margin-bottom: 0.9em;
+}
+
+h3 {
+  font-size: 1.4375rem;
+  line-height: 1.125;
+  margin-top: 1.35em;
+  margin-bottom: 0.75em;
+}
+
+h4, h5, h6 {
+  font-size: 1.125rem;
+  line-height: 1.125;
+  margin-top: 1.5em;
+  margin-bottom: 0.44444em;
+}
+
+p,
+ul, ol,
+table,
+figure, audio, video, object, embed, iframe,
+hr,
+blockquote,
+pre {
+  margin-top: 0;
+  margin-bottom: 1.25rem;
+}
+
+/* Main content styling */
 /* Other
 ============================================================================ */
 .site-branding {
-  margin: 1rem 0;
   /* Reset */
 }
 
@@ -821,21 +889,30 @@ input.alt[type="submit"]:hover {
 
 /* Titles */
 .entry-title,
-.archive-title {
+.archive-title,
+.widget-title,
+.gsection_title {
   margin-top: 0;
 }
 
 .entry-title a,
-.archive-title a {
+.archive-title a,
+.widget-title a,
+.gsection_title a {
   color: inherit;
 }
 
-.widget-title {
-  margin-top: 0;
+h2.entry-title {
+  margin-bottom: 1.25rem;
+}
+
+.gsection_title {
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
 }
 
 /* Responsiveness */
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 720px) {
   #menu-primary {
     display: none;
   }
@@ -933,10 +1010,13 @@ input.alt[type="submit"]:hover {
 
 /* Styling */
 #menu-primary {
-  background-color: #546e7a;
-  font-family: Verdana, sans-serif;
+  font-family: Arial, sans-serif;
   line-height: 1.2;
   /* Top level menu-items */
+}
+
+#menu-primary > .wrap {
+  background-color: transparent;
 }
 
 #menu-primary, #menu-primary a {
@@ -989,26 +1069,14 @@ input.alt[type="submit"]:hover {
   font-weight: 700;
 }
 
-/* Responsiveness */
-#menu-primary-mobile {
-  display: none;
-}
-
-@media screen and (max-width: 800px) {
-  #menu-primary-mobile {
-    display: block;
-  }
-}
-
 /* Toggle */
 .menu-toggle {
-  text-transform: uppercase;
-  padding: 0.9375rem 1.25rem 0.9375rem;
+  text-transform: capitalize;
+  padding: 0.625rem 0.625rem 0.625rem;
   line-height: 1;
   text-align: center;
   cursor: pointer;
-  font-size: 1.25rem;
-  background-color: #546e7a;
+  background-color: #34bfa0;
   color: #fff;
 }
 
@@ -1020,6 +1088,7 @@ input.alt[type="submit"]:hover {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   content: "";
+  font-size: 1.125rem;
   padding-right: 5px;
 }
 
@@ -1029,7 +1098,7 @@ input.alt[type="submit"]:hover {
 }
 
 .menu-toggle:hover {
-  background-color: #455a64;
+  background-color: #31b396;
   color: #fff;
 }
 
@@ -1053,20 +1122,22 @@ input.alt[type="submit"]:hover {
 }
 
 /* Structure */
+#menu-primary-mobile {
+  position: absolute;
+  z-index: 1;
+  top: -8px;
+  right: -88px;
+  width: 320px;
+  text-align: right;
+}
+
 #menu-primary-mobile .menu-items {
   display: none;
-  text-align: center;
 }
 
-@media screen and (max-width: 480px) {
-  #menu-primary-mobile .menu-items {
-    text-align: left;
-  }
-}
-
-/* Structure */
+/* Style */
 #menu-primary-mobile {
-  background-color: #546e7a;
+  background-color: transparent;
   /* Top level */
 }
 
@@ -1076,6 +1147,7 @@ input.alt[type="submit"]:hover {
 
 #menu-primary-mobile .menu-items {
   border-top: 1px solid #607d8b;
+  text-align: left;
 }
 
 #menu-primary-mobile a {
@@ -1083,7 +1155,7 @@ input.alt[type="submit"]:hover {
 }
 
 #menu-primary-mobile .menu-items > .menu-item {
-  background-color: transparent;
+  background-color: #34bfa0;
   border-bottom: 1px solid #607d8b;
   position: relative;
 }
@@ -1147,9 +1219,7 @@ input.alt[type="submit"]:hover {
 }
 
 .breadcrumbs {
-  margin-bottom: 0.5em;
-  margin-top: -0.5em;
-  text-align: center;
+  margin-bottom: 0;
 }
 
 .breadcrumbs {
@@ -1357,46 +1427,6 @@ input.alt[type="submit"]:hover {
   background-color: #4d729f;
 }
 
-/*------------------------------------------------------------------
-Alignment
--------------------------------------------------------------------*/
-.alignleft {
-  display: inline;
-  float: left;
-  margin-right: 2rem;
-  margin-top: 0.375rem;
-  margin-bottom: 0.6rem;
-}
-
-.alignright {
-  display: inline;
-  float: right;
-  margin-left: 2rem;
-  margin-top: 0.375rem;
-  margin-bottom: 0.6rem;
-}
-
-.aligncenter {
-  clear: both;
-  display: block;
-  margin-left: auto;
-  margin-top: 0.375rem;
-  margin-bottom: 0.6rem;
-  margin-right: auto;
-}
-
-@media screen and (max-width: 600px) {
-  .alignleft,
-  .alignright {
-    display: block;
-    float: none;
-    margin-right: 0;
-    margin-left: 0;
-    width: 100%;
-    margin-bottom: 1.25rem;
-  }
-}
-
 /* Reset */
 .gform_wrapper ol,
 .gform_wrapper ul {
@@ -1422,7 +1452,7 @@ Alignment
 }
 
 .gform_wrapper .gform_body {
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.75rem;
 }
 
 .gform_wrapper .gfield {
@@ -1431,10 +1461,6 @@ Alignment
 
 .gform_wrapper .gfield.gfield_html {
   margin-bottom: 0;
-}
-
-.gform_wrapper .gfield.gsection {
-  padding-top: 0.75rem;
 }
 
 .gform_wrapper .gfield_label {
@@ -1951,6 +1977,7 @@ Alignment
 /* Structure
 ============================================================================ */
 #container {
+  background-color: #ffffff;
   display: -webkit-box;
   display: -moz-box;
   display: box;
@@ -1980,6 +2007,10 @@ Alignment
   min-height: 100%;
 }
 
+#main > .wrap {
+  background-color: #ffffff;
+}
+
 #footer {
   -webkit-flex-grow: 1;
   -moz-flex-grow: 1;
@@ -1999,71 +2030,81 @@ Alignment
 #menu-primary > .wrap,
 #main > .wrap,
 #footer > .wrap {
-  max-width: 800px;
+  max-width: 720px;
   margin: 0 auto;
 }
 
 #header {
-  background-color: #607d8b;
-  padding: 2rem 0;
+  background-color: #ebe7dd;
+  margin-bottom: -132px;
 }
 
 #header, #header a {
-  color: #fff;
+  color: #34bfa0;
+}
+
+#header > .wrap {
+  position: relative;
+  margin-top: 68px;
+  margin-bottom: 16px;
+  height: 116px;
+}
+
+#header .header-border {
+  position: absolute;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #34bfa0;
+  top: -8px;
+  box-shadow: -8px 0 0 0 #34bfa0;
+}
+
+#header #branding {
+  position: absolute;
+  top: -14px;
+  left: -44px;
+  width: 20px;
+  word-break: break-all;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+#header #branding .site-title {
+  font-size: 1.5rem;
+  font-family: Arial, sans-serif;
+  line-height: 1.3333;
+  font-weight: 700;
+}
+
+#header #menu-primary-mobile {
+  position: absolute;
+  z-index: 1;
+  top: -8px;
+  right: -88px;
+  width: 320px;
+  text-align: right;
+}
+
+#header .menu-toggle {
+  display: inline-block;
+  width: 88px;
+  text-align: center;
+  font-family: Arial, sans-serif;
 }
 
 #content {
-  background: #ffffff;
-  padding: 3rem 3rem 2.5rem 9rem;
+  background-color: #ffffff;
+  padding: 2.75rem 3rem;
   position: relative;
-  left: -3rem;
-  box-shadow: 1px 0 0 0 #fff, -1px 0 0 0 #fff;
 }
 
 #content .entry {
   margin-bottom: 1.25rem;
 }
 
-#content .entry h1, #content .entry h2, #content .entry h3, #content .entry h4, #content .entry h5, #content .entry h6 {
-  margin-left: -4.5rem;
-}
-
-#content .entry .alignleft {
-  margin-left: -9rem;
-}
-
-#content .entry .alignright {
-  margin-right: -3rem;
-}
-
-#content .entry .alignnone {
-  margin-left: -9rem;
-  margin-right: -3rem;
-}
-
-#content .entry .gallery {
-  margin-left: -9rem;
-  margin-right: -3rem;
-}
-
-#content h1.entry-title,
-#content .archive-title {
-  margin-bottom: 0;
-}
-
-#content h1.entry-title:after,
-#content .archive-title:after {
-  content: '';
-  display: block;
-  height: 0px;
-  width: 10%;
-  margin: 1.25rem 0 1.25rem 4.5rem;
-  border-bottom: 4px dotted #ccc;
-}
-
 #content .entry-byline {
-  text-align: center;
-  margin-bottom: 0.25rem;
+  display: none;
 }
 
 /* Plural styles */
@@ -2071,13 +2112,9 @@ Alignment
   content: '';
   display: block;
   height: 1px;
-  width: 50%;
+  width: 25%;
   background-color: #ccc;
-  margin: 2rem auto 2rem;
-}
-
-#content h2.entry-title {
-  margin-bottom: 1.25rem;
+  margin: 2rem 0 2rem;
 }
 
 #sidebar-primary .widget {
@@ -2085,9 +2122,13 @@ Alignment
 }
 
 #footer {
-  padding: 1rem 0;
-  background-color: #cfd8dc;
+  background-color: #ffffff;
   text-align: center;
+}
+
+#footer > .wrap {
+  background-color: #ffffff;
+  padding: 1rem 0;
 }
 
 #footer, #footer a {

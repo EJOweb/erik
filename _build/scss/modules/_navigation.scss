@@ -44,7 +44,9 @@
 
 /* Styling */
 #menu-primary {
-	background-color: $color__background-menu;
+	> .wrap {
+		background-color: $color__background-menu;
+	}
 	&, a {
 		color: $color__text-menu-item;
 	}

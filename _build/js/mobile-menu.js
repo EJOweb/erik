@@ -20,14 +20,14 @@ jQuery(document).ready(function($){
 	});
 
 	//* Reset on resize
-	$(window).resize(u_debounce(function(){
-		//Remove inline style because that overrules stylesheet
-		if($(window).width() >= 1000) {  
-			navigation.removeAttr('style');
-			navigation.find(".sub-menu").removeAttr('style');
-			navigation.children(".menu-item").removeClass("expanded");
-			responsive_menu_icon.removeClass("expanded");
-		}  
-	}, 250 ));
+	// $(window).resize(u_debounce(function(){
+	// 	//Remove inline style because that overrules stylesheet
+	// 	if($(window).width() >= 1000) {  
+	// 		navigation.removeAttr('style');
+	// 		navigation.find(".sub-menu").removeAttr('style');
+	// 		navigation.children(".menu-item").removeClass("expanded");
+	// 		responsive_menu_icon.removeClass("expanded");
+	// 	}  
+	// }, 250 ));
 
 });
