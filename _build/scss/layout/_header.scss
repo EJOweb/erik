@@ -1,38 +1,41 @@
 #header {
 	background-color: $color__background-header;
 	&, a { color: $color__text-header; }
-	margin-bottom: -132px;
+	margin-bottom: -106px;
 
 	> .wrap {
 		position: relative;
-		margin-top: 68px;
-		margin-bottom: 16px;
-		height: 116px;
+		margin-top: 48px;
+		margin-bottom: 24px;
+		height: 114px;
 	}
 
 	.header-border {
 		position: absolute;
 		z-index: 0;
-		width: 100%;
+		width: calc(100% + 64px);
 		height: 100%;
-		background-color: $color__border-header;
-		top: -8px;
-		box-shadow: -8px 0 0 0 $color__border-header;
+		background-color: $color__background-header;
+		left: -32px;
+		top: 0;
+		border-left: 8px double $color__border-header;
+		border-top: 8px double $color__border-header;
+		// box-shadow: -16px 0 0 0 $color__border-header;
 	}
 
 	#branding {
 		position: absolute;
-		top: -14px;
-		left: -44px;
+		top: -5px;
+		left: -62px;
 		width: 20px;
 		word-break: break-all;
 		text-transform: uppercase;
 		text-align: center;
 
 		.site-title {
-			font-size: 1.5rem;
+			font-size: rem(25px);
 			font-family: $font__family-heading;
-			line-height: 1.3333;
+			line-height: 1.25;
 			font-weight: $font__weight-bold;
 		}
 	}
@@ -40,8 +43,8 @@
 	#menu-primary-mobile {
 		position: absolute;
 		z-index: 1;
-		top: -8px;
-		right: -88px;
+		top: 0;
+		right: -116px;
 	    width: 320px;
 	    text-align: right;
 	}

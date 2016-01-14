@@ -504,15 +504,15 @@ blockquote {
 /* Links
 -------------------------------------------------------------------*/
 a {
-  color: #263238;
+  color: #20292b;
 }
 
 a:visited {
-  color: #263238;
+  color: #20292b;
 }
 
 a:hover, a:focus, a:active {
-  color: #263238;
+  color: #20292b;
 }
 
 a:focus {
@@ -702,7 +702,7 @@ a.button, button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-  background-color: #34bfa0;
+  background-color: #00bcd4;
   color: #fff;
   padding: 10px 15px 12px;
   font-family: Arial, sans-serif;
@@ -715,14 +715,14 @@ a.button:hover, button:hover,
 input[type="button"]:hover,
 input[type="reset"]:hover,
 input[type="submit"]:hover {
-  background-color: #2fab8f;
+  background-color: #00a5bb;
 }
 
 a.button.alt, button.alt,
 input.alt[type="button"],
 input.alt[type="reset"],
 input.alt[type="submit"] {
-  background-color: #34bfa0;
+  background-color: #00bcd4;
   color: #fff;
 }
 
@@ -730,7 +730,7 @@ a.button.alt:hover, button.alt:hover,
 input.alt[type="button"]:hover,
 input.alt[type="reset"]:hover,
 input.alt[type="submit"]:hover {
-  background-color: #31b396;
+  background-color: #00aec5;
 }
 
 /* Alignment
@@ -788,7 +788,7 @@ textarea {
   font-size: 1rem;
   line-height: 1.6;
   font-weight: 400;
-  color: #263238;
+  color: #20292b;
 }
 
 /*------------------------------------------------------------------
@@ -797,7 +797,7 @@ Headings
 h1, h2, h3, h4, h5, h6 {
   font-family: Arial, sans-serif;
   font-weight: 400;
-  color: #263238;
+  color: #20292b;
 }
 
 h1 {
@@ -834,7 +834,7 @@ Headings
 h1, h2, h3, h4, h5, h6 {
   font-family: Arial, sans-serif;
   font-weight: 400;
-  color: #263238;
+  color: #20292b;
 }
 
 h1 {

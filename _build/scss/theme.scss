@@ -26,6 +26,14 @@
 ============================================================================ */
 @import "content/content";
 
+/* Structure
+============================================================================ */
+@import "layout/site";
+@import "layout/header";
+@import "layout/content";
+@import "layout/sidebar-primary";
+@import "layout/footer";
+
 /* Other
 ============================================================================ */
 @import "modules/branding";
@@ -45,11 +53,3 @@
 /* Accessibility
 ============================================================================ */
 @import "modules/accessibility";
-
-/* Structure
-============================================================================ */
-@import "layout/site";
-@import "layout/header";
-@import "layout/content";
-@import "layout/sidebar-primary";
-@import "layout/footer";

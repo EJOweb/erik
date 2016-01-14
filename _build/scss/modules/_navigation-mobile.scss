@@ -20,11 +20,11 @@
 	}
 
 	background-color: $color__background-menu-toggle;
-	color: $color__text-menu-item;
+	color: $color__text-menu-toggle;
 
 	&:hover {
 		background-color: $color__background-menu-toggle-hover;
-		color: $color__text-menu-item-hover;
+		color: $color__text-menu-toggle-hover;
 	}
 }
 
@@ -53,11 +53,11 @@
 
 /* Style */
 #menu-primary-mobile {
-	background-color: $color__background-menu;
 	&, a { color: $color__text-menu; }
 
 	.menu-items {
 		border-top: 1px solid $color__border-menu;
+		background-color: $color__background-menu;
 		text-align: left;
 	}
 
