@@ -1,58 +1,41 @@
 #header {
-	background-color: $color__background-header;
 	&, a { color: $color__text-header; }
-	margin-bottom: -106px;
+	margin-bottom: -76px;
 
 	> .wrap {
 		position: relative;
-		margin-top: 48px;
-		margin-bottom: 24px;
-		height: 114px;
+		height: 118px;
 	}
 
 	.header-border {
 		position: absolute;
-		z-index: 0;
-		width: calc(100% + 64px);
-		height: 100%;
-		background-color: $color__background-header;
-		left: -32px;
-		top: 0;
-		border-left: 8px double $color__border-header;
-		border-top: 8px double $color__border-header;
-		// box-shadow: -16px 0 0 0 $color__border-header;
+		left: -24px;
+		top: 18px;
+		height: 100px;
+		width: 24px;
+		border-color: #fff;
+		border-style: solid;
+		border-width: 8px 0 0 8px;
+		-webkit-border-image: url($path__images + 'border.png') 8 round;
+		   -moz-border-image: url($path__images + 'border.png') 8 round;
+		     -o-border-image: url($path__images + 'border.png') 8 round;
+		        border-image: url($path__images + 'border.png') 8 round;
 	}
 
 	#branding {
 		position: absolute;
-		top: -5px;
-		left: -62px;
-		width: 20px;
+		top: 14px;
+		left: -54px;
+		width: 18px;
 		word-break: break-all;
 		text-transform: uppercase;
 		text-align: center;
 
 		.site-title {
-			font-size: rem(25px);
+			font-size: rem(24px);
 			font-family: $font__family-heading;
-			line-height: 1.25;
+			line-height: 1.125;
 			font-weight: $font__weight-bold;
 		}
 	}
-
-	#menu-primary-mobile {
-		position: absolute;
-		z-index: 1;
-		top: 0;
-		right: -116px;
-	    width: 320px;
-	    text-align: right;
-	}
-
-	.menu-toggle {
-		display: inline-block;
-		width: 88px;
-		text-align: center;
-		font-family: $font__family-heading;
-	}	
 }

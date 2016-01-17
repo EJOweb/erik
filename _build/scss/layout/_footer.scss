@@ -1,10 +1,22 @@
 #footer {
-	background-color: $color__background-main;
-	> .wrap {
-		background-color: $color__background-footer;
-		padding: 1rem 0;
-	}
+	background-color: $color__background-footer;
 	&, a {	color: $color__text-footer;	}
-	text-align: center;
+	
+	margin-top: -46px;
+	> .wrap {
+		margin-top: 46px;
+		padding: 1rem 0 1.5rem;
+		text-align: center;
+	}
+
+	#toTop {
+		font-weight: $font__weight-bold;
+		cursor: pointer;
+		
+		&:before {
+			@include icon( 'fa-arrow-circle-up' );
+			padding-right: rem(6);
+		}
+	}
 }
 
