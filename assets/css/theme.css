@@ -504,15 +504,15 @@ blockquote {
 /* Links
 -------------------------------------------------------------------*/
 a {
-  color: #20292b;
+  color: #00a5bb;
 }
 
 a:visited {
-  color: #20292b;
+  color: #00bcd4;
 }
 
 a:hover, a:focus, a:active {
-  color: #20292b;
+  text-decoration: underline;
 }
 
 a:focus {
@@ -1081,6 +1081,20 @@ pre {
   max-height: 412px;
   margin: 0 auto;
   background: url("../images/header-shadow2.png") center 100% no-repeat;
+}
+
+.banner .banner-block-left {
+  display: none;
+  background: #00bcd4;
+  width: 500px;
+  height: 500px;
+  position: absolute;
+  top: -100px;
+  -webkit-transform: rotate(15deg);
+  -moz-transform: rotate(15deg);
+  -ms-transform: rotate(15deg);
+  -o-transform: rotate(15deg);
+  transform: rotate(15deg);
 }
 
 .site-branding {

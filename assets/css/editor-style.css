@@ -504,15 +504,15 @@ blockquote {
 /* Links
 -------------------------------------------------------------------*/
 a {
-  color: #20292b;
+  color: #00a5bb;
 }
 
 a:visited {
-  color: #20292b;
+  color: #00bcd4;
 }
 
 a:hover, a:focus, a:active {
-  color: #20292b;
+  text-decoration: underline;
 }
 
 a:focus {

@@ -3,12 +3,20 @@
 <div class="banner <?php echo $banner_image_class; ?>">
 	<!-- <div class="wrap"> -->
 
-		<?php if (is_singular() && has_post_thumbnail()) : ?>
+	<?php if (is_singular() && has_post_thumbnail()) : ?>
 
-			<?php the_post_thumbnail( 'header' ); ?>
+		<?php the_post_thumbnail( 'header' ); ?>
 
-		<?php endif; //END post_thumbnail check ?>
+	<?php endif; //END post_thumbnail check ?>
+
 			
 	<!-- </div> -->
-	<div class="banner-shadow"><div class="wrap"></div></div>
+	<div class="banner-shadow">
+		<div class="wrap">
+		
+			<div class="banner-block-left"></div>
+			<div class="banner-block-right"></div>
+			
+		</div>
+	</div>
 </div>

@@ -2,6 +2,7 @@
 	height: 184px;
 	&.banner-image {
 		height: 300px;
+		// box-shadow: 0 10px 0 0 $color__border-header;
 	}
 	background: $color__background-header;
 	margin-bottom: -134px;
@@ -28,8 +29,23 @@
 			height: 100%;
 			max-width: 1920px;
 			max-height: 412px;
+			// width: 1920px;
+			// height: 412px;
 			margin: 0 auto;
 			background: url($path__images + 'header-shadow2.png') center 100% no-repeat;
 		}
 	}
+
+	.banner-block-left {
+		display: none;
+		background: $color__background-header;
+		width: 500px;
+		height: 500px;
+		position: absolute;
+		top: -100px;
+		// right: 1560px;
+		// left: 360px;
+		@include transform( rotate(15deg) );
+	}
 }
+
