@@ -1,10 +1,13 @@
 <?php 
 if ( function_exists('yoast_breadcrumb') ) {
 
-	yoast_breadcrumb(
-		'<p class="breadcrumb-trail breadcrumbs">',
-		'</p>'
-	);
+	if (!is_front_page()) {
 
+		yoast_breadcrumb(
+			'<p class="breadcrumb-trail breadcrumbs">',
+			'</p>'
+		);
+
+	}
 }
 ?>

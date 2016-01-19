@@ -4,6 +4,10 @@
 		height: 300px;
 		// box-shadow: 0 10px 0 0 $color__border-header;
 	}
+
+	> .wrap {
+		
+	}
 	background: $color__background-header;
 	margin-bottom: -134px;
 	overflow: hidden;
@@ -18,6 +22,32 @@
 		max-width: none;
 	}
 
+	.banner-blocks {
+		position: relative;
+		width: 100%;
+		height: 100%;
+		max-width: $width__site-max;
+		margin: 0 auto;
+	}
+
+		.banner-block-left,
+		.banner-block-right {
+			background: $color__background-header;
+			width: 500px;
+			height: 500px;
+			position: absolute;
+			top: -100px;
+			@include transform( rotate(15deg) );
+		}
+
+		.banner-block-left {
+			right: 920px;
+		}
+
+		.banner-block-right {
+			left: 920px;
+		}
+
 	.banner-shadow {
 		position: absolute;
 		bottom: 0;
@@ -29,23 +59,9 @@
 			height: 100%;
 			max-width: 1920px;
 			max-height: 412px;
-			// width: 1920px;
-			// height: 412px;
 			margin: 0 auto;
 			background: url($path__images + 'header-shadow2.png') center 100% no-repeat;
 		}
-	}
-
-	.banner-block-left {
-		display: none;
-		background: $color__background-header;
-		width: 500px;
-		height: 500px;
-		position: absolute;
-		top: -100px;
-		// right: 1560px;
-		// left: 360px;
-		@include transform( rotate(15deg) );
 	}
 }
 

@@ -7,10 +7,12 @@ $color__background-body: #fff;
 $color__background-main: #ffffff;
 $color__text: #263238;
 $color__text: #20292b;
+$color__text-secondary: lighten($color__text, 40%);
 $color__link: darken($color__primary, 5%);
+$color__link-active: $color__primary;
 $color__link-visited: $color__primary;
 $color__link-hover: darken($color__primary, 10%);
-$color__border: #ccc;
+$color__border: #ddd;
 
 // Header
 $color__background-header: $color__primary;
@@ -31,9 +33,9 @@ $color__text-button: #fff;
 $color__text-button-alt: #fff;
 $color__text-form-field: #666;
 $color__text-form-field-focus: #111;
-$color__border-form-field: #ccc;
-$color__border-form-field-hover: #ccc;
-$color__border-form-field-focus: #ccc;
+$color__border-form-field: #ddd;
+$color__border-form-field-hover: #ddd;
+$color__border-form-field-focus: $color__primary;
 
 // Menu
 $color__border-menu: rgba(#000, 0.05);

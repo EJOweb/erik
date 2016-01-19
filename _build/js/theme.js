@@ -10,5 +10,4 @@ jQuery(document).ready(function($) {
 
 	/* Aligned images */
     $('.alignnone').removeClass('alignnone').wrap('<div class="alignnone"></div>');
-
 });

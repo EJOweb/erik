@@ -1,7 +1,7 @@
 #content {
 	// margin-top: -10rem;
 	background-color: $color__background-main;
-	padding: 2.75rem 3rem;
+	padding: 2.75rem 3rem (2.75rem - $vertical__space);
 	position: relative;
 	
 	.entry {
@@ -13,7 +13,7 @@
 	}
 
 	.entry-byline {
-		display: none;
+		// display: none;
 	}
 
 	.entry-header {
@@ -27,15 +27,37 @@
 
 
 /* Plural styles */
-#content {	
-	.entry + .entry {
-		&::before {
-			content: '';
-			display: block;
-			height: 1px;
-			width: 25%;
-			background-color: $color__border;
-			margin: 2rem 0 2rem;
+.plural #content {	
+
+	.entry {
+		display: table;
+		width: 100%;
+		margin: 0;
+		border-top: 1px solid $color__border;
+
+		&:last-of-type {
+			border-bottom: 1px solid $color__border;
+			margin-bottom: $vertical__space;
 		}
+	}
+
+	.entry-byline {
+		display: table-cell;
+		vertical-align: middle;
+		width: 100px;
+		line-height: 1;
+	}
+
+	.entry-header {
+		display: table-cell;
+		vertical-align: middle;
+
+		.entry-title a {
+			display: block;
+			padding: 1.25rem 0 1.25rem 1.25rem;
+		}
+	}
+
+	.entry + .entry {
 	}
 }

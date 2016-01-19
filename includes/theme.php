@@ -47,7 +47,7 @@ add_action( 'preprocess_comment', 'preprocess_new_comment' );
  */
 function erik_register_image_sizes() 
 {
-	add_image_size( 'header', 1920, 300, true );
+	add_image_size( 'header', 1200, 300, true );
 }
 
 /**

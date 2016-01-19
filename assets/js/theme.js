@@ -357,7 +357,6 @@ jQuery(document).ready(function($) {
 
 	/* Aligned images */
     $('.alignnone').removeClass('alignnone').wrap('<div class="alignnone"></div>');
-
 });
 //* Wait a couple of miniseconds before action. Useful to prevent multiple triggers on resize
 //* Underscore-framework functionality
