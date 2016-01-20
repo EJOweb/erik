@@ -1,0 +1,11 @@
+#main {
+	> .wrap {
+		max-width: $width__site-max;
+		margin: 0 auto;
+	}
+
+	@include media($breakpoint__medium) {
+		padding-left: 100px;
+		> .wrap { margin: 0; }
+	}
+}

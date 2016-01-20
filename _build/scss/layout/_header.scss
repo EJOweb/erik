@@ -1,16 +1,28 @@
 #header {
 	&, a { color: $color__text-header; }
-	margin-bottom: -76px;
+	margin-bottom: -77px;
 
 	> .wrap {
-		position: relative;
-		height: 118px;
+		max-width: $width__site-max;
+		margin: 0 auto;
+		
+		> .wrap {
+			position: relative;
+			height: 118px;
+		}
+	}
+
+	@include media($breakpoint__medium) {
+		padding-left: 100px;
+		> .wrap { 
+			margin: 0; 
+		}
 	}
 
 	.header-border {
 		position: absolute;
 		left: -24px;
-		top: 18px;
+		top: 17px;
 		height: 100px;
 		width: 24px;
 		border-color: #fff;

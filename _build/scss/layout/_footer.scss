@@ -1,12 +1,20 @@
 #footer {
 	background-color: $color__background-footer;
 	&, a {	color: $color__text-footer;	}
-	
+
 	margin-top: -46px;
 	> .wrap {
 		margin-top: 46px;
 		padding: 1rem 0 1.5rem;
 		text-align: center;
+		max-width: $width__site-max;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	@include media($breakpoint__medium) {
+		padding-left: 100px;
+		> .wrap { margin-left: 0; margin-right: 0; }
 	}
 
 	#toTop {

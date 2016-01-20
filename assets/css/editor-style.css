@@ -1,4 +1,18 @@
 @charset "UTF-8";
+/*
+Large
+Medium
+Smedium
+Small
+Tiny
+
+desktop
+laptop
+tablet
+phablet
+smartphone
+featurephone
+*/
 /* Reset
 ============================================================================ */
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
@@ -760,7 +774,7 @@ input.alt[type="submit"]:hover {
   margin-right: auto;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: smartphone) {
   .alignleft,
   .alignright {
     display: block;

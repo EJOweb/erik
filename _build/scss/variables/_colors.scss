@@ -38,27 +38,27 @@ $color__border-form-field-hover: #ddd;
 $color__border-form-field-focus: $color__primary;
 
 // Menu
-$color__border-menu: rgba(#000, 0.05);
 $color__background-menu: transparent;
-$color__background-menu-toggle: $color__secondary;
-$color__background-menu-toggle-hover: darken($color__secondary, 3%);
 $color__background-menu-item: transparent;
 $color__background-menu-item-hover: transparent;
 $color__background-menu-item-selected: transparent;
+$color__background-menu-toggle: $color__background-menu-item;
+$color__background-menu-toggle-hover: $color__background-menu-item-hover;
 $color__background-submenu: #eee;
 $color__background-submenu-item: transparent;
 $color__background-submenu-item-hover: #607d8b;
 $color__background-submenu-item-selected: #607d8b;
 $color__text-menu: #fff;
-$color__text-menu-toggle: #00acc1;
-$color__text-menu-toggle-hover: $color__text-menu-toggle;
 $color__text-menu-item: $color__text-menu;
 $color__text-menu-item-hover: $color__text-menu;
 $color__text-menu-item-selected: $color__text-menu;
+$color__text-menu-toggle: $color__text-menu;
+$color__text-menu-toggle-hover: $color__text-menu-toggle;
 $color__text-submenu: lighten($color__text, 12%);
 $color__text-submenu-item: $color__text-submenu;
 $color__text-submenu-item-hover: $color__text-submenu;
 $color__text-submenu-item-selected: $color__text-submenu;
+$color__border-submenu: rgba(#000, 0.05);
 
 // Other
 $color__background-hr: $color__border;

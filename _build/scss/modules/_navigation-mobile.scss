@@ -1,31 +1,65 @@
+/* Responsiveness */
+#menu-primary-mobile {
+	display: none;
+	@include media($breakpoint__smedium) {
+		display: block;
+	}
+}
+
 /* Toggle */
 .menu-toggle {
-	text-transform: capitalize;
-	padding: rem(10) rem(10) rem(10);
-	line-height: 1;
-	text-align: center;
-	cursor: pointer;
+	a { 
+		padding: rem(11px) rem(12px) rem(12px); 
+		background-color: $color__background-menu-toggle;
+		color: $color__text-menu-toggle;
+		text-transform: capitalize;
 
-	&:before { 
-		@include icon('fa-navicon');
+		&:hover {
+			background-color: $color__background-menu-toggle-hover;
+			color: $color__text-menu-toggle-hover;
+		}
+
 		font-size: $font__size-large;
-		padding-right: 5px;
+		font-family: $font__family-menu;
+		line-height: $font__line-height-menu;
+		text-align: center;
+
+		&:before { 
+			@include icon('fa-navicon');
+			font-size: $font__size-large;
+			padding-right: 5px;
+		}
 	}
 
 	&.expanded {
-		&:before { 
+		a:before { 
 			content: $fa-var-remove; 
 			padding-right: 6px;
 		}
 	}
 
-	background-color: $color__background-menu-toggle;
-	color: $color__text-menu-toggle;
 
-	&:hover {
-		background-color: $color__background-menu-toggle-hover;
-		color: $color__text-menu-toggle-hover;
+	@include flex-row(center);
+
+
+	&:before {
+		content: '';
+		pointer-events: none;
+		height: 8px;
+		border-color: #fff;
+		border-style: solid;
+		border-width: 8px 0 0 0;
+		-webkit-border-image: url($path__images + 'border.png') 8 round;
+		   -moz-border-image: url($path__images + 'border.png') 8 round;
+		     -o-border-image: url($path__images + 'border.png') 8 round;
+		        border-image: url($path__images + 'border.png') 8 round;
+
+		@include flex(1 1 auto);
+		margin-right: 0;
+		width: auto;	
 	}
+
+	
 }
 
 /* Reset */
@@ -40,12 +74,6 @@
 
 /* Structure */
 #menu-primary-mobile {
-	position: absolute;
-	z-index: 1;
-	top: -8px;
-	right: -88px;
-    width: 320px;
-    text-align: right;
     .menu-items {
     	display: none;
     }
@@ -56,7 +84,7 @@
 	&, a { color: $color__text-menu; }
 
 	.menu-items {
-		border-top: 1px solid $color__border-menu;
+		border-top: 1px solid $color__border-submenu;
 		background-color: $color__background-menu;
 		text-align: left;
 	}
@@ -72,7 +100,7 @@
 	/* Top level */
 	.menu-items > .menu-item {
 		background-color: $color__background-menu-item;
-		border-bottom: 1px solid $color__border-menu;
+		border-bottom: 1px solid $color__border-submenu;
 		position: relative;
 
 		> a {
