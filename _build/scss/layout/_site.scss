@@ -1,21 +1,18 @@
 #container {
-	background-color: $color__background-body;
-	@include display(flex);
-	@include flex-direction(column);
-	@include align-items(stretch);
+	background-color: palette(white);
+	display: flex;
+	flex-direction: column;
+	align-items: stretch;
 	min-height: 100%;
 }
 
 #footer {
-	@include flex-grow(1);
-	@include flex-shrink(1);
-	@include flex-basis(auto);
+	flex: 1 1 auto;
 }
 
 @import "layout/header";
 @import "layout/main";
 @import "layout/content";
-@import "layout/sidebar-primary";
 @import "layout/footer";
 
 

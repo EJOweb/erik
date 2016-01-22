@@ -7,11 +7,11 @@
 	overflow: hidden;
 
 	&:focus {
-		background-color: $color__background-screenreader;
+		background-color: palette(white, dark);
 		border-radius: 3px;
 		box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
 		clip: auto !important;
-		color: $color__text-screenreader;
+		color: palette(black, dark);
 		display: block;
 		font-size: $font__size-small;
 		font-weight: $font__weight-bold;

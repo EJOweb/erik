@@ -55,9 +55,9 @@
 
 	.comment {
 		article {
-			border-left: 1px solid $color__border;
-			border-top: 1px solid $color__border;
-			border-bottom: 1px solid $color__border;
+			border-left: 1px solid palette(grey);
+			border-top: 1px solid palette(grey);
+			border-bottom: 1px solid palette(grey);
 			margin-bottom: -1px;
 		}
 		
@@ -98,13 +98,13 @@
 
 		//* Simple edit textarea
 		textarea {
-			border-bottom: 1px solid $color__border;
+			border-bottom: 1px solid palette(grey);
 			padding: rem(5) 0;
 			display:block;
 
 			&:focus {
 				border-bottom-width: 2px;
-				border-color: $color__border-form-field-focus;
+				border-color: palette(primary);
 				margin-bottom: -1px;
 			}
 		}
@@ -113,9 +113,9 @@
 
 //* Reply styling
 .comment-respond {
-	border-left: 1px solid $color__border;
-	border-top: 1px solid $color__border;
-	border-bottom: 1px solid $color__border;
+	border-left: 1px solid palette(grey);
+	border-top: 1px solid palette(grey);
+	border-bottom: 1px solid palette(grey);
 	margin-bottom: -1px;
 	position: relative;
 
@@ -131,7 +131,7 @@
 		margin-top: 2px;
 
 		.fa:hover {
-			color: $color__link-active;
+			color: palette(primary);;
 		}
 	}
 
@@ -153,7 +153,7 @@
 	}
 
 	label {
-		color: $color__text-secondary;
+		color: palette(grey, dark);
 		position:absolute;
 		pointer-events: none;
 		left: 0px;
@@ -176,13 +176,13 @@
 textarea {
 	border: none;
 	// box-sizing: border-box;
-	border-bottom: 1px solid $color__border;
+	border-bottom: 1px solid palette(grey);
 	padding: rem(5) 0;
 	display:block;
 
 	&:focus {
 		border-bottom-width: 2px;
-		border-color: $color__border-form-field-focus;
+		border-color: palette(primary);
 		margin-bottom: -1px;
 	}
 }

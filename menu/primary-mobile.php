@@ -3,7 +3,7 @@
 	<nav <?php hybrid_attr( 'menu', 'primary-mobile' ); ?>>
 		<div class="wrap">
 
-			<div class="menu-toggle"><a>Menu</a></div>
+			<div class="menu-toggle"><span>Menu</span></div>
 			<!-- <div class="menu-toggle"><i class="fa fa-navicon"></i>Menu</div> -->
 
 			<?php wp_nav_menu(

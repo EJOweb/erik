@@ -1,24 +1,21 @@
 //* Breakpoint query
 @mixin media($breakpoint_width, $min-max: 'max-width', $device: 'screen') {
 
-	//* Check for breakpoint names
-	// @if $width == large {
+	// /* Check for breakpoint names */
+	// @if $breakpoint_width == large {
 	// 	$breakpoint_width: $breakpoint__large;
 	// }
-	// @else if $width == medium {
+	// @else if $breakpoint_width == medium {
 	// 	$breakpoint_width: $breakpoint__medium;
 	// }
-	// @else if $width == smedium {
+	// @else if $breakpoint_width == smedium {
 	// 	$breakpoint_width: $breakpoint__smedium;
 	// }
-	// @else if $width == small {
+	// @else if $breakpoint_width == small {
 	// 	$breakpoint_width: $breakpoint__small;
 	// }
-	// @else if $width == tiny {
+	// @else if $breakpoint_width == tiny {
 	// 	$breakpoint_width: $breakpoint__tiny;
-	// }
-	// @else {
-	// 	$breakpoint_width: $width;
 	// }
 
 	//* Output media query

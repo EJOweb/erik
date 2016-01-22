@@ -8,4 +8,15 @@
 		padding-left: 100px;
 		> .wrap { margin: 0; }
 	}
+
+	@include media($breakpoint__small) {
+		padding-left: 16px;
+		padding-right: 16px;
+	}
+
+	@include media($breakpoint__tiny) {
+		padding-left: 0;
+		padding-right: 0;
+	}
+
 }

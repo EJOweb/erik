@@ -1,15 +1,20 @@
 .banner {
+	background: palette(primary);
+	
 	height: 184px;
 	&.banner-image {
 		height: 300px;
-		// box-shadow: 0 10px 0 0 $color__border-header;
+	}
+	margin-bottom: -134px;
+
+	@include media($breakpoint__small) {
+		margin-bottom: -93px;
 	}
 
-	> .wrap {
-		
+	@include media($breakpoint__tiny) {
+		margin-bottom: -41px;
 	}
-	background: $color__background-header;
-	margin-bottom: -134px;
+
 	overflow: hidden;
 	position: relative;
 
@@ -32,7 +37,7 @@
 
 		.banner-block-left,
 		.banner-block-right {
-			background: $color__background-header;
+			background: palette(primary);
 			width: 500px;
 			height: 500px;
 			position: absolute;

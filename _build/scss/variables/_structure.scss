@@ -4,23 +4,21 @@ $width__site-min: 300px;
 $breakpoint__large: 900px;
 $breakpoint__medium: 900px;
 $breakpoint__smedium: 820px;
-$breakpoint__small: 650px;
-$breakpoint__tiny: 480px;
+$breakpoint__small: 560px;
+$breakpoint__tiny: 420px;
 
-/*
-Large
-Medium
-Smedium
-Small
-Tiny
+// Large
+// Medium
+// Smedium
+// Small
+// Tiny
 
-desktop
-laptop
-tablet
-phablet
-smartphone
-featurephone
-*/
+// desktop
+// laptop
+// tablet
+// phablet
+// smartphone
+// featurephone
 
 $width__gutter: 36px;
 $width__gutter-pct: ( $width__gutter / $width__site-max ) * 100%;

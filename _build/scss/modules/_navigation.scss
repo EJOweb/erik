@@ -92,11 +92,16 @@
 
 /* Styling */
 #menu-primary {
-	&, a {
-		color: $color__text-menu-item;
-		font-size: $font__size-large;
-		font-family: $font__family-menu;
-		line-height: $font__line-height-menu;
+	color: palette(white);
+	font-size: $font__size-large;
+	font-family: $font__family-menu;
+	line-height: $font__line-height-menu;
+
+	a {
+		color: inherit;
+		font-size: inherit;
+		font-family: inherit;
+		line-height: inherit;
 	}
 
 	/* Top level menu-items */
@@ -108,9 +113,12 @@
 			text-align: center;
 
 			&:hover {
-				background-color: $color__background-menu-item-hover;
-				color: $color__text-menu-item-hover;
+				color: palette(white, dark);
 				text-decoration: underline;
+
+				.fa {
+					text-decoration: underline;
+				}
 			}
 		}		
 
@@ -119,8 +127,6 @@
 		&.current-menu-parent,
 		&.current-menu-ancestor {
 			> a {
-				background-color: $color__background-menu-item-selected;
-				color: $color__text-menu-item-selected;
 			}
 		}
 
@@ -137,15 +143,15 @@
 	//* Submenu
 	.sub-menu { 
 		padding: rem(8) rem(18) rem(8);
-		background-color: $color__background-submenu;
+		background-color: palette(grey);
 		&, a {
 			font-size: $font__size-small;
-			color: $color__text-submenu-item;
+			color: palette(black);
 		}
 
 		.menu-item {
 			+ .menu-item {
-				border-top: 1px solid $color__border-submenu;
+				border-top: 1px solid palette(grey, dark);
 			}
 
 			a {
