@@ -1,3 +1,66 @@
+// http://erskinedesign.com/blog/setting-typographic-scale-with-sass-maps/
+// https://github.com/ultimate-package/tools.font-scale
+
+// FONT-FAMILY SETTINGS
+$font-primary: (
+	stack: "Georgia, serif",
+  
+	x-small: (
+		font-size: 13,
+		line-height: 16
+	),
+
+	small: (
+		font-size: 14,
+		line-height: 20
+	),
+
+	base: (
+		font-size: 16,
+		line-height: 18
+	),
+
+	mid: (
+		font-size: 18,
+		line-height: 22
+	),
+
+	mid-large: (
+		font-size: 20,
+		line-height: 26
+	),
+
+	large: (
+		font-size: 25,
+		line-height: 30
+	),
+
+	x-large: (
+		font-size: 45,
+		line-height: 47
+	)
+);
+
+$font-secondary: (
+	stack: "Verdana, sans-serif", 
+
+	x-small: (
+		font-size: 12,
+		line-height: 16
+	)
+);
+
+// $font-default: $font-georgia;
+
+
+// input: 
+// font-scale(base, secondary)
+
+// output:
+// font-size: xx
+// line-height: xx
+
+
 // Font sizes
 $em-base: 16px; // For bourbon rem function
 $font__size: rem($em-base); 
