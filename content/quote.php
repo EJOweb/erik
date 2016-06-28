@@ -8,7 +8,7 @@
 			<?php hybrid_post_terms( array( 'taxonomy' => 'category' ) ); ?>
 			<span class="delimiter">&bullet;</span>
 			<?php echo $time; ?>
-			<?php ejo_show_comments_info(); ?>
+			<?php EJOtheme::show_comments_info(); ?>
 		</div>
 
 		<div <?php hybrid_attr( 'entry-content' ); ?>>
@@ -26,7 +26,7 @@
 			<?php hybrid_post_terms( array( 'taxonomy' => 'category' ) ); ?>
 			<span class="delimiter">&bullet;</span>
 			<?php echo $time; ?>			
-			<?php ejo_show_comments_info(); ?>
+			<?php EJOtheme::show_comments_info(); ?>
 		</div>
 
 		<div <?php hybrid_attr( 'entry-content' ); ?>>
