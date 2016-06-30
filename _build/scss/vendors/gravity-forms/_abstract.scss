@@ -1,0 +1,18 @@
+// Variables
+$required: #790000 !default;
+$error: #CC0000 !default;
+$confirmation: #007900 !default;
+
+$ui-font-color: #333 !default;
+$ui-border-color: #DDD !default;
+$ui-background-color: #EFEFEF !default;
+
+// $form-text-inputs: 	'input:not([type="submit"]):not([type="checkbox"]):not([type="radio"])',
+// 					'input:not([type])' !default;
+
+// Breakpoints
+// If theme does not define breakpoints
+$breakpoints: (
+	'sm': (min-width: 480px),
+) !default;
+

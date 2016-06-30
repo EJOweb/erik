@@ -1,0 +1,85 @@
+// Borders
+//
+
+// Get border width
+@function get-border-width($type: base, $borders: $borders) 
+{
+    @if map-has-key($borders, $type) == false {
+        @warn "Border " + $type + " not found in $borders";
+        @warn 'Returning 1px border-width';
+        @return 1px;
+    }
+
+    $border: map-get($borders, $type);
+    $border-width: map-get($border, width);
+
+    @return $border-width;
+}
+
+// Get border style
+@function get-border-style($type: base, $borders: $borders) 
+{
+    @if map-has-key($borders, $type) == false {
+        @warn "Border " + $type + " not found in $borders";
+        @warn 'Returning solid border-style';
+        @return solid;
+    }
+
+    $border: map-get($borders, $type);
+    $border-style: map-get($border, style);
+
+    @return $border-style;
+}
+
+// Get border color
+@function get-border-color($type: base, $borders: $borders) 
+{
+    @if map-has-key($borders, $type) == false {
+        @warn "Border " + $type + " not found in $borders";
+        @warn 'Returning $gray border-color';
+        @return $gray;
+    }
+
+    $border: map-get($borders, $type);
+    $border-color: map-get($border, color);
+
+    @return $border-color;
+}
+
+// Get border
+@function get-border($type: base)
+{
+    @return get-border-width($type) get-border-style($type) get-border-color($type);
+}
+
+// Print border
+@mixin border($type: base)
+{
+	border: get-border($type);
+}
+
+// Single side border-radius
+
+@mixin border-radius($radius: $border-radius) {
+	border-radius: $radius;
+}
+
+@mixin border-top-radius($radius: $border-radius) {
+	border-top-right-radius: $radius;
+	border-top-left-radius: $radius;
+}
+
+@mixin border-right-radius($radius: $border-radius) {
+	border-bottom-right-radius: $radius;
+	border-top-right-radius: $radius;
+}
+
+@mixin border-bottom-radius($radius: $border-radius) {
+	border-bottom-right-radius: $radius;
+	border-bottom-left-radius: $radius;
+}
+
+@mixin border-left-radius($radius: $border-radius) {
+	border-bottom-left-radius: $radius;
+	border-top-left-radius: $radius;
+}

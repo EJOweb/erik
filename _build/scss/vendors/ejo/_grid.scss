@@ -1,0 +1,51 @@
+/// Grid system
+//
+// Generate semantic grid columns with these mixins.
+
+/// Row - Column Grid
+// 
+// 
+
+@mixin make-row($gutter: $grid-gutter-width) {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+
+@mixin make-column($gutter: $grid-gutter-width) {
+	// position: relative;
+	min-height: 1px;
+}
+
+@mixin column-span($column-span, $columns-total, $gutter: $grid-gutter-width) 
+{
+	// Calculate how many gutters are remaining
+	// If column-span is 2 and columns-total is 3,
+	// then there will be 1 gutter remaining
+    $gutters-remaining: $columns-total - $column-span;
+
+    // Calculate the percentage of the spanning columns
+    // If column-span is 2 and columns-total is 3,
+    // then the result will be 66.66666 percent
+    $column-percentage-size: (100% / #{$columns-total}) * #{$column-span};
+
+    // Calculate the size of the remaining gutters
+    // If gutters-remaining is 1, gutter is 36px and columns-total is 3,
+    // then the gutter size sum will be 12px
+    $gutter-size-sum: #{$gutters-remaining} * #{$gutter} / #{$columns-total};
+
+    // Return the calculation formula for the size of 1 block
+	flex: 0 0 calc( #{$column-percentage-size} - #{$gutter-size-sum} );
+}
+
+
+// // Compose calc() formula for size of a box relative to the total blocks and space-around
+// @function boxsize($total-blocks, $gutter: $grid-gutter-width) 
+// {
+//     // If there are 6 blocks, there need to be calculated space for 5 borders
+//     $number-of-gutters: $total-blocks - 1;
+
+//     // Return the calculation formula for the size of 1 block
+//     @return calc(100% / #{$total-blocks} - ((#{$number-of-gutters} * #{$gutter}) / #{$total-blocks}));
+// }

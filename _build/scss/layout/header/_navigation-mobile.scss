@@ -1,0 +1,202 @@
+/* Mobile Navigation
+-------------------------------------------------------------------*/
+
+#menu-primary-mobile {
+	position: relative;
+	flex-grow: 0;
+	flex-shrink: 0;
+	flex-basis: auto;
+	align-self: flex-end;
+
+	@include breakpoint(lg) {
+		display: none;
+	}
+}
+
+
+/* Toggle button */
+.menu-toggle {
+	padding-bottom: 9px;
+
+	span {
+		@include font-appearance(secondary, bold);
+		display: block;
+		padding: 4px 0;
+		text-align: center;
+		cursor: pointer;
+		text-transform: uppercase;
+
+		&:before { 
+			@include icon('fa-navicon');
+			padding-right: 5px;
+		}
+
+		&:after {
+			content: "";
+			display: block;
+			position: relative;
+			top: 13px;
+			margin: 0 auto;
+			height: 2px;
+			width: 0;
+			background-color: transparent;
+			transition: all 200ms ease-in-out 0s;
+		}
+
+		&:hover {
+			&:after {
+				background-color: $white;
+				width: 100%;
+			}
+		}
+	}
+
+	&.expanded {
+		span:before { 
+			content: $fa-var-remove; 
+			padding-right: 6px;
+		}
+
+		span:after {
+			background-color: $white;
+			width: 100%;
+		}
+	}
+}
+
+/* Menu style */
+#menu-primary-mobile {
+	ul { @include reset-list; }
+
+	a {
+		@include reset-link;
+		display: block;
+		transition: all 200ms ease 0s;
+	}
+
+	li { display: block; }
+	
+	.menu-mobile {
+		display: none;
+		@include font-appearance(secondary, normal);
+		@include font-dimension(base, $menu-mobile-font-dimensions);
+		position: absolute;
+		top: 100%;
+		// left: 0;
+		right: 0;
+		// margin-left: auto;
+		// margin-right: auto;
+		z-index: 99;
+		min-width: 240px;
+		max-width: 300px;
+		padding: 6px 0;
+		background: $white;
+		color: $font-color;
+		box-shadow: $box-shadow;
+		text-align: left;
+
+		// @include breakpoint(sm) {
+		// 	left: auto;
+		// 	right: 0;
+		// 	// margin-left: auto;
+		// 	// margin-right: auto;
+		// }
+	}
+
+	.menu-item {
+		position: relative;
+		display: block;
+
+		&.current-menu-ancestor > a,
+		&.current-menu-item > a {
+			@include font-weight(bold, secondary);
+		}
+	}
+
+	.touch-button {
+		position: absolute;
+		top: 0;
+		right: 0;
+		@include font-size(sm, $menu-mobile-font-dimensions);
+		text-align: center;
+		cursor: pointer;
+
+		@include on-event {
+			background-color: $gray-lighter;
+		}
+	}
+
+	.sub-menu {
+		@include reset-list;
+		display: none;
+		flex-basis: 100%;
+		padding: 2px 12px 5px;
+
+		.menu-item {
+			&:first-child { border-top: none; }
+
+			a {
+				@include on-event {
+					background-color: $gray-lighter;
+				}
+			}		
+		}
+	}
+
+	/* Top level */
+	.menu-items > .menu-item {
+		> a {
+			flex: 1 0 100%;
+			width: 100%;
+			padding: rem(9) rem(18);
+
+			@include on-event {
+				background-color: $gray-lighter;
+			}
+		}
+
+		&.current-menu-ancestor > a,
+		&.current-menu-item > a {
+		}
+
+		&.expanded {
+			a {
+				@include on-event {
+				}
+			}
+		}
+
+		> .touch-button {
+			padding: rem(9) rem(12);
+		}
+	}
+
+	/* Second level */
+	.menu-items > .menu-item > .sub-menu {
+		> .menu-item {
+			> a {
+				@include font-size(sm, $menu-mobile-font-dimensions);
+				padding: rem(6) rem(18);
+			}		
+
+			> .touch-button {
+				padding: rem(6) rem(12);
+			}
+		}
+	}
+
+	/* Lower levels */
+	.sub-menu .sub-menu {
+		a {
+			@include font-size(xs, $menu-mobile-font-dimensions);
+			padding: rem(3) rem(18);
+		}
+
+		.touch-button {
+			padding: rem(3) rem(12);
+		}
+	}
+
+
+}
+

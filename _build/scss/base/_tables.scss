@@ -1,0 +1,37 @@
+/* Tables
+-------------------------------------------------------------------*/
+    
+table {
+	width: 100%;
+	border-collapse: collapse;
+	border-spacing: 0;
+	margin-bottom: space-y(base);
+}
+
+th,
+td {
+    padding: space-y(two-third) space-x(two-third);
+    line-height: space-y(two-third);
+    text-align: left;
+    vertical-align: middle;
+}
+
+th {
+    background-color: $brand-primary;
+    color: $font-color-inv;
+}
+
+td {
+
+}
+
+tr {
+    &.even {
+        // background-color: rgba($black, 0.05);
+    }
+}
+
+// Reset table
+@mixin reset-table {
+
+}

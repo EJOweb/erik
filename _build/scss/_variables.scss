@@ -1,0 +1,377 @@
+//* Color Palette
+//* Grayscale and brand colors for use across Bootstrap.
+$gray:                      #55595c;
+$gray-dark:                 #373a3c;
+$gray-darker:               #272a2c;
+$gray-light:                #818a91;
+$gray-lighter:              #eceeef;
+$gray-lightest:             #f7f7f9;
+
+$white:						#ffffff;
+$black:						#000000;
+
+$brand-primary:             #0275d8;
+$brand-primary:             #a9c857;
+$brand-primary-dark:        darken($brand-primary, 7%);
+$brand-primary-light:       lighten($brand-primary, 7%);
+
+$brand-secondary:           #f2912d;
+$brand-secondary-dark:      darken($brand-secondary, 7%);
+$brand-secondary-light:     lighten($brand-secondary, 7%);
+
+$brand-success:             #5cb85c;
+$brand-info:                #5bc0de;
+$brand-warning:             #f0ad4e;
+$brand-danger:              #d9534f;
+$brand-inverse:             $gray-dark;
+
+
+//**
+//* TYPOGRAPHY
+//**
+
+//* Font Color
+$font-color: 				$gray;
+$font-color-light: 			$gray-light;
+$font-color-inv: 			$white;
+$font-color-inv-light: 		rgba($font-color-inv, 0.8);
+
+//* Font dimensions
+$font-dimensions: (
+	xs: (
+		font-size:   12,
+		line-height: 12,
+	),
+	sm: (
+		font-size:   15,
+		line-height: 20,
+	),
+	base: (
+		font-size: 18,
+		line-height: 30,
+	),
+	lg: (
+		font-size:   20,
+		line-height: 30,
+	),
+	h4: (
+		font-size:   18,
+		line-height: 30,
+	),
+	h3: (
+		font-size:   24,
+		line-height: 30,
+	),
+	h2: (
+		font-size:   32,
+		line-height: 40,
+	),
+	h1: (
+		font-size:   42,
+		line-height: 48,
+	),
+);
+
+//* Font family
+$font-families: (
+	primary: (
+		// stack: ('Georgia', 'Utopia', 'Charter', serif),	
+		stack: ('Roboto', 'Segoe UI', 'Tahoma', sans-serif),
+		weights: (
+			normal: 300,
+			bold: 500
+		)
+	),
+
+	secondary: (
+		stack: ('Roboto Slab', 'Segoe UI', 'Tahoma', sans-serif),
+		weights: (
+			normal: 700,
+		)
+	)
+);
+
+//* Links
+$link-color: 					$brand-primary;
+
+//* Buttons
+$button-bgcolor: 				$brand-primary;
+$button-bgcolor-action:			$brand-primary-dark;
+$button-color: 					$white;
+
+$button-highlight-bgcolor: 			$brand-primary;
+$button-highlight-bgcolor-action:	$brand-primary-dark;
+$button-highlight-color: 			$white;
+
+$button-transparent-bgcolor: 		transparent;
+$button-transparent-bgcolor-action:	transparent;
+$button-transparent-color: 			$button-bgcolor;
+$button-transparent-color-action:	$button-bgcolor-action;
+$button-transparent-border:			1px solid $button-bgcolor;
+
+$button-outline-bgcolor: 		transparent;
+$button-outline-bgcolor-action:	rgba($button-bgcolor, 0.1);
+$button-outline-color: 			$button-bgcolor;
+$button-outline-border:			1px solid $button-bgcolor;
+
+//* Header Image
+$header-image-color: 			$brand-primary;
+
+
+//**
+//* STRUCTURE
+//**
+
+//* Site padding
+$site-paddings: (
+	xs: 24px,
+	// sm: 24px,
+	// md: 24px,
+	// lg: 24px,
+	// xl: 24px
+);
+
+//* Breakpoints
+//* This theme is designed mobile-first
+// $breakpoints: (
+// 	xs: 0, 	   		// Extra small screen / phone
+// 	sm: 544px, 		// Small screen / phone
+// 	md: 768px, 		// Medium screen / tablet
+// 	lg: 1008px, 	// Large screen / desktop
+// );
+
+$breakpoints: (
+	xs: 0, 	   		// Extra small screen / phone
+	sm: 544px, 		// Small screen / phone
+	md: 768px, 		// Medium screen / tablet
+	lg: 1008px, 	// Large screen / desktop
+);
+
+// * Container sizes
+$container-min-width: 300px;
+$container-max-widths: (
+	base: (
+		xs: 400px,
+		sm: 576px,
+		md: 720px,
+		// lg: 960px,
+	),
+	content: (
+		xs: 400px,
+		sm: 540px,
+		// md: 720px,
+		// lg: 960px,
+	)
+);
+
+//* Spacing
+//*
+//* Control the default styling of most Bootstrap elements by modifying these
+//* variables. Mostly focused on spacing.
+//* You can add more entries to the $spacers map, should you need more variation.
+
+$space: get-line-height(base);
+$space-x: $space / 0.75;
+$space-y: $space;
+
+//* Grid columns
+//*
+//* Set the number of columns and specify the width of the gutters.
+
+$grid-columns:      12;
+$grid-gutter-width: $space-x;
+
+//* Paths
+$path__images: '../images/';
+
+//* Borders
+$borders: (
+	base: (
+		width: 1px,
+		style: solid,
+		color: $gray-light,
+	),
+	header: (
+		width: 1px,
+		style: solid,
+		color: rgba($white,0.6),
+	),
+	footer: (
+		width: 1px,
+		style: solid,
+		color: rgba($white,0.4),
+	),
+);
+
+//* Border radius
+$border-radius: 4px;
+
+//* Box shadow
+$box-shadow: 1px 1px 3px 0px rgba(0, 0, 0, 0.15);
+
+//* Menu
+$menu-mobile-font-dimensions: (
+	xs: (
+		font-size: 12,
+		line-height: 24,
+	),
+	sm: (
+		font-size: 14,
+		line-height: 24,
+	),
+	base: (
+		font-size: 16,
+		line-height: 24,
+	),
+);
+
+//* Galleries
+$gallery-gutter: 6px;
+
+
+
+// CURRENTLY NOT IN USE:
+//
+// Ideas
+
+// Textcontent containers
+//
+// $textcontent: 	'.entry-content',
+// 				'.textwidget',
+// 				'.wp-editor';
+
+// $font-sizes: (
+//   xs: 14,
+//   sm: 16,
+//   base: 18,
+//   lg: 20,
+//   h4: 19,
+//   h3: 26,
+//   h2: 35,
+//   h1: 42,
+// );
+
+// $font: (
+// 	xs: (
+// 		dimensions: (
+// 			font-size:   12,
+// 			line-height: 12,
+// 		),
+// 		space: (
+// 			// padding-top: space-y(xs),
+// 			// margin-bottom: space-y(xs),
+// 		),
+// 		type: (
+// 			// font-family: primary, // Inherited by default
+// 			// font-weight: normal, // Inherited by default
+// 		),
+// 		other: (
+// 			text-transform: uppercase,
+// 		),
+// 	),
+// 	sm: (
+// 		dimensions: (
+// 			font-size:   15,
+// 			line-height: 15,
+// 		),
+// 		space: (
+
+// 		),
+// 		type: (
+
+// 		),
+// 		other: (
+
+// 		),
+// 	),
+// 	base: (
+// 		dimensions: (
+// 			font-size: 18,
+// 			line-height: 30,
+// 		),
+// 		space: (
+
+// 		),
+// 		type: (
+
+// 		),
+// 		other: (
+
+// 		),
+// 	),
+// 	lg: (
+// 		dimensions: (
+// 			font-size:   20,
+// 			line-height: 30,
+// 		),
+// 		space: (
+
+// 		),
+// 		type: (
+
+// 		),
+// 		other: (
+
+// 		),
+// 	),
+// 	h4: (
+// 		dimensions: (
+// 			font-size:   19,
+// 			line-height: 30,
+// 		),
+// 		space: (
+
+// 		),
+// 		type: (
+
+// 		),
+// 		other: (
+
+// 		),
+// 	),
+// 	h3: (
+// 		dimensions: (
+// 			font-size:   26,
+// 			line-height: 39,
+// 		),
+// 		space: (
+
+// 		),
+// 		type: (
+
+// 		),
+// 		other: (
+
+// 		),
+// 	),
+// 	h2: (
+// 		dimensions: (
+// 			font-size:   35,
+// 			line-height: 45,
+// 		),
+// 		space: (
+
+// 		),
+// 		type: (
+
+// 		),
+// 		other: (
+
+// 		),
+// 	),
+// 	h1: (
+// 		dimensions: (
+// 			font-size:   42,
+// 			line-height: 54,
+// 		),
+// 		space: (
+
+// 		),
+// 		type: (
+
+// 		),
+// 		other: (
+
+// 		),
+// 	),
+// );

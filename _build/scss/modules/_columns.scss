@@ -1,0 +1,49 @@
+$column: 	'.column',
+			'> div',
+			'> p';
+.columns {
+	@include make-row;
+	
+	#{$column} {
+		margin-bottom: vertical-space(1);
+		@include make-column;
+	}
+}
+
+.columns-2 {
+	@include breakpoint(md) {
+		#{$column} {
+			@include column-span(1, 2);
+		}
+	}
+	@include breakpoint(lg) {
+		
+	}	
+}
+
+.columns-3 {
+	@include breakpoint(md) {
+		.column {
+			@include column-span(1, 2);
+		}
+	}
+
+	@include breakpoint(lg) {
+
+	}
+
+	@include breakpoint(xl) {
+		.column {
+			@include column-span(1, 3);
+		}
+	}
+}
+
+.columns-4 {
+	@include breakpoint(lg) {
+
+	}
+	.column {
+		@include column-span(1, 4);
+	}
+}

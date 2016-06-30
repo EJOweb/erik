@@ -1,0 +1,48 @@
+/* Lists
+-------------------------------------------------------------------*/
+ul, ol {
+    padding: 0;
+    margin-top: 0;
+    margin-left: space-x();
+    margin-bottom: space-y();
+
+    ul, ol {
+        margin-bottom: 0;
+        margin-top: space-y(half);
+    }
+
+    li {
+        margin-bottom: space-y(half);
+        padding-left: space-x(half);
+    }
+}
+
+ul { list-style-type: circle; }
+ol { list-style-type: decimal; }
+
+/* Reset lists */
+@mixin reset-list {
+    margin: 0;
+    list-style: none;
+
+    ul, ol {
+        margin-top: 0;
+    }
+
+    li {
+        margin-bottom: 0;
+        padding-left: 0;
+    }
+}
+
+/* Special lists */
+ul.checklist {
+    list-style: none;
+
+    li {
+        &:before {
+            @include icon(fa-check);
+            margin-right: 0.5em;
+        }
+    }
+}

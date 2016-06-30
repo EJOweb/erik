@@ -1,0 +1,15 @@
+/**
+ * Only show admin bar on large screens
+ */
+#wpadminbar {
+	@include breakpoint-down(lg) {
+		display: none;
+	}
+}
+
+
+/* Gravity Forms
+-------------------------------------------------------------------*/
+.content-container .gform_wrapper {
+    margin-bottom: space-y();
+}

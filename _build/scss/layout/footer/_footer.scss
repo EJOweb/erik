@@ -1,0 +1,56 @@
+/* Footer
+-------------------------------------------------------------------*/
+#footer {
+	@include site-padding;
+	@include font-dimension(sm);
+	background-color: $gray;
+	color: $font-color-inv;
+
+	#{$links} {
+		color: inherit;
+		@include on-event() {
+			
+		}
+	}
+
+	#{$buttons} {
+		@include button-style($brand-primary);
+	}
+
+	> .wrap {
+		@include container;
+	}
+}
+
+#footer .footer-widgets {
+	padding-top: space-y(2);
+	padding-bottom: space-y(1);
+
+	@include breakpoint(md) {
+		@include make-row;
+	}
+	
+	.widget {
+		margin-bottom: space-y(base);
+		@include breakpoint(md) {
+			@include make-column;
+			@include column-span(1, 3);
+		}
+	}
+
+	.widget-title {
+		margin-bottom: space-y(base);
+	}
+}
+
+#footer .footer-line {
+	padding: space-y(fourth) 0;
+	border-top: get-border(footer);
+	text-align: center;
+
+	.textwidget {
+		a { 
+			text-decoration: none;
+		}
+	}
+}

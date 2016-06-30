@@ -1,0 +1,49 @@
+/* Content header
+-------------------------------------------------------------------*/
+
+// @import "page-header";
+@import "breadcrumbs";
+
+main {
+	
+}
+
+.main {
+	@include site-padding;
+
+	.singular & .entry {
+		@include container(content);
+		padding-top: space-y(2);
+		padding-bottom: space-y();
+	}
+
+	#comments-template {
+		@include container(content);		
+	}
+}
+
+/* Titles */
+.entry-title a {
+	@include reset-link;
+}
+
+h1.entry-title,
+.archive-title {
+}
+
+h2.entry-title {
+    
+}
+
+
+.entry-byline {
+	position: relative;
+	@include font-dimension(sm);
+	color: $font-color-light;
+
+	a {
+		@include on-link-event;
+	}
+}
+
+

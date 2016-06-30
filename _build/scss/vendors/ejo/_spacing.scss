@@ -1,0 +1,111 @@
+////
+// Spacing
+////
+
+// // Get horizontal x-axis space.
+// @function space-x($level: base, $spacing: $spacing) 
+// {
+//     $space: map-get($spacing, $level);
+//     $space-x: map-get($space, x);
+
+//     @return $space-x;
+// }
+
+// // Get horizontal y-axis space.
+// @function space-y($level: base, $spacing: $spacing) 
+// {
+//     $space: map-get($spacing, $level);
+//     $space-y: map-get($space, y);
+
+//     @return $space-y;
+// }
+
+// // Get both y and x-axis spacing.
+// @function spacing($level: base, $spacing: $spacing) 
+// {
+//     $space: map-get($spacing, $level);
+
+//     $space-y: map-get($space, y);
+//     $space-x: map-get($space, x);
+
+//     @return $space-y $space-x;
+// }
+
+// Get x or y-axis space.
+@function calc-space-name($space, $space-name: base) 
+{
+	// Early return if $space-name is not a string
+	@if type-of($space-name) != string {
+		@return false;
+	}
+
+	// Return space based on name
+	@if $space-name == fourth {
+		@return $space * 0.25;
+	}
+	@else if $space-name == third {
+		@return $space / 3;
+	}
+	@else if $space-name == half {
+		@return $space * 0.5;
+	}
+	@else if $space-name == two-third {
+		@return $space / 1.5;
+	}
+	@else if $space-name == three-fourth {
+		@return $space * 0.75;
+	}
+	@else if $space-name == base or $space-name == one {
+		@return $space;
+	}
+	@else if $space-name == one-and-fourth {
+		@return $space * 1.25;
+	}
+	@else if $space-name == one-and-third {
+		@return $space / 0.75;
+	}
+	@else if $space-name == one-and-half {
+		@return $space * 1.5;
+	}
+	@else if $space-name == one-and-two-third {
+		@return $space / 0.6;
+	}
+	@else if $space-name == one-and-three-fourth {
+		@return $space * 1.75;
+	}
+	@else {
+		@warn "Space name " + $space-name + " was not recognized";
+		@warn 'Returning ' + $space;
+ 
+		@return $space;
+	}    
+}
+
+// Vertical space based on line-height (because $space-y is base on line-height)
+@function space-y($level: 1, $space-y: $space-y) 
+{
+	// Get space based on space-name
+	$space: calc-space-name($space-y, $level);
+
+	// Return the space if not false
+	@if $space != false {
+		@return $space;
+	}
+
+	// Return space based on number
+    @return ($level * $space-y);
+}
+
+// Horizontal space based on line-height (because $space-x is base on line-height)
+@function space-x($level: 1, $space-x: $space-x) {
+    // Get space based on space-name
+	$space: calc-space-name($space-x, $level);
+
+	// Return the space if not false
+	@if $space != false {
+		@return $space;
+	}
+
+	// Return space based on number
+    @return ($level * $space-x);
+}

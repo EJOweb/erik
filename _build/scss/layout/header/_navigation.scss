@@ -1,0 +1,135 @@
+/* Primary Navigation
+-------------------------------------------------------------------*/
+#menu-primary {
+	display: none;
+	position: relative;
+	flex-grow: 1;
+	flex-shrink: 0;
+	flex-basis: auto;
+	align-self: flex-end;
+}
+
+@include breakpoint(lg) {
+	#menu-primary {
+		display: block;
+	}
+}
+
+#menu-primary {
+
+	ul { @include reset-list; }
+
+	a {
+		@include reset-link;
+		display: block;
+		transition: all 200ms ease 0s;
+	}
+
+	li { display: block; }
+
+	.menu-items {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: flex-end;
+		align-items: flex-start;
+	}
+
+	/* Top level items */
+	.menu-items > .menu-item {
+		padding-bottom: 9px;
+		margin: 0px 9px;
+
+		> a {		
+			@include font-appearance(primary, bold);
+			padding: 4px 12px;
+			text-align: center;
+			text-transform: uppercase;
+		}
+
+		> a:after {
+			content: "";
+			display: block;
+			position: relative;
+			top: 13px;
+			margin: 0 auto;
+			height: 2px;
+			width: 0;
+			background-color: transparent;
+			transition: all 200ms ease-in-out 0s;
+		}
+
+		/* Active */
+		&.current-menu-item,
+		&.current-menu-parent,
+		&.current-menu-ancestor,
+		&.current-post-ancestor,
+		&.current-category-ancestor {
+			> a:after {
+				background-color: $white;
+				width: 100%;
+			}
+		}		
+
+		/* On hover */
+		&:hover > a:after {
+			background: $white;
+			width: 100%;
+		}
+
+		&:last-child {
+			margin-right: 0;
+			> a {
+				padding-right: 0;
+			}
+		}
+	}
+
+	/* Top level Submenu */
+	.menu-items > .menu-item {
+		position: relative;
+		// overflow: hidden;
+
+		> .sub-menu {
+			visibility: hidden;
+			opacity: 0;
+			position: absolute;
+			top: 150%;
+			left: 0;
+			z-index: 99;
+			max-width: 320px;
+			min-width: 100%;
+			padding: 6px 0;
+			background: $white;
+			color: $font-color;
+			box-shadow: $box-shadow;
+			transition: all 300ms ease 0s;
+		}
+
+		/* Show sub-menu on hover menu-item */
+		&:hover {
+			overflow: visible;
+
+			> .sub-menu { 
+				visibility: visible;
+				opacity: 1;
+				top: 100%;
+			}
+		}
+	}
+
+	.menu-items > .menu-item > .sub-menu > .menu-item {
+		font-size: font-size(small);
+		white-space: nowrap;
+		a {
+			padding: 0.333rem 1rem;
+			transition: all 100ms linear 0s;
+
+			&:hover {
+				background: $gray-lighter;
+				// color: $white;
+			}
+		}
+	}
+
+}

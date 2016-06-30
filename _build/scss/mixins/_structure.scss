@@ -1,0 +1,27 @@
+
+// For each breakpoint, define the maximum width of the container in a media query
+@mixin container($type: base, $max-widths: $container-max-widths, $breakpoints: $breakpoints) 
+{
+	margin: 0 auto;
+
+	$max-widths-of-type: map-get($max-widths, $type);
+
+	@each $breakpoint, $max-width in $max-widths-of-type {
+		@include breakpoint($breakpoint, $breakpoints) {
+			max-width: $max-width;
+		}
+	}
+}
+
+//
+// Site padding
+//
+@mixin site-padding($site-paddings: $site-paddings, $breakpoints: $breakpoints) 
+{
+	@each $breakpoint, $site-padding in $site-paddings {
+		@include breakpoint($breakpoint, $breakpoints) {
+			padding-left: rem($site-padding);
+			padding-right: rem($site-padding);
+		}
+	}
+}

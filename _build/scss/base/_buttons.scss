@@ -1,0 +1,119 @@
+/* Buttons
+-------------------------------------------------------------------*/
+$buttons:   'button',
+            '.button',
+            'input[type="button"]',
+            'input[type="reset"]',
+            'input[type="submit"]';
+
+@mixin button-style($style:default)
+{
+	@if ($style:highlight) {
+		background-color: $button-highlight-bgcolor;
+		color: $button-highlight-color;
+
+		@include on-event {
+			background-color: $button-highlight-bgcolor-action;
+		}
+	}
+	@elseif ($style:outline) {
+		background-color: $button-outline-bgcolor;
+		color: $button-outline-color;
+		border: $button-outline-border;
+
+		@include on-event {
+			background-color: $button-outline-bgcolor-action;
+		}
+	}
+	@elseif ($style:transparent) {
+		background-color: $button-transparent-bgcolor;
+		color: $button-transparent-color;
+		border: $button-transparent-border;
+
+		@include on-event {
+			background-color: $button-transparent-bgcolor-action;
+		}
+	}
+	@else {
+		background-color: $button-bgcolor;
+		color: $button-color;
+
+		@include on-event {
+			background-color: $button-bgcolor-action;
+		}
+	}
+}
+
+//
+// Buttons reset
+//
+#{$buttons} {
+    border: none;
+	// white-space: nowrap;
+	vertical-align: middle;
+	cursor: pointer;
+	text-align: center;
+	// max-width: 100%;
+}
+
+//
+// Buttons
+//
+#{$buttons} {
+	display: inline-block;
+    line-height: space-y(two-third);
+    padding: space-y(half) space-x(half);
+    font-weight: get-font-weight(bold, primary);
+    @include border-radius();
+
+	&,
+	&.default {
+    	@include button-style();
+    }
+
+	// &.transparent {
+	// 	@include button-style(transparent);
+	// }
+
+	&.highlight {
+		@include button-style(highlight);
+	}
+
+	&.outline  {
+		@include button-style(outline);
+	}
+
+    & + & {
+    	margin-left: 8px;
+    }
+}
+
+/* Create small space if buttons are posted above each other */
+a.button + br + a.button {
+    margin-top: 4px;
+}   
+
+
+//* Dynamic button style
+// @mixin button-style($color: $brand-primary) 
+// {
+// 	$this-font-color: $font-color;
+// 	$color-action: darken($color, $color-change-value);
+
+// 	// @warn 'kleur ' + $color + ' lichtheid: ' + lightness($color);
+
+// 	// http://thesassway.com/intermediate/dynamically-change-text-color-based-on-its-background-with-sass		
+// 	@if (lightness($color) < 60) {
+// 		$this-font-color: $font-color-inv;
+// 	}
+// 	@if (lightness($color) < 40) {
+// 		$color-action: lighten($color, $color-change-value);
+// 	}
+
+// 	background-color: $color;
+// 	color: $this-font-color;
+
+// 	@include on-event {
+// 		background-color: $color-action;
+// 	}
+// }

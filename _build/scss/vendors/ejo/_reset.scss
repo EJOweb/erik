@@ -1,0 +1,44 @@
+/* Box-sizing
+-------------------------------------------------------------------*/
+
+html { // http://bit.ly/1qk2tVR
+    box-sizing: border-box;
+}
+
+* {
+    &,
+    &::after,
+    &::before {
+        box-sizing: inherit;
+    }
+}
+
+/* Address Flexbox Bugs
+ *
+ * Useful documentation: https://github.com/philipwalton/flexbugs 
+-------------------------------------------------------------------*/
+
+/**
+ * Allow flexbox-containers to shrink below its min-content
+ * Thus allowing flexboxcontainers to shrink smaller than child-image
+ * See: https://teamtreehouse.com/community/firefox-flexbox-not-working
+ * And: http://stackoverflow.com/questions/28710379/firefox-flexbox-image-width
+ */
+* {
+    min-width: 0;
+    min-height: 0;
+}
+
+/**
+ * Make sure the html and body viewport is 100% height.
+ * This way flex children can fit up all screen if necessary.
+ * 
+ * Maybe use min-height? Because when body content is larger than
+ * screen-height, the body needs to be larger I guess?
+ */
+html,
+body {
+    height: 100%;
+    // min-height: 100%;
+}
+

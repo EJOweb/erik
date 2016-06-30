@@ -237,7 +237,7 @@ final class EJOtheme
 
 		//* Styles
 		/* Load Font */
-		// wp_enqueue_style( 'theme-fonts', 'https://fonts.googleapis.com/css?family=Roboto:300,300italic,500,500italic|Roboto+Slab:700' );
+		wp_enqueue_style( 'theme-fonts', 'https://fonts.googleapis.com/css?family=Roboto:300,300italic,500,500italic|Roboto+Slab:700' );
 
 		/* Load active theme stylesheet. */
 		wp_enqueue_style( 'theme', EJOtheme::$css_uri . "theme{$suffix}.css", false, EJOtheme::$version );

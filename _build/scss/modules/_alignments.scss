@@ -1,0 +1,33 @@
+/* Alignments
+-------------------------------------------------------------------*/
+
+.alignleft,
+.alignright {
+    display: block;
+    margin-bottom: vertical-space(1);
+}
+
+.aligncenter {
+    clear: both;
+    display: block;
+    margin-left: auto;
+    margin-top: rem(6px);
+    margin-right: auto;
+}
+
+
+@include breakpoint(sm) {
+    .alignleft {
+        display: inline;
+        float: left;
+        margin-right: 2rem;
+        margin-top: rem(6px);
+    }
+
+    .alignright {
+        display: inline;
+        float: right;
+        margin-left: 2rem;
+        margin-top: rem(6px);
+    }
+}

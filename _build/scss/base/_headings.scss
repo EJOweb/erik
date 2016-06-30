@@ -1,0 +1,93 @@
+/* Headings
+-------------------------------------------------------------------*/
+$default-headings: 'h1', 'h2', 'h3', 'h4', 'h5', 'h6';
+// $textcontent-headings: selector-nest(#{$textcontent}, #{$default-headings});
+// $textcontent-h1: selector-nest(#{$textcontent}, 'h1');
+// $textcontent-h2: selector-nest(#{$textcontent}, 'h2');
+// $textcontent-h3: selector-nest(#{$textcontent}, 'h3');
+// $textcontent-h4: selector-nest(#{$textcontent}, 'h4');
+// $textcontent-h5: selector-nest(#{$textcontent}, 'h5');
+// $textcontent-h6: selector-nest(#{$textcontent}, 'h6');
+
+// h4: (
+//     font-size:   18,
+//     line-height: 24,
+// ),
+// h3: (
+//     font-size:   25,
+//     line-height: 31,
+// ),
+// h2: (
+//     font-size:   33,
+//     line-height: 39,
+// ),
+// h1: (
+//     font-size:   42,
+//     line-height: 48,
+// ),
+
+@mixin h1 {
+    // @include font-dimension(h1);
+    font-size: get-font-size(h1);
+    line-height: space-y(one-and-two-third);
+    margin-bottom: space-y(one);
+    @include font-appearance(secondary, bold);
+}
+
+@mixin h2 {
+    // @include font-dimension(h2);
+    font-size: get-font-size(h2);
+    line-height: space-y(one-and-half);
+    margin-bottom: space-y();
+    @include font-appearance(secondary, normal);
+}
+
+@mixin h3 {
+    // @include font-dimension(h3);
+    font-size: get-font-size(h3);
+    line-height: space-y(one-and-third);
+    margin-bottom: space-y(two-third);
+    @include font-appearance(secondary, normal);
+}
+
+@mixin h4 {
+    // @include font-dimension(h4);
+    font-size: get-font-size(h4);
+    line-height: space-y(three-fourth);
+    margin-bottom: space-y(fourth);
+    @include font-appearance(secondary, bold);
+}
+
+// Reset headings
+@mixin reset-heading {
+    font-size: inherit;
+    line-height: inherit;
+    font-family: inherit;
+    font-weight: inherit;
+    color: inherit;
+}
+
+#{$default-headings} {
+    margin: 0;
+    color: inherit;
+
+    a {
+        @include on-link-event();
+    }
+}
+
+h1 {
+    @include h1;
+}
+
+h2 {
+    @include h2;
+}
+
+h3 {
+    @include h3;
+}
+
+h4, h5, h6 { 
+    @include h4;
+}

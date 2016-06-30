@@ -1,0 +1,79 @@
+/* Font Styles
+-------------------------------------------------------------------*/
+b, strong { 
+    @include font-weight(bold, primary);
+}
+
+i, em, mark, cite { 
+    font-style: italic; 
+}
+
+/* Paragraphs
+-------------------------------------------------------------------*/
+
+p {
+    margin-top: 0;
+    margin-bottom: space-y();
+
+    &.intro {
+        @include font-weight(bold, primary);
+    }
+}
+
+/* Media
+-------------------------------------------------------------------*/
+img,
+figure,
+audio,
+video,
+object,
+embed,
+iframe {
+    max-width: 100%;
+    height: auto;
+}
+
+figure,
+audio,
+video,
+object,
+embed,
+iframe {
+    margin: 0 0 space-y();
+}
+
+/* Horizontal Rule
+-------------------------------------------------------------------*/
+
+hr {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+    border: 0;
+}
+
+/* Blockquotes
+-------------------------------------------------------------------*/
+
+blockquote {
+    margin: space-y() 0;
+    padding: 0 0 0 space-x();
+    @include font-dimension(lg);
+    font-style: italic;
+
+    i,
+    em, 
+    cite {
+        font-style: normal;
+    }
+}
+
+/* Code
+-------------------------------------------------------------------*/
+pre {
+    // word-wrap: break-word; 
+    white-space: pre-wrap; 
+    margin: space-y() 0;
+}
+

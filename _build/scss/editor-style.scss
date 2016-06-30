@@ -8,6 +8,8 @@
 @import "mixins/mixins";
 @import "mixins/mixins-flexbox";
 @import "mixins/mixins-reset-styles";
+@import "mixins/breakpoints";
+@import "mixins/on-event";
 
 // Theme Variables
 @import "variables/colors";
@@ -35,9 +37,9 @@ body {
 
 /* Main content editor */
 body.content {
-	max-width: $width__site-max;
-	padding-left: 3rem !important;
-	padding-right: 3rem !important;
+	max-width: $width__content-max;
+	margin-left: 3rem !important;
+	margin-right: 3rem !important;
 	margin-top: 2rem;
 	margin-bottom: 2rem;
 }

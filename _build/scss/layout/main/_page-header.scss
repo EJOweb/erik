@@ -1,0 +1,89 @@
+.page-header {
+	@include site-padding;
+	position: relative;
+	z-index: 0;
+	padding-top: rem(75);
+	background-color: $brand-primary;
+	color: $font-color-inv;
+
+	#{$links} {
+		color: inherit;
+		@include on-event() {
+			
+		}
+	}
+
+	#{$buttons} {
+		@include button-style($brand-secondary);
+	}
+}
+
+.page-header {
+	.header-wrapper {
+		position: relative;
+		@include container;
+		@include margin-collapse-fix;
+		text-align: center;
+	}
+
+	header {
+		margin-top: space-y(2);
+		margin-bottom: space-y(2);
+	}
+}
+
+.header-image {
+	position: absolute;
+	z-index: 0;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;
+
+	> .wrap { 
+		flex: 0 0 1440px;
+		position: relative;
+	}
+
+	img {
+		display: block;
+		width: 100%;
+		filter: grayscale(0.9);
+	}
+	
+	.overlay {
+		content: '';
+		position: absolute;
+		z-index: 1;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		margin-left: auto;
+		margin-right: auto;
+		background-image: radial-gradient(
+			// circle,
+			rgba($header-image-color, 0.9) 50%, 
+			$header-image-color 70%
+		);
+		// background-image: radial-gradient(
+		// 	// ellipse,
+		// 	rgba(red, 0.9) 50%, 
+		// 	red 70%
+		// );
+		@include breakpoint(xl) {
+			background-image: linear-gradient(
+				to right,
+				$header-image-color 0%,
+				rgba($header-image-color, 0.9) 25%, 
+				rgba($header-image-color, 0.9) 75%, 
+				$header-image-color 100%
+			);
+		}
+	}
+}	

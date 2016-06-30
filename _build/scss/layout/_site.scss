@@ -1,26 +1,8 @@
+/* Site Layout
+-------------------------------------------------------------------*/
 #container {
-	background-color: palette(white);
-	display: flex;
-	flex-direction: column;
-	align-items: stretch;
-	min-height: 100%;
+	overflow: hidden;
+	min-width: $container-min-width;
 }
 
-#footer {
-	flex: 1 1 auto;
-}
 
-@import "layout/header";
-@import "layout/main";
-@import "layout/content";
-@import "layout/footer";
-
-
-@include media(tablet) {
-}
-
-@include media(phablet) {
-}
-
-@include media(smartphone) {
-}

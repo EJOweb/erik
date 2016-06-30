@@ -1,0 +1,28 @@
+/* Layout */
+.site-branding {
+	flex-grow: 1;
+	flex-shrink: 1;
+	flex-basis: auto;
+
+	// text-align: center;
+	// flex-basis: 100%;
+	// @include breakpoint(sm) {
+	// 	flex-basis: 320px;
+		margin-right: $grid-gutter-width;
+	// }
+
+	/* Reset */
+	p, h1 {
+		margin: 0;
+	}
+
+	.custom-logo-link {
+		display: block;
+		max-width: 320px;
+		margin-bottom: 13px;
+
+		img {
+			display: block;
+		}	
+	}
+}

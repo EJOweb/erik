@@ -1,0 +1,58 @@
+@function strip-units($value) {
+	@return ($value / ($value * 0 + 1));
+}
+
+// Clearfix
+@mixin clearfix() {
+	&::after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+}
+
+// Event wrapper
+@mixin on-event($events: hover focus active ) { 
+	$selector: ();
+
+	@each $event in $events {
+		$selector: append($selector, unquote('&:#{$event}'), 'comma');
+	}
+
+		#{$selector} {
+			@content;
+		}
+}
+
+// Compose calc() formula for size of a box relative to the total blocks and space-around
+@function boxsize($total-blocks, $gap-size: 0px) 
+{
+		// If there are 6 blocks, there need to be calculated space for 5 borders
+		$number-of-gaps: $total-blocks - 1;
+
+		// Return the calculation formula for the size of 1 block
+		@return calc(100% / #{$total-blocks} - ((#{$number-of-gaps} * #{$gap-size}) / #{$total-blocks}));
+}
+
+// Mixes a color with black.
+@function shade($color, $percent) {
+	@return mix(#000, $color, $percent);
+}
+
+// Mixes a color with white.
+@function tint($color, $percent) {
+	@return mix(#fff, $color, $percent);
+}
+
+// Fixes margin overflow of children
+@mixin margin-collapse-fix {
+	// overflow: auto; // Causes scrollbars in chrome!
+	overflow: hidden;
+
+
+	// &:after {
+	// 	content: "";
+	// 	display: block;
+	// 	clear: both;
+	// }
+}

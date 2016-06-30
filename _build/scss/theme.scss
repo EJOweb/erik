@@ -1,57 +1,68 @@
 @charset 'UTF-8';
 
-// Resources
-@import "vendors/bourbon/bourbon";
-@import "vendors/colors";
-@import "vendors/icons";
-@import "vendors/social-media";
+//
+// RESOURCES AND SETTINGS
+// 
 
-// Mixins
-@import "mixins/mixins";
-@import "mixins/mixins-flexbox";
-@import "mixins/mixins-reset-styles";
+// Resources
+@import "vendors/ejo/utilities";
+@import "vendors/ejo/breakpoints";
+@import "vendors/ejo/grid";
+@import "vendors/ejo/spacing";
+@import "vendors/ejo/typography";
+@import "vendors/ejo/border";
+@import "vendors/ejo/colors";
+@import "vendors/ejo/icons";
+@import "vendors/ejo/social-media";
+
+// Custom theme mixins
+@import "mixins/structure";
+@import "mixins/background-variant";
 
 // Theme Variables
-@import "variables/colors";
-@import "variables/typography";
-@import "variables/structure";
-@import "variables/misc";
+@import "variables";
 
-/* Reset
-============================================================================ */
-@import "vendors/normalize";
+//
+// CSS OUTPUT START
+// 
 
-/* EJO Defaults
-============================================================================ */
-@import "vendors/ejo-defaults";
+/* Normalize
+-------------------------------------------------------------------*/
+@import "vendors/normalize/normalize";
+@import "vendors/ejo/reset";
 
-/* Content
-============================================================================ */
-@import "content/content";
+// Content
+@import "base/body";
+@import "base/links";
+@import "base/headings";
+@import "base/lists";
+@import "base/tables";
+@import "base/misc";
+@import "base/forms";
+@import "base/buttons";
 
-/* Structure
-============================================================================ */
+// Layout
 @import "layout/site";
+@import "layout/header/header";
+@import "layout/main/main";
+@import "layout/footer/footer";
 
-/* Other
-============================================================================ */
-@import "modules/banner";
-@import "modules/branding";
-@import "modules/titles";
-@import "modules/navigation";
-@import "modules/navigation-mobile";
-@import "modules/breadcrumbs";
+// Templates
+
+// Modules (hapklare brokken)
+@import "modules/alignments";
 @import "modules/pagination";
-@import "modules/comments";
 @import "modules/social-media";
 @import "vendors/gravity-forms/setup";
-
-/* Media
-============================================================================ */
 @import "modules/media/galleries";
 @import "modules/media/captions";
 @import "modules/media/smileys";
+@import "modules/widget-menu";
+@import "modules/widget-featured";
+@import "modules/widget-simple-testimonials";
 
-/* Accessibility
-============================================================================ */
+// Accessibility
 @import "modules/accessibility";
+
+// Shame
+@import "modules/shame";

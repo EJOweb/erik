@@ -1,0 +1,14 @@
+.featured-widget {
+	text-align: center;
+
+	.icon-container {
+		display: inline-block;
+		margin-bottom: space-y(fourth);
+
+		.fa {
+			font-size: rem(80);
+			color: $brand-secondary;
+		}
+	}
+	
+}

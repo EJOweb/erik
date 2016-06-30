@@ -1,0 +1,14 @@
+/* Body
+-------------------------------------------------------------------*/
+html {
+    font-size: get-font-size-clean(base) / 16 * 100%;
+}
+
+body {
+	position: relative;
+
+    @include font-dimension(base);
+    @include font-appearance(primary, normal);
+
+    color: $font-color;
+}

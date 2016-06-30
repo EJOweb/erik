@@ -1,0 +1,18 @@
+.breadcrumbs {
+	position: relative;
+	margin-top: space-y(half) * -1;
+	margin-bottom: -6px;
+	@include font-dimension(sm);
+	color: $font-color-inv-light;
+
+	a {
+		@include reset-link;
+		@include on-event {
+			color: $font-color-inv;
+		}
+	}
+
+	.breadcrumb_last {
+		font-style: italic;
+	}
+}

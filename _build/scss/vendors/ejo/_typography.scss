@@ -1,0 +1,130 @@
+////
+// TYPOGRAPHY
+////
+
+// Convert pixels to rems
+// eg. for a relational value of 12px write rem(12)
+// Assumes $base-font-size is the font-size of <html>
+@function rem($pxval) 
+{
+    $base: get-font-size-clean(base);
+    
+    @if not unitless($pxval) {
+        $pxval: strip-units($pxval);
+    }
+
+    @if not unitless($base) {
+        $base: strip-units($base);
+    }
+
+    @return ($pxval / $base) * 1rem;
+}
+
+// Get line height from $font-dimensions
+@function get-line-height-clean($size: base, $font-dimensions: $font-dimensions) 
+{
+    @if map-has-key($font-dimensions, $size) == false {
+        @warn "Font Dimension " + $size + " not found in $font-dimensions";
+        @warn 'Returning inherit line-height';
+        @return inherit;
+    }
+
+    $font-dimension: map-get($font-dimensions, $size);
+    $line-height: map-get($font-dimension, line-height);
+
+    @return $line-height;
+}
+
+// Get line height from $font-dimensions
+@function get-line-height($size: base, $font-dimensions: $font-dimensions) 
+{
+    $line-height: get-line-height-clean($size, $font-dimensions);
+
+    @return rem($line-height);
+}
+
+// Get font-size from $font-dimensions
+@function get-font-size-clean($size: base, $font-dimensions: $font-dimensions) 
+{
+    @if map-has-key($font-dimensions, $size) == false {
+        @warn "Font Dimension " + $size + " not found in $font-dimensions";
+        @warn 'Returning inherit font-size';
+        @return inherit;
+    }
+
+    $font-dimension: map-get($font-dimensions, $size);
+    $font-size: map-get($font-dimension, font-size);
+
+    @return $font-size;
+}
+
+// Get font-size from $font-dimensions
+@function get-font-size($size: base, $font-dimensions: $font-dimensions) 
+{   
+    $font-size: get-font-size-clean($size, $font-dimensions);
+
+    @return rem($font-size);
+}
+
+// Returns the font-family from the 'stack' key in a Sass list
+@function get-font-weight($weight:normal, $type:primary)
+{
+    @if map-has-key($font-families, $type) == false {
+        @warn "Font family " + $type + " not found in $font-families";
+        @warn 'Returning 400 font-weight';
+        @return 400;
+    }    
+
+    $font-family: map-get($font-families, $type);
+    $font-family-weights: map-get($font-family, weights);
+    $font-family-weight: map-get($font-family-weights, $weight);
+
+    @return $font-family-weight;   
+}
+
+// Returns the font-family associated with a type
+@function get-font-family($type:primary)
+{
+    $font-family: map-get($font-families, $type);
+    $font-family-stack: map-get($font-family, stack);
+
+    @return $font-family-stack;
+    // @return unquote($font-family-stack);
+}
+
+// font-family
+@mixin font-family($type:primary)
+{
+    font-family: get-font-family($type);
+}
+
+// font-weight
+@mixin font-weight($weight:normal, $type:primary)
+{
+    font-weight: get-font-weight($weight, $type);  
+}
+
+// font-family and weight
+@mixin font-appearance($type:primary, $weight:normal)
+{
+    font-family: get-font-family($type);
+    font-weight: get-font-weight($weight, $type);  
+}
+
+// font-size
+@mixin font-size($size: base, $font-dimensions: $font-dimensions) {
+    font-size: get-font-size($size, $font-dimensions);
+}
+
+// line-height
+@mixin line-height($size: base, $font-dimensions: $font-dimensions)
+{
+    line-height: get-line-height($size, $font-dimensions);  
+}
+
+// font-dimensions
+@mixin font-dimension($size: base, $font-dimensions: $font-dimensions)
+{
+    font-size: get-font-size($size, $font-dimensions);
+    line-height: get-line-height($size, $font-dimensions);  
+}
