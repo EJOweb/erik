@@ -8,6 +8,10 @@
 	margin-top: space-y(1) - rem($gallery-gutter);
 	margin-bottom: space-y(1) - rem($gallery-gutter);
 
+	padding: (space-y(0.5) - rem($gallery-gutter)) (space-x(0.5) - rem($gallery-gutter));
+	background-color: $gray-lightest;
+	@include border(base);
+
 	@include breakpoint(sm) {
 		margin-left: rem(-90) - rem($gallery-gutter);
 		margin-right: rem(-90) - rem($gallery-gutter);

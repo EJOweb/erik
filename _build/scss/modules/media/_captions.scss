@@ -1,4 +1,7 @@
 .wp-caption {
+	padding: space-y(0.5) space-x(0.5);
+	background-color: $gray-lightest;
+	@include border(base);
 	img[class*="wp-image-"] {
 		display: block;
 		margin-left: auto;
@@ -8,7 +11,7 @@
 
 .wp-caption-text {
 	@include font-dimension(sm);
-	padding: space-y(0.125) space-x(0.125);
+	padding: space-y(0.25) space-x(0.125) 0;
 	font-style: italic;
 	text-align: center;
 	color: $font-color-light;

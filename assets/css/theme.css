@@ -675,7 +675,7 @@ input:not([type="submit"]):not([type="checkbox"]):not([type="radio"]), input:not
 select,
 textarea {
   padding: space(xs);
-  border: 1px solid #818a91;
+  border: 1px solid #eceeef;
   border-radius: 4px;
 }
 
@@ -881,6 +881,10 @@ a.button + br + a.button {
 
 .header-content h1 {
   margin: 0;
+  font-family: "Roboto", "Segoe UI", "Tahoma", sans-serif;
+  font-weight: 300;
+  font-size: 1.77778rem;
+  line-height: 2.22222rem;
 }
 
 /* Layout */
@@ -1267,24 +1271,35 @@ a.button + br + a.button {
 -------------------------------------------------------------------*/
 .breadcrumbs {
   position: relative;
-  margin-top: -0.83333rem;
-  margin-bottom: -6px;
+  margin-bottom: 0.41667rem;
   font-size: 0.83333rem;
   line-height: 1.11111rem;
-  color: rgba(255, 255, 255, 0.8);
 }
 
 .breadcrumbs a {
   color: inherit;
   text-decoration: none;
+  font-weight: 500;
 }
 
-.breadcrumbs a:hover, .breadcrumbs a:focus, .breadcrumbs a:active {
-  color: #ffffff;
+.breadcrumbs .fa {
+  font-size: 1rem;
 }
 
 .breadcrumbs .breadcrumb_last {
   font-style: italic;
+}
+
+.singular .breadcrumbs {
+  /* Hide last seperator and breadcrumb */
+}
+
+.singular .breadcrumbs span[rel="v:child"] .sep {
+  display: none;
+}
+
+.singular .breadcrumbs .breadcrumb_last {
+  display: none;
 }
 
 .main {
@@ -1421,7 +1436,7 @@ a.button + br + a.button {
 .alignleft,
 .alignright {
   display: block;
-  margin-bottom: vertical-space(1);
+  margin-bottom: 1.66667rem;
 }
 
 .aligncenter {
@@ -1434,9 +1449,10 @@ a.button + br + a.button {
 
 @media (min-width: 544px) {
   .alignleft {
-    display: inline;
+    margin-left: -5rem;
     float: left;
-    margin-right: 2rem;
+    margin-right: 1.66667rem;
+    margin-bottom: 0.83333rem;
     margin-top: 0.33333rem;
   }
   .alignright {
@@ -1976,6 +1992,9 @@ a.button + br + a.button {
   margin-right: -0.33333rem;
   margin-top: 1.33333rem;
   margin-bottom: 1.33333rem;
+  padding: 0.5rem 0.77778rem;
+  background-color: #f7f7f9;
+  border: 1px solid #eceeef;
 }
 
 @media (min-width: 544px) {
@@ -2019,6 +2038,12 @@ a.button + br + a.button {
   }
 }
 
+.wp-caption {
+  padding: 0.83333rem 1.11111rem;
+  background-color: #f7f7f9;
+  border: 1px solid #eceeef;
+}
+
 .wp-caption img[class*="wp-image-"] {
   display: block;
   margin-left: auto;
@@ -2028,7 +2053,7 @@ a.button + br + a.button {
 .wp-caption-text {
   font-size: 0.83333rem;
   line-height: 1.11111rem;
-  padding: 0.20833rem 0.27778rem;
+  padding: 0.41667rem 0.27778rem 0;
   font-style: italic;
   text-align: center;
   color: #818a91;

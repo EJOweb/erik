@@ -4,6 +4,8 @@
 
 	<?php if ( is_singular() ) : // If a single post. ?>
 
+		<?php hybrid_get_menu( 'breadcrumbs' ); // Loads the menu/breadcrumbs.php template. ?>
+
 		<header class="entry-header">
 			<h1 <?php hybrid_attr( 'entry-title' ); ?>><?php the_title(); ?></h1>
 		</header>

@@ -1,18 +1,35 @@
 .breadcrumbs {
 	position: relative;
-	margin-top: space-y(half) * -1;
-	margin-bottom: -6px;
+	// margin-top: space-y(half) * -1;
+	// margin-bottom: -6px;
+	margin-bottom: space-y(0.25);
 	@include font-dimension(sm);
-	color: $font-color-inv-light;
 
 	a {
 		@include reset-link;
-		@include on-event {
-			color: $font-color-inv;
-		}
+		@include font-weight(bold,primary);
+		// @include on-event {
+		// 	color: $font-color-inv;
+		// }
+	}
+
+	.fa {
+		@include font-size();
 	}
 
 	.breadcrumb_last {
 		font-style: italic;
+	}
+
+	.singular & {
+
+		/* Hide last seperator and breadcrumb */
+		span[rel="v:child"] .sep {
+			display: none;
+		}
+
+		.breadcrumb_last {
+			display: none;
+		}
 	}
 }

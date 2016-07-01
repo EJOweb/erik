@@ -4,7 +4,7 @@
 .alignleft,
 .alignright {
     display: block;
-    margin-bottom: vertical-space(1);
+    margin-bottom: space-y(1);
 }
 
 .aligncenter {
@@ -18,9 +18,10 @@
 
 @include breakpoint(sm) {
     .alignleft {
-        display: inline;
+        margin-left: rem(-90);
         float: left;
-        margin-right: 2rem;
+        margin-right: space-x(0.75);
+        margin-bottom: space-y(0.5);
         margin-top: rem(6px);
     }
 

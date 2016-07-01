@@ -46,6 +46,8 @@
 
 	h1 {
 		margin: 0;
+		@include font-appearance(primary);
+		@include font-dimension(h2);
 	}
 }
 
